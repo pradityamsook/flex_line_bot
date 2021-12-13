@@ -1,0 +1,48 @@
+{
+    "type": "bubble",
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "image",
+                "url": "https://i.imgur.com/hMGffHU.png",
+                "size": "full",
+                "aspectMode": "cover",
+                "aspectRatio": "1:1",
+                "gravity": "center"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "คลิกเลย",
+                        "align": "center",
+                        "weight": "bold",
+                        "position": "relative",
+                        "color": "#FFFFFF"
+                    }
+                ],
+                "position": "absolute",
+                "height": "40px",
+                "width": "126px",
+                "borderColor": "#D61F26",
+                "cornerRadius": "20px",
+                "offsetStart": "90px",
+                "borderWidth": "5px",
+                "offsetTop": "238px",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "backgroundColor": "#D61F26",
+                "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "http://linecorp.com/"
+                }
+            }
+        ],
+        "paddingAll": "0px"
+    }
+}

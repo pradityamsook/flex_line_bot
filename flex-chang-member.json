@@ -1,0 +1,70 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/k3fCzQP.png",
+                        "gravity": "center",
+                        "size": "full",
+                        "aspectRatio": "3:4"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "คะแนนสะสมช้างแฟมิลี่ของฉัน      วันที่ :  22 / 11 / 2021",
+                                "color": "#ffffff",
+                                "weight": "bold",
+                                "size": "11px"
+                            }
+                        ],
+                        "position": "absolute",
+                        "paddingStart": "12px",
+                        "paddingTop": "47px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "7,256",
+                                "size": "34px",
+                                "color": "#FFFFFF",
+                                "weight": "bold"
+                            }
+                        ],
+                        "position": "absolute",
+                        "paddingTop": "80px",
+                        "paddingStart": "30px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "คะแนน",
+                                "size": "18px",
+                                "color": "#FFFFFF",
+                                "weight": "bold"
+                            }
+                        ],
+                        "position": "absolute",
+                        "paddingTop": "90px",
+                        "paddingStart": "220px"
+                    }
+                ],
+                "paddingAll": "0px"
+            }
+        }
+    ]
+}

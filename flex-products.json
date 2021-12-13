@@ -1,0 +1,537 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "header": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "กลุ่มซีเมนต์โครงสร้าง",
+                        "align": "center",
+                        "gravity": "center",
+                        "color": "#FFFFFF"
+                    }
+                ],
+                "height": "40px",
+                "backgroundColor": "#CD242B",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "background": {
+                    "type": "linearGradient",
+                    "angle": "0deg",
+                    "startColor": "#CD242B",
+                    "endColor": "#7D1416"
+                }
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "ชมสินค้ากลุ่มนี้เพิ่มเติม คลิก!",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "style": "primary",
+                        "color": "#D61F26"
+                    }
+                ],
+                "borderWidth": "8px",
+                "height": "90px",
+                "cornerRadius": "8px"
+            },
+            "styles": {
+                "header": {
+                    "separator": true
+                }
+            }
+        },
+        {
+            "type": "bubble",
+            "header": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "กลุ่มซีเมนต์โครงสร้าง",
+                        "align": "center",
+                        "gravity": "center",
+                        "color": "#FFFFFF"
+                    }
+                ],
+                "height": "40px",
+                "backgroundColor": "#CD242B",
+                "justifyContent": "center",
+                "alignItems": "center",
+                "background": {
+                    "type": "linearGradient",
+                    "angle": "0deg",
+                    "startColor": "#CD242B",
+                    "endColor": "#7D1416"
+                }
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/pvinl1r.png",
+                                "aspectRatio": "1:1",
+                                "size": "40px",
+                                "offsetTop": "13px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+                                "align": "center",
+                                "gravity": "center",
+                                "adjustMode": "shrink-to-fit",
+                                "position": "relative",
+                                "offsetBottom": "15px",
+                                "size": "13px"
+                            }
+                        ],
+                        "spacing": "sm",
+                        "height": "60px",
+                        "alignItems": "center",
+                        "justifyContent": "flex-start"
+                    },
+                    {
+                        "type": "separator"
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "ชมสินค้ากลุ่มนี้เพิ่มเติม คลิก!",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "style": "primary",
+                        "color": "#D61F26"
+                    }
+                ],
+                "borderWidth": "8px",
+                "height": "90px",
+                "cornerRadius": "8px"
+            },
+            "styles": {
+                "header": {
+                    "separator": true
+                }
+            }
+        },
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/Cy3SQ74.png",
+                        "aspectMode": "cover",
+                        "aspectRatio": "2:3",
+                        "gravity": "top",
+                        "size": "full"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมดที่นี่!",
+                                "wrap": true,
+                                "gravity": "center",
+                                "align": "center",
+                                "style": "normal",
+                                "weight": "bold"
+                            }
+                        ],
+                        "position": "relative",
+                        "justifyContent": "center",
+                        "alignItems": "center",
+                        "offsetTop": "20px",
+                        "height": "75px"
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "คลิก",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "style": "primary",
+                        "color": "#D61F26"
+                    }
+                ],
+                "borderWidth": "8px",
+                "cornerRadius": "8px"
+            },
+            "styles": {
+                "header": {
+                    "separator": true
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.imgur.com/Hy7OVI5.png"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "text",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl",
+                        "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "1,023 บาท / ถัง ราคา ณ วันที่ 22 พ.ย. 2021",
+                                "wrap": true,
+                                "weight": "regular",
+                                "flex": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "เลือก",
+                            "uri": "https://linecorp.com"
+                        },
+                        "color": "#ED1C24"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "bubble",
+            "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.imgur.com/Hy7OVI5.png"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "text",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl",
+                        "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L02)"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "1,023 บาท / ถัง ราคา ณ วันที่ 22 พ.ย. 2021",
+                                "wrap": true,
+                                "weight": "regular",
+                                "flex": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "เลือก",
+                            "uri": "https://linecorp.com"
+                        },
+                        "color": "#ED1C24"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "bubble",
+            "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://i.imgur.com/tBBRiDI.png"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "text",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "xl",
+                        "text": "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมด ได้ที่นี่!    "
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "button",
+                        "action": {
+                            "type": "uri",
+                            "label": "เลือก",
+                            "uri": "https://linecorp.com"
+                        },
+                        "color": "#ED1C24"
+                    }
+                ]
+            }
+        }
+    ]
+}
