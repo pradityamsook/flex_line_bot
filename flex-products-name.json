@@ -4,11 +4,43 @@
         {
             "type": "bubble",
             "hero": {
-                "type": "image",
-                "size": "full",
-                "aspectRatio": "20:13",
-                "aspectMode": "cover",
-                "url": "https://i.imgur.com/Hy7OVI5.png"
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/Hy7OVI5.png",
+                        "size": "full",
+                        "aspectRatio": "20:13"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/yUia3Sy.png",
+                                "position": "relative",
+                                "margin": "none",
+                                "size": "xxl",
+                                "aspectRatio": "10:3",
+                                "offsetTop": "10px"
+                            },
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/en2oNPK.png",
+                                "size": "xxl",
+                                "aspectRatio": "3:2",
+                                "offsetTop": "10px",
+                                "offsetStart": "140px"
+                            }
+                        ],
+                        "offsetBottom": "200px",
+                        "height": "70px",
+                        "paddingTop": "15px"
+                    }
+                ],
+                "height": "180px"
             },
             "body": {
                 "type": "box",
@@ -28,10 +60,54 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "1,023 บาท / ถัง ราคา ณ วันที่ 22 พ.ย. 2021",
+                                "text": "1,023 บาท / ถัง ",
                                 "wrap": true,
                                 "weight": "regular",
                                 "flex": 0
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ราคา ณ วันที่ 22 พ.ย. 2021"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/ynXV8ia.png",
+                                "aspectRatio": "1:1",
+                                "size": "3xl"
+                            },
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/vVcsjMQ.png",
+                                "position": "relative",
+                                "aspectRatio": "1:1",
+                                "size": "xxl",
+                                "offsetStart": "115px"
+                            },
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/OabotYy.png",
+                                "size": "xxl",
+                                "aspectRatio": "1:1",
+                                "offsetStart": "120px"
+                            },
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/RHJXfvA.png",
+                                "size": "xxl",
+                                "aspectRatio": "1:1",
+                                "offsetStart": "125px"
                             }
                         ]
                     }
@@ -49,9 +125,12 @@
                             "label": "เลือก",
                             "uri": "https://linecorp.com"
                         },
-                        "color": "#ED1C24"
+                        "color": "#FFFFFF",
+                        "height": "sm"
                     }
-                ]
+                ],
+                "backgroundColor": "#ED1C24",
+                "height": "65px"
             }
         },
         {
@@ -102,9 +181,12 @@
                             "label": "เลือก",
                             "uri": "https://linecorp.com"
                         },
-                        "color": "#ED1C24"
+                        "color": "#FFFFFF",
+                        "height": "sm"
                     }
-                ]
+                ],
+                "backgroundColor": "#ED1C24",
+                "height": "65px"
             }
         },
         {
@@ -142,9 +224,12 @@
                             "label": "เลือก",
                             "uri": "https://linecorp.com"
                         },
-                        "color": "#ED1C24"
+                        "color": "#FFFFFF",
+                        "height": "sm"
                     }
-                ]
+                ],
+                "backgroundColor": "#ED1C24",
+                "height": "65px"
             }
         }
     ]
