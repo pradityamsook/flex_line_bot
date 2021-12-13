@@ -5,6 +5,77 @@
             "type": "bubble",
             "body": {
                 "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/VrLnVgK.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "gravity": "top"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "filler"
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "baseline",
+                                        "contents": [
+                                            {
+                                                "type": "filler"
+                                            },
+                                            {
+                                                "type": "text",
+                                                "text": "คลิกเลย",
+                                                "color": "#ffffff",
+                                                "flex": 0,
+                                                "offsetTop": "-2px"
+                                            },
+                                            {
+                                                "type": "filler"
+                                            }
+                                        ],
+                                        "spacing": "sm"
+                                    },
+                                    {
+                                        "type": "filler"
+                                    }
+                                ],
+                                "borderWidth": "1px",
+                                "cornerRadius": "20px",
+                                "spacing": "sm",
+                                "borderColor": "#A7A9ACAA",
+                                "margin": "xxl",
+                                "height": "40px",
+                                "width": "100px",
+                                "offsetStart": "90px",
+                                "backgroundColor": "#A7A9ACAA"
+                            }
+                        ],
+                        "position": "absolute",
+                        "offsetBottom": "0px",
+                        "offsetStart": "0px",
+                        "offsetEnd": "0px",
+                        "paddingAll": "20px",
+                        "paddingTop": "18px"
+                    }
+                ],
+                "paddingAll": "0px"
+            }
+        },
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
                 "layout": "horizontal",
                 "contents": [
                     {
@@ -58,88 +129,12 @@
                                 "borderWidth": "1px",
                                 "cornerRadius": "20px",
                                 "spacing": "sm",
-                                "borderColor": "#A7A9AC",
+                                "borderColor": "#A7A9ACAA",
                                 "margin": "xxl",
                                 "height": "40px",
                                 "width": "100px",
                                 "offsetStart": "80px",
-                                "backgroundColor": "#A7A9AC"
-                            }
-                        ],
-                        "position": "absolute",
-                        "offsetBottom": "0px",
-                        "offsetStart": "0px",
-                        "offsetEnd": "0px",
-                        "paddingAll": "20px",
-                        "paddingTop": "18px"
-                    }
-                ],
-                "paddingAll": "0px"
-            }
-        },
-        {
-            "type": "bubble",
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "image",
-                        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip2.jpg",
-                        "size": "full",
-                        "aspectMode": "cover",
-                        "aspectRatio": "1:1",
-                        "gravity": "top"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                            {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": []
-                            },
-                            {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                    {
-                                        "type": "filler"
-                                    },
-                                    {
-                                        "type": "box",
-                                        "layout": "baseline",
-                                        "contents": [
-                                            {
-                                                "type": "filler"
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": "คลิกเลย",
-                                                "color": "#ffffff",
-                                                "flex": 0,
-                                                "offsetTop": "-2px"
-                                            },
-                                            {
-                                                "type": "filler"
-                                            }
-                                        ],
-                                        "spacing": "sm"
-                                    },
-                                    {
-                                        "type": "filler"
-                                    }
-                                ],
-                                "borderWidth": "1px",
-                                "cornerRadius": "20px",
-                                "spacing": "sm",
-                                "borderColor": "#A7A9AC",
-                                "margin": "xxl",
-                                "height": "40px",
-                                "width": "100px",
-                                "offsetStart": "80px",
-                                "backgroundColor": "#A7A9AC"
+                                "backgroundColor": "#A7A9ACAA"
                             }
                         ],
                         "position": "absolute",
