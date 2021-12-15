@@ -1,0 +1,132 @@
+{
+    "messages": [
+        {
+            "type": "flex",
+            "altText": "Interactive message - please check on your phone or update your Line app",
+            "contents": {
+                "type": "carousel",
+                "contents": [
+                    {
+                        "type": "bubble",
+                        "direction": "ltr",
+                        "size": "kilo",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://upload.convolab.ai/scg-promptplus-dev%2Ff75d80ae-c18f-4073-b2c8-fddf557f4bc1.jpg",
+                            "size": "full",
+                            "aspectRatio": "1:1",
+                            "aspectMode": "cover"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "none",
+                            "margin": "none",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "promotion0",
+                                    "size": "md",
+                                    "align": "start",
+                                    "gravity": "top",
+                                    "color": "#545556",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "promotion",
+                                    "margin": "sm",
+                                    "size": "sm",
+                                    "align": "start",
+                                    "color": "#5B5B5B",
+                                    "wrap": true,
+                                    "maxLines": 2
+                                },
+                                {
+                                    "type": "separator",
+                                    "color": "#ffffff"
+                                }
+                            ]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "button",
+                                    "height": "md",
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "คลิกเลย",
+                                        "displayText": "คลิกเลย ",
+                                        "data": "__NN_e32a416e.cbeab|btn1|promotion0|คลิกเลย"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "bubble",
+                        "direction": "ltr",
+                        "size": "kilo",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://upload.convolab.ai/scg-promptplus-dev%2F32170f0d-23c1-4206-a7af-e6285ee0a92f.jpg",
+                            "size": "full",
+                            "aspectRatio": "1:1",
+                            "aspectMode": "cover"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "spacing": "none",
+                            "margin": "none",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "promotion1",
+                                    "size": "md",
+                                    "align": "start",
+                                    "gravity": "top",
+                                    "color": "#545556",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "promotion",
+                                    "margin": "sm",
+                                    "size": "sm",
+                                    "align": "start",
+                                    "color": "#5B5B5B",
+                                    "wrap": true,
+                                    "maxLines": 2
+                                },
+                                {
+                                    "type": "separator",
+                                    "color": "#ffffff"
+                                }
+                            ]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "button",
+                                    "height": "md",
+                                    "action": {
+                                        "type": "postback",
+                                        "label": "คลิกเลย",
+                                        "displayText": "คลิกเลย ",
+                                        "data": "__NN_e32a416e.cbeab|btn1|promotion1|คลิกเลย"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "message_id": "sNBVtX7KCZxVSkckAjgDJ9"
+}

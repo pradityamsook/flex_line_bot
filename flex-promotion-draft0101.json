@@ -58,7 +58,12 @@
                                 "height": "40px",
                                 "width": "100px",
                                 "offsetStart": "90px",
-                                "backgroundColor": "#A7A9ACAA"
+                                "backgroundColor": "#A7A9ACAA",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "action",
+                                    "uri": "http://linecorp.com/"
+                                }
                             }
                         ],
                         "position": "absolute",
