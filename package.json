@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pradityamsook/flex_line_bot/issues"
   },
-  "homepage": "https://github.com/pradityamsook/flex_line_bot#readme"
+  "homepage": "https://github.com/pradityamsook/flex_line_bot#readme",
+  "dependencies": {
+    "dayjs": "^1.10.7"
+  }
 }
