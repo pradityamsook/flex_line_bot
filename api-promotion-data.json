@@ -1,0 +1,25 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "promotion_code": "DEMO_PER_TOTAL",
+            "promotion_name": "Demo - Per Total From Group Of Products",
+            "promotion_priority": "1",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "details": "ใครสายมินิมอลต้องโดน! ขวดน้ำสไตล์เรียบง่าย แต่ดูดี จะพกไปไหนก็สะดวก ขนาดพอดีกับกระเป๋าสะพายข้างแบบเป๊ะๆ ใช้ซ้ำได้ด้วยนะ รักษ์โลกแถมช่วยลดขยะไปอี๊กกก รีบไปตำโลดดด น้องราคา 69.- เท่านั้น! 📍MUJI ทุกสาขา (แอดเจอที่สาขาเซ็นทรัลพระราม 9 นะ)"
+        },
+        {
+            "promotion_code": "CF point Sep",
+            "promotion_name": "CF point Sep",
+            "promotion_priority": "2",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "details": ""
+        }
+    ]
+}
