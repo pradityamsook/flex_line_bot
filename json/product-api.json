@@ -1,0 +1,167 @@
+{
+    "status": 200,
+    "data": [
+        {
+            "priority": "1",
+            "class_code": "XA01001",
+            "class_name": "ซีเมนต์เทา",
+            "class_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/product-category/images/1013e18a-2ad7-4e87-877d-f6210aa15dc3__ZCB10STDA001000A12-1.jpg",
+            "class_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products?q=&productCategory=XC&productSubcategory=XC01&productClass=XC01001",
+            "products": [
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "1"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "2"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "3"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "4"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "5"
+                }
+            ]
+        },
+        {
+            "priority": "2",
+            "class_code": "XA01001",
+            "class_name": "ซีเมนต์เทา",
+            "class_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/product-category/images/1013e18a-2ad7-4e87-877d-f6210aa15dc3__ZCB10STDA001000A12-1.jpg",
+            "class_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products?q=&productCategory=XC&productSubcategory=XC01&productClass=XC01001",
+            "products": [
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "1"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "2"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "3"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "4"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "5"
+                }
+            ]
+        },
+        {
+            "priority": "3",
+            "class_code": "XA01001",
+            "class_name": "ซีเมนต์เทา",
+            "class_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/product-category/images/1013e18a-2ad7-4e87-877d-f6210aa15dc3__ZCB10STDA001000A12-1.jpg",
+            "class_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products?q=&productCategory=XC&productSubcategory=XC01&productClass=XC01001",
+            "products": [
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "1"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "2"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "3"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "4"
+                },
+                {
+                    "product_code": "20359324",
+                    "product_name": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                    "product_type": "ประเภท 1 50 kg SCG",
+                    "product_barcode": "8852439000128",
+                    "product_image": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                    "product_url": "line://app/1654018489-4RD6o50o?type=prompt&goto=products/20000005",
+                    "product_priority": "5"
+                }
+            ]
+        }
+    ]
+}

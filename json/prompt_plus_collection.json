@@ -1,0 +1,604 @@
+{
+    "payload": {
+        "total": {
+            "value": 3,
+            "relation": "eq"
+        },
+        "max_score": 1,
+        "hits": [
+            {
+                "_index": "njoin-scg-promptplus-dev-docs-user_entity_prompt_plus_promotion_flextemplate-aliases",
+                "_type": "_doc",
+                "_id": "6c33a45d-99d8-4457-bd57-1840672f5490",
+                "_score": 1,
+                "_source": {
+                    "item": {
+                        "image": "https://upload.convolab.ai/scg-promptplus-dev%2F32170f0d-23c1-4206-a7af-e6285ee0a92f.jpg",
+                        "button_labels": "คลิกเลย",
+                        "name": "promotion1",
+                        "json": {
+                            "image": "https://upload.convolab.ai/scg-promptplus-dev%2F32170f0d-23c1-4206-a7af-e6285ee0a92f.jpg",
+                            "btn": "คลิกเลย",
+                            "URL": "https://google.com",
+                            "Name": "promotion1",
+                            "promotion": "promotion"
+                        },
+                        "syn": [
+                            "promotion1"
+                        ],
+                        "detail": "promotion",
+                        "url": "https://google.com"
+                    },
+                    "_updated_at": "2021-12-14T09:52:28.601Z",
+                    "id": "6c33a45d-99d8-4457-bd57-1840672f5490",
+                    "bot_id": "origin"
+                }
+            },
+            {
+                "_index": "njoin-scg-promptplus-dev-docs-user_entity_prompt_plus_promotion_flextemplate-aliases",
+                "_type": "_doc",
+                "_id": "3c8f1b8b-620b-457a-92b0-de998817df3b",
+                "_score": 1,
+                "_source": {
+                    "item": {
+                        "image": "https://upload.convolab.ai/scg-promptplus-dev%2Ff75d80ae-c18f-4073-b2c8-fddf557f4bc1.jpg",
+                        "button_labels": "คลิกเลย",
+                        "name": "promotion0",
+                        "json": {
+                            "image": "https://upload.convolab.ai/scg-promptplus-dev%2Ff75d80ae-c18f-4073-b2c8-fddf557f4bc1.jpg",
+                            "btn": "คลิกเลย",
+                            "URL": "https://google.com",
+                            "Name": "promotion0",
+                            "promotion": "promotion"
+                        },
+                        "syn": [
+                            "promotion0"
+                        ],
+                        "detail": "promotion",
+                        "url": "https://google.com"
+                    },
+                    "_updated_at": "2021-12-14T09:52:36.073Z",
+                    "id": "3c8f1b8b-620b-457a-92b0-de998817df3b",
+                    "bot_id": "origin"
+                }
+            },
+            {
+                "_index": "njoin-scg-promptplus-dev-docs-user_entity_prompt_plus_promotion_flextemplate-aliases",
+                "_type": "_doc",
+                "_id": "cb7c99b1-6cc7-4555-943d-bc6990d265a4",
+                "_score": 1,
+                "_source": {
+                    "item": {
+                        "image": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+                        "name": "Prompt Plus Promotion Flextemplate 2364",
+                        "json": {
+                            "image": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+                            "Name": "Prompt Plus Promotion Flextemplate 2364"
+                        },
+                        "syn": [
+                            "Prompt Plus Promotion Flextemplate 2364"
+                        ]
+                    },
+                    "_updated_at": "2021-12-16T11:02:45.541Z",
+                    "id": "cb7c99b1-6cc7-4555-943d-bc6990d265a4",
+                    "bot_id": "origin"
+                }
+            }
+        ]
+    },
+    "original": "",
+    "context": {
+        "_first_message": "",
+        "lineid": "U556c752dd966f3942e3c70bd9b6ba86c",
+        "line": {
+            "userId": "U556c752dd966f3942e3c70bd9b6ba86c",
+            "displayName": "ปด.",
+            "pictureUrl": "https://sprofile.line-scdn.net/0h92UxodF1Zh14AXEuhO8YYghRZXdbcD8PUmIgLhlROX9GZnEYV2Mqc0UBPSoRMXNPAzN6KEhSPSV0EhF7ZleaKX8xOCpBNidKVWIv8w",
+            "statusMessage": "Holding bo na nad im've got cin.",
+            "language": "th",
+            "name": "ปด.",
+            "status": "Holding bo na nad im've got cin."
+        },
+        "name": "ปด.",
+        "_channel": {
+            "connected": true,
+            "idkey": "lineid",
+            "config": {
+                "relay_output": true,
+                "messageCount": 0,
+                "facebook_reply_comment": false,
+                "relay_enrich": false,
+                "created_at": 1638943982042,
+                "facebook_token": "",
+                "_users": [
+                    "ea05fa89.44fe78",
+                    "941c2f1b.3a049",
+                    "1ce96557.c4e13b",
+                    "603cf158.d9a5f",
+                    "7e6a4c61.67a6e4",
+                    "4a1b9134.8eda4",
+                    "8dfbc1e8.4f953",
+                    "3f37204f.e38f8",
+                    "294bb8a7.2e02d8",
+                    "cc8d5dde.85cff",
+                    "eb3ecdf1.f6d64",
+                    "f80ad5d6.5ea518",
+                    "d7a16793.1e8eb8",
+                    "e354c93c.5ab148",
+                    "46c47305.2c84dc",
+                    "ceb4e1e1.7b81c",
+                    "dd544306.34abb",
+                    "511803f8.f666fc",
+                    "381301b7.a1d9be",
+                    "2e2a66f6.03848a",
+                    "4365671d.9e2928",
+                    "c81f5dd2.0bc59",
+                    "1b3ccef8.933ce1",
+                    "c93fb00.30f835",
+                    "fd2a5d97.9ce97",
+                    "613ad3e2.de0d0c",
+                    "ac3d6cce.b944d",
+                    "876fb840.302cb8",
+                    "fd8fb3a2.6378f",
+                    "8495bb25.98c0a8",
+                    "8e714169.aad1c",
+                    "136696b2.1c6e79",
+                    "aa3984a3.ec1868",
+                    "9e86d9b9.516f68",
+                    "f80089a0.ef3168",
+                    "e7fc0eb5.a1a31",
+                    "821d9b26.fb4c58",
+                    "adf55e91.402b1",
+                    "746ae59.bdc001c",
+                    "a7f078c1.bd5fa8",
+                    "42b72aa3.249e44",
+                    "40dd2ea7.4a761",
+                    "de8206b9.ab8898",
+                    "6570a51.687c45c",
+                    "d17e7e8f.e0816",
+                    "728b9db9.eb2654",
+                    "e728259a.488b08",
+                    "5d178a5b.396f54",
+                    "6aee8918.ddf008",
+                    "af21e02e.ec13e",
+                    "bd3a12a2.4e237",
+                    "752ad447.2eefac",
+                    "2f3576c6.e1cc7a"
+                ],
+                "type": "channel",
+                "facebook_reply_comment_text": "",
+                "intercom_appid": "",
+                "intercom_token": "",
+                "id": "line_1656700479",
+                "channel_type": "line",
+                "bot_id": "origin",
+                "_asyncDelivery": true,
+                "slack_token": "",
+                "facebook_menu": "",
+                "custom_appid": "",
+                "intercom_adminid": "",
+                "_inputCallback": null,
+                "fbpost_ref": "",
+                "last_refresh": 1638943982042,
+                "line_cid": "",
+                "token": "athBtRBZW9exbigCAcOH1YrBgv997OPaA2Na3wmA51SdN+lkfBgITyR9m8fMJrKEMMVWHRJTt2mol6ckXGp8uNMhagq9s85r5sRzslk+zPx+U4nnM5wypwK0zLyTUqD3snPhyRj0JvwozLMIPRzOgAdB04t89/1O/w1cDnyilFU=",
+                "wires": [],
+                "rocketchat_appid": "",
+                "_inputCallbacks": null,
+                "websocket_appid": "",
+                "userCount": 0,
+                "entity_link": [],
+                "name": "SCG Prompt Plus Dev",
+                "line_token": "",
+                "z": "",
+                "facebook_getstarted": false,
+                "_closeCallbacks": [
+                    null
+                ],
+                "_wireCount": 0,
+                "channel_id": 1656700479,
+                "status": "active"
+            },
+            "terminated": false
+        }
+    },
+    "user_id": "U556c752dd966f3942e3c70bd9b6ba86c",
+    "message_id": "rCfHzW1tJcsJmgCBsfCwYf",
+    "conversation_id": "vNkdRYL69NpsNEaqX89nnp",
+    "_msgid": "a0acc867.0a4d68",
+    "internal_system": {
+        "chatlogic": "http://scg-promptplus-dev-chatlogic-svc:1680",
+        "api": "http://scg-promptplus-dev-api-svc:1780",
+        "database_user": "https://origin:meD82YH98gjE8Uws@dev-es7.convolab.ai:9200/njoin-scg-promptplus-dev-user/_search",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": ""
+        }
+    },
+    "external_system": {
+        "product_class": "https://scg-promptplus-dev.amity.co/scg/product-class",
+        "product_keyword": "https://scg-promptplus-dev.amity.co/scg/product-keyword",
+        "product_promotion": "https://scg-promptplus-dev.amity.co/scg/promotion",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": ""
+        }
+    },
+    "method": "POST",
+    "url": "https://scg-promptplus-dev.amity.co/scg/promotion",
+    "headers": {
+        "date": "Fri, 17 Dec 2021 03:49:23 GMT",
+        "content-type": "application/json",
+        "content-length": "1347",
+        "connection": "close",
+        "x-amzn-requestid": "3b79b916-c194-493f-91af-ae2c47d0bf7a",
+        "x-amz-apigw-id": "KeZOoHCeyQ0FrWw=",
+        "x-amzn-trace-id": "Root=1-61bc08c3-572fb2b4774e808811bb1a86;Sampled=0",
+        "x-node-red-request-node": "c1b2a44c"
+    },
+    "statusCode": 200,
+    "responseUrl": "https://scg-promptplus-dev.amity.co/scg/promotion",
+    "req": {
+        "_readableState": {
+            "objectMode": false,
+            "highWaterMark": 16384,
+            "buffer": {
+                "head": null,
+                "tail": null,
+                "length": 0
+            },
+            "length": 0,
+            "pipes": [],
+            "flowing": true,
+            "ended": true,
+            "endEmitted": true,
+            "reading": false,
+            "sync": false,
+            "needReadable": false,
+            "emittedReadable": false,
+            "readableListening": false,
+            "resumeScheduled": false,
+            "errorEmitted": false,
+            "emitClose": true,
+            "autoDestroy": false,
+            "destroyed": false,
+            "defaultEncoding": "utf8",
+            "awaitDrainWriters": null,
+            "multiAwaitDrain": false,
+            "readingMore": false,
+            "decoder": null,
+            "encoding": null
+        },
+        "readable": false,
+        "_events": {},
+        "_eventsCount": 1,
+        "socket": "[internal]",
+        "httpVersionMajor": 1,
+        "httpVersionMinor": 1,
+        "httpVersion": "1.1",
+        "complete": true,
+        "headers": {
+            "host": "scg-promptplus-dev-linklogic-svc:1980",
+            "accept": "application/json",
+            "content-type": "application/json",
+            "content-length": "2548",
+            "connection": "close"
+        },
+        "rawHeaders": [
+            "host",
+            "scg-promptplus-dev-linklogic-svc:1980",
+            "accept",
+            "application/json",
+            "content-type",
+            "application/json",
+            "content-length",
+            "2548",
+            "Connection",
+            "close"
+        ],
+        "trailers": {},
+        "rawTrailers": [],
+        "aborted": false,
+        "upgrade": false,
+        "url": "/integrator/get_promotion",
+        "method": "POST",
+        "statusCode": null,
+        "statusMessage": null,
+        "client": "[internal]",
+        "_consuming": true,
+        "_dumped": false,
+        "baseUrl": "/linklogic",
+        "originalUrl": "/linklogic/integrator/get_promotion",
+        "_parsedUrl": {
+            "protocol": null,
+            "slashes": null,
+            "auth": null,
+            "host": null,
+            "port": null,
+            "hostname": null,
+            "hash": null,
+            "search": null,
+            "query": null,
+            "pathname": "/integrator/get_promotion",
+            "path": "/integrator/get_promotion",
+            "href": "/integrator/get_promotion",
+            "_raw": "/integrator/get_promotion"
+        },
+        "params": {},
+        "query": {},
+        "res": "[internal]",
+        "body": {
+            "payload": {
+                "info": {
+                    "info_format": "items",
+                    "square_image": false,
+                    "items": [
+                        {
+                            "label": "13 Lucky number",
+                            "subtitle": "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes. ",
+                            "img": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+                            "btns": "รายละเอียด"
+                        },
+                        {
+                            "label": "13 Lucky number",
+                            "subtitle": "Lorem ipsum dolor sit amet, consectetu adipiscing elit.",
+                            "img": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+                            "btns": "รายละเอียด"
+                        },
+                        {
+                            "label": "CF point Sep",
+                            "subtitle": "",
+                            "img": "https://i.imgur.com/KipWSc2.png",
+                            "btns": "รายละเอียด"
+                        }
+                    ]
+                },
+                "config": {
+                    "combine_output": false
+                }
+            },
+            "original": "",
+            "context": {
+                "_first_message": "",
+                "lineid": "U556c752dd966f3942e3c70bd9b6ba86c",
+                "line": {
+                    "userId": "U556c752dd966f3942e3c70bd9b6ba86c",
+                    "displayName": "ปด.",
+                    "pictureUrl": "https://sprofile.line-scdn.net/0h92UxodF1Zh14AXEuhO8YYghRZXdbcD8PUmIgLhlROX9GZnEYV2Mqc0UBPSoRMXNPAzN6KEhSPSV0EhF7ZleaKX8xOCpBNidKVWIv8w",
+                    "statusMessage": "Holding bo na nad im've got cin.",
+                    "language": "th",
+                    "name": "ปด.",
+                    "status": "Holding bo na nad im've got cin."
+                },
+                "name": "ปด.",
+                "_channel": {
+                    "connected": true,
+                    "idkey": "lineid",
+                    "config": {
+                        "relay_output": true,
+                        "messageCount": 0,
+                        "facebook_reply_comment": false,
+                        "relay_enrich": false,
+                        "created_at": 1638943982042,
+                        "facebook_token": "",
+                        "_users": [
+                            "ea05fa89.44fe78",
+                            "941c2f1b.3a049",
+                            "1ce96557.c4e13b",
+                            "603cf158.d9a5f",
+                            "7e6a4c61.67a6e4",
+                            "4a1b9134.8eda4",
+                            "8dfbc1e8.4f953",
+                            "3f37204f.e38f8",
+                            "294bb8a7.2e02d8",
+                            "cc8d5dde.85cff",
+                            "eb3ecdf1.f6d64",
+                            "f80ad5d6.5ea518",
+                            "d7a16793.1e8eb8",
+                            "e354c93c.5ab148",
+                            "46c47305.2c84dc",
+                            "ceb4e1e1.7b81c",
+                            "dd544306.34abb",
+                            "511803f8.f666fc",
+                            "381301b7.a1d9be",
+                            "2e2a66f6.03848a",
+                            "4365671d.9e2928",
+                            "c81f5dd2.0bc59",
+                            "1b3ccef8.933ce1",
+                            "c93fb00.30f835",
+                            "fd2a5d97.9ce97",
+                            "613ad3e2.de0d0c",
+                            "ac3d6cce.b944d",
+                            "876fb840.302cb8",
+                            "fd8fb3a2.6378f",
+                            "8495bb25.98c0a8",
+                            "8e714169.aad1c",
+                            "136696b2.1c6e79",
+                            "aa3984a3.ec1868",
+                            "9e86d9b9.516f68",
+                            "f80089a0.ef3168",
+                            "e7fc0eb5.a1a31",
+                            "821d9b26.fb4c58",
+                            "adf55e91.402b1",
+                            "746ae59.bdc001c",
+                            "a7f078c1.bd5fa8",
+                            "42b72aa3.249e44",
+                            "40dd2ea7.4a761",
+                            "de8206b9.ab8898",
+                            "6570a51.687c45c",
+                            "d17e7e8f.e0816",
+                            "728b9db9.eb2654",
+                            "e728259a.488b08",
+                            "5d178a5b.396f54",
+                            "6aee8918.ddf008",
+                            "af21e02e.ec13e",
+                            "bd3a12a2.4e237",
+                            "752ad447.2eefac",
+                            "2f3576c6.e1cc7a"
+                        ],
+                        "type": "channel",
+                        "facebook_reply_comment_text": "",
+                        "intercom_appid": "",
+                        "intercom_token": "",
+                        "id": "line_1656700479",
+                        "channel_type": "line",
+                        "bot_id": "origin",
+                        "_asyncDelivery": true,
+                        "slack_token": "",
+                        "facebook_menu": "",
+                        "custom_appid": "",
+                        "intercom_adminid": "",
+                        "_inputCallback": null,
+                        "fbpost_ref": "",
+                        "last_refresh": 1638943982042,
+                        "line_cid": "",
+                        "token": "athBtRBZW9exbigCAcOH1YrBgv997OPaA2Na3wmA51SdN+lkfBgITyR9m8fMJrKEMMVWHRJTt2mol6ckXGp8uNMhagq9s85r5sRzslk+zPx+U4nnM5wypwK0zLyTUqD3snPhyRj0JvwozLMIPRzOgAdB04t89/1O/w1cDnyilFU=",
+                        "wires": [],
+                        "rocketchat_appid": "",
+                        "_inputCallbacks": null,
+                        "websocket_appid": "",
+                        "userCount": 0,
+                        "entity_link": [],
+                        "name": "SCG Prompt Plus Dev",
+                        "line_token": "",
+                        "z": "",
+                        "facebook_getstarted": false,
+                        "_closeCallbacks": [
+                            null
+                        ],
+                        "_wireCount": 0,
+                        "channel_id": 1656700479,
+                        "status": "active"
+                    },
+                    "terminated": false
+                }
+            },
+            "user_id": "U556c752dd966f3942e3c70bd9b6ba86c",
+            "message_id": "rCfHzW1tJcsJmgCBsfCwYf",
+            "conversation_id": "vNkdRYL69NpsNEaqX89nnp",
+            "_msgid": "a0acc867.0a4d68",
+            "internal_system": {
+                "chatlogic": "http://scg-promptplus-dev-chatlogic-svc:1680",
+                "api": "http://scg-promptplus-dev-api-svc:1780",
+                "database_user": "https://origin:meD82YH98gjE8Uws@dev-es7.convolab.ai:9200/njoin-scg-promptplus-dev-user/_search",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": ""
+                }
+            },
+            "external_system": {
+                "product_class": "https://scg-promptplus-dev.amity.co/scg/product-class",
+                "product_keyword": "https://scg-promptplus-dev.amity.co/scg/product-keyword",
+                "product_promotion": "https://scg-promptplus-dev.amity.co/scg/promotion",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Authorization": ""
+                }
+            },
+            "method": "POST",
+            "url": "https://scg-promptplus-dev.amity.co/scg/promotion",
+            "headers": {
+                "date": "Fri, 17 Dec 2021 03:49:23 GMT",
+                "content-type": "application/json",
+                "content-length": "1347",
+                "connection": "close",
+                "x-amzn-requestid": "3b79b916-c194-493f-91af-ae2c47d0bf7a",
+                "x-amz-apigw-id": "KeZOoHCeyQ0FrWw=",
+                "x-amzn-trace-id": "Root=1-61bc08c3-572fb2b4774e808811bb1a86;Sampled=0",
+                "x-node-red-request-node": "c1b2a44c"
+            },
+            "statusCode": 200,
+            "responseUrl": "https://scg-promptplus-dev.amity.co/scg/promotion",
+            "req": "[Circular ~.req]",
+            "res": {}
+        },
+        "_body": true,
+        "route": {
+            "path": "/integrator/get_promotion",
+            "stack": [
+                {
+                    "name": "httpMiddleware",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "corsHandler",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "metricsHandler",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "jsonParser",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "urlencodedParser",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "rawBodyParser",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "<anonymous>",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                },
+                {
+                    "name": "<anonymous>",
+                    "keys": [],
+                    "regexp": {
+                        "fast_star": false,
+                        "fast_slash": false
+                    },
+                    "method": "post"
+                }
+            ],
+            "methods": {
+                "post": true
+            }
+        }
+    },
+    "res": {},
+    "data": "{\"status\":200,\"data\":[{\"promotion_code\":\"DEMO_PER_TOTAL\",\"promotion_name\":\"13 Lucky number\",\"promotion_priority\":\"1\",\"promotion_banner\":\"https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png\",\"promotion_page\":\"line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER\",\"valid_from\":\"2021-09-21 07:00:00\",\"valid_to\":\"2021-09-30 07:00:00\",\"details\":\"Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes. \"},{\"promotion_code\":\"DEMO_PER_TOTAL\",\"promotion_name\":\"13 Lucky number\",\"promotion_priority\":\"1\",\"promotion_banner\":\"https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png\",\"promotion_page\":\"line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER\",\"valid_from\":\"2021-09-21 07:00:00\",\"valid_to\":\"2021-09-30 07:00:00\",\"details\":\"Lorem ipsum dolor sit amet, consectetu adipiscing elit.\"},{\"promotion_code\":\"CF point Sep\",\"promotion_name\":\"CF point Sep\",\"promotion_priority\":\"2\",\"promotion_banner\":\"https://i.imgur.com/KipWSc2.png\",\"promotion_page\":\"line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF\",\"valid_from\":\"2021-09-21 07:00:00\",\"valid_to\":\"2021-09-30 07:00:00\",\"details\":\"\"}]}",
+    "documentType": "user_entity_prompt_plus_promotion_flextemplate",
+    "maxResults": 1000,
+    "query": {
+        "match_all": {}
+    }
+}
