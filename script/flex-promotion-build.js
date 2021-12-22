@@ -8,9 +8,10 @@ const item = [];
 for (let index = 0; index < data.data.length; data++) {
   var carousel = {
     label: data.data[index].promotion_name,
-    subtitle: data.data[index].details,
+    subtitle: `${data.data[index].details}|${data.data[index].promotion_page}`,
     img: data.data[index],
     btns: "รายละเอียด",
+    // link: data.data[index].promotion_page,
   };
   item.push(carousel);
 }

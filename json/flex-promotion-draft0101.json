@@ -20,61 +20,81 @@
                         "layout": "vertical",
                         "contents": [
                             {
+                                "type": "filler"
+                            },
+                            {
                                 "type": "box",
-                                "layout": "vertical",
+                                "layout": "baseline",
                                 "contents": [
                                     {
                                         "type": "filler"
                                     },
                                     {
-                                        "type": "box",
-                                        "layout": "baseline",
-                                        "contents": [
-                                            {
-                                                "type": "filler"
-                                            },
-                                            {
-                                                "type": "text",
-                                                "text": "คลิกเลย",
-                                                "color": "#ffffff",
-                                                "flex": 0,
-                                                "offsetTop": "-2px"
-                                            },
-                                            {
-                                                "type": "filler"
-                                            }
-                                        ],
-                                        "spacing": "sm"
+                                        "type": "text",
+                                        "text": "คลิกเลย",
+                                        "color": "#ffffff",
+                                        "flex": 0,
+                                        "offsetTop": "-2px"
                                     },
                                     {
                                         "type": "filler"
                                     }
                                 ],
-                                "borderWidth": "1px",
-                                "cornerRadius": "20px",
-                                "spacing": "sm",
-                                "borderColor": "#A7A9ACAA",
-                                "margin": "xxl",
-                                "height": "40px",
-                                "width": "100px",
-                                "offsetStart": "90px",
-                                "backgroundColor": "#A7A9ACAA",
-                                "action": {
-                                    "type": "uri",
-                                    "label": "action",
-                                    "uri": "http://linecorp.com/"
-                                }
+                                "spacing": "sm"
+                            },
+                            {
+                                "type": "filler"
+                            },
+                            {
+                                "type": "text",
+                                "text": "​",
+                                "wrap": true,
+                                "maxLines": 5,
+                                "size": "9px",
+                                "offsetBottom": "50px"
                             }
                         ],
-                        "position": "absolute",
-                        "offsetBottom": "0px",
-                        "offsetStart": "0px",
-                        "offsetEnd": "0px",
-                        "paddingAll": "20px",
-                        "paddingTop": "18px"
+                        "borderWidth": "1px",
+                        "cornerRadius": "20px",
+                        "spacing": "sm",
+                        "borderColor": "#A7A9ACAA",
+                        "margin": "xxl",
+                        "height": "40px",
+                        "width": "100px",
+                        "offsetStart": "105px",
+                        "backgroundColor": "#A7A9ACAA",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "offsetBottom": "70px"
                     }
                 ],
                 "paddingAll": "0px"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "รายละเอียด",
+                        "color": "#FFFFFF",
+                        "gravity": "center",
+                        "adjustMode": "shrink-to-fit",
+                        "align": "center",
+                        "offsetTop": "10px",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    }
+                ],
+                "backgroundColor": "#ED1C24",
+                "height": "63.81px",
+                "position": "relative"
             }
         },
         {
