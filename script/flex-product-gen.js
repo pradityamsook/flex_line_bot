@@ -8,6 +8,8 @@ let newData = [];
 
 let bodyContent = {
   type: "bubble",
+  direction: "ltr",
+  size: "kilo",
   header: {
     type: "box",
     layout: "vertical",
@@ -254,12 +256,6 @@ let bodyContent = {
 //   bodyContent.footer.contents[0].action.uri = v.hero.url;
 bodyContent.header.contents[1].text = getData[3];
 
-//   if (!v.body.contents[1].text) {
-//       node.warn("test")
-//       bodyContent.body.contents.text = "";
-//   } else {
-//       bodyContent.body.contents[2].text = v.body.contents[1].text;
-//   }
 let contents = {
   type: "carousel",
   contenst: newData,
