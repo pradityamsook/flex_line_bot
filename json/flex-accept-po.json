@@ -5,47 +5,11 @@
         "layout": "vertical",
         "contents": [
             {
-                "type": "text",
-                "text": "คำสั่งซื้ออนุมัติแล้ว",
-                "align": "start",
-                "wrap": true,
-                "offsetTop": "5px",
-                "offsetStart": "100px",
-                "color": "#367B61",
-                "size": "18px",
-                "style": "normal"
-            },
-            {
-                "type": "text",
-                "text": "ผู้แทนจำหน่ายอนุมัติคำสั่งซื้อของ",
-                "offsetTop": "5px",
-                "offsetStart": "100px",
-                "wrap": true,
-                "size": "11px"
-            },
-            {
-                "type": "text",
-                "text": "คุณแล้ว สอบถามข้อมูลเพิ่มเติม",
-                "offsetTop": "5px",
-                "offsetStart": "100px",
-                "wrap": true,
-                "size": "11px"
-            },
-            {
-                "type": "text",
-                "text": "โปรดติดต่อผู้แทนจำหน่ายของคุณ",
-                "offsetTop": "5px",
-                "offsetStart": "100px",
-                "wrap": true,
-                "size": "11px"
-            },
-            {
                 "type": "image",
-                "url": "https://i.imgur.com/5d9LfXT.png",
-                "offsetStart": "1px",
-                "aspectRatio": "1:1",
-                "align": "start",
-                "position": "absolute"
+                "url": "https://i.imgur.com/vRXUCaq.png",
+                "aspectRatio": "3:1",
+                "aspectMode": "cover",
+                "size": "250px"
             }
         ],
         "width": "300px",

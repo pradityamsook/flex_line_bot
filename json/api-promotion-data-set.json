@@ -1,0 +1,36 @@
+{
+    "status": 200,
+    "message": "found",
+    "data": [
+        {
+            "promotion_code": "DEMO_PER_TOTAL",
+            "promotion_name": "13 Lucky number",
+            "promotion_priority": "1",
+            "promotion_banner": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "details": "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes. "
+        },
+        {
+            "promotion_code": "DEMO_PER_TOTAL",
+            "promotion_name": "13 Lucky number",
+            "promotion_priority": "2",
+            "promotion_banner": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "details": "Lorem ipsum dolor sit amet, consectetu adipiscing elit."
+        },
+        {
+            "promotion_code": "CF point Sep",
+            "promotion_name": "CF point Sep",
+            "promotion_priority": "3",
+            "promotion_banner": "https://i.imgur.com/KipWSc2.png",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "details": ""
+        }
+    ]
+}
