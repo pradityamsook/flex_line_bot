@@ -8,6 +8,14 @@
                 "layout": "vertical",
                 "contents": [
                     {
+                        "type": "image",
+                        "url": "https://i.imgur.com/zGvnyzi.png",
+                        "aspectMode": "cover",
+                        "position": "absolute",
+                        "size": "300px",
+                        "aspectRatio": "4:1"
+                    },
+                    {
                         "type": "text",
                         "text": "กลุ่มซีเมนต์โครงสร้าง",
                         "align": "center",
@@ -243,6 +251,14 @@
                 "type": "box",
                 "layout": "vertical",
                 "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/zGvnyzi.png",
+                        "aspectMode": "cover",
+                        "position": "absolute",
+                        "size": "300px",
+                        "aspectRatio": "4:1"
+                    },
                     {
                         "type": "text",
                         "text": "กลุ่มซีเมนต์โครงสร้าง",
