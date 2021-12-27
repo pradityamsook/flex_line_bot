@@ -1,23 +1,17 @@
 // node.warn(msg.payload);
 var getData = msg.payload.messages[0].text.split("|");
-node.warn(getData);
+// node.warn(getData);
 getData.shift();
 node.warn(getData.length);
 node.warn(getData);
-// const preContents = msg.payload.messages[0].contents.contents;
+
 var newData = [];
-
-//   bodyContent.footer.contents[0].action.uri = v.hero.url;
-bodyContent.header.contents[1].text = getData[3];
-
 let contents = {
   type: "carousel",
   contents: newData,
 };
 
-bodyContent.header.contents[1].text = getData[0];
-// newData.push(bodyContent);
-getData.map((v, index) => {
+for (var index = 0; index < getData.length; index++) {
   var bodyContent = {
     type: "bubble",
     direction: "ltr",
@@ -266,23 +260,127 @@ getData.map((v, index) => {
       },
     },
   };
+
+  var bodyListData = {
+    type: "box",
+    layout: "baseline",
+    contents: [
+      {
+        type: "icon",
+        url: "https://i.imgur.com/pvinl1r.png",
+        aspectRatio: "1:1",
+        size: "40px",
+        offsetTop: "13px",
+      },
+      {
+        type: "text",
+        text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+        align: "center",
+        gravity: "center",
+        adjustMode: "shrink-to-fit",
+        position: "relative",
+        offsetBottom: "15px",
+        size: "13px",
+      },
+    ],
+    spacing: "sm",
+    height: "60px",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  };
+
+  var lastContent = {
+    type: "bubble",
+    direction: "ltr",
+    size: "kilo",
+    body: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "image",
+          url: "https://i.imgur.com/Cy3SQ74.png",
+          aspectMode: "cover",
+          aspectRatio: "2:3",
+          gravity: "top",
+          size: "full",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมดที่นี่!",
+              wrap: true,
+              gravity: "center",
+              align: "center",
+              style: "normal",
+              weight: "bold",
+            },
+          ],
+          position: "relative",
+          justifyContent: "center",
+          alignItems: "center",
+          offsetTop: "20px",
+          height: "75px",
+        },
+      ],
+    },
+    footer: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "button",
+          action: {
+            type: "uri",
+            label: "คลิก",
+            uri: "http://linecorp.com/",
+          },
+          style: "primary",
+          color: "#D61F26",
+        },
+      ],
+      borderWidth: "8px",
+      cornerRadius: "8px",
+    },
+    styles: {
+      header: {
+        separator: true,
+      },
+    },
+  };
+
   if (getData[index] === "end_card" && index != getData.length - 2) {
     newData.push(bodyContent);
-    node.warn(`-------${bodyContent.header.contents[1].text}`);
     bodyContent.header.contents[1].text = getData[index + 1];
+    node.warn(`-------${bodyContent.header.contents[1].text}`);
+  } else if (index === 0) {
+    bodyContent.header.contents[1].text = getData[0];
+    newData.push(bodyContent);
+  } else if (index === getData.length - 1) {
+    newData.push(lastContent);
   }
 
-  // if (getData[index] === "") {
-  //     getData.shift();
-  // }
+  if (getData[index] === "end_list") {
+    bodyContent.body.contents.splice();
+    bodyContent.body.contents.push(bodyListData);
+    bodyListData.contents[0].url = getData[index - 1];
+    bodyListData.contents[1].text = getData[index - 2];
+  }
+  //   if (getData[index] === "") {
+  //       getData.shift();
+  //   }
   //   node.warn(bodyContent.header.contents[1].text);
-});
+}
 
+node.warn(bodyContent.body.contents);
 msg.payload.messages[0].type = "flex";
 msg.payload.messages[0].altText = "Products";
 msg.payload.messages[0].contents = contents;
 
 delete msg.payload.messages[0].text;
 msg.backup_payload = msg.payload;
-node.warn(msg.payload);
+// node.warn(msg.payload);
 return msg;

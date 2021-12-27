@@ -514,7 +514,8 @@
                                 "gravity": "center",
                                 "align": "center",
                                 "style": "normal",
-                                "weight": "bold"
+                                "weight": "bold",
+                                "size": "14px"
                             }
                         ],
                         "position": "relative",
@@ -523,7 +524,8 @@
                         "offsetTop": "20px",
                         "height": "75px"
                     }
-                ]
+                ],
+                "paddingAll": "0px"
             },
             "footer": {
                 "type": "box",
