@@ -1,4 +1,4 @@
-const preData = require("./pre-promotion-payload.json");
+const preData = require("../json/pre-promotion-payload.json");
 
 const preContents = preData.messages[0].contents.contents;
 
