@@ -3,34 +3,55 @@
     "message": "found",
     "data": [
         {
-            "promotion_code": "DEMO_PER_TOTAL",
-            "promotion_name": "13 Lucky number",
+            "promotion_code": "DEMO_PER_TOTAL 1",
+            "promotion_name": "Demo - Per Total From Group Of Products 1",
             "promotion_priority": "1",
-            "promotion_banner": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
             "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
             "valid_from": "2021-09-21 07:00:00",
             "valid_to": "2021-09-30 07:00:00",
-            "details": "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes. "
+            "promotion_description": "ซื้อ เครื่องเจียร์ 4 M9509B 850 W Makita 1 ชิ้ น ลดชิ้ นละ 1 บาท 100 ชิ้ น ลดชิ้ นละ 5 บาท 1000 ชิ้ น ลดชิ้ นละ 10 บาท",
+            "promotion_products": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF/products"
         },
         {
-            "promotion_code": "DEMO_PER_TOTAL",
-            "promotion_name": "13 Lucky number",
+            "promotion_code": "CF point Sep 1",
+            "promotion_name": "CF point Sep 1",
             "promotion_priority": "2",
-            "promotion_banner": "https://upload.convolab.ai/scg-promptplus-dev%2F96e4c442-64b1-4658-801a-729c46e47e7b.png",
-            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
-            "valid_from": "2021-09-21 07:00:00",
-            "valid_to": "2021-09-30 07:00:00",
-            "details": "Lorem ipsum dolor sit amet, consectetu adipiscing elit."
-        },
-        {
-            "promotion_code": "CF point Sep",
-            "promotion_name": "CF point Sep",
-            "promotion_priority": "3",
-            "promotion_banner": "https://i.imgur.com/KipWSc2.png",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
             "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF",
             "valid_from": "2021-09-21 07:00:00",
             "valid_to": "2021-09-30 07:00:00",
-            "details": ""
+            "promotion_description": "ซื้อสินค้าที่รวมรายการครบ 5 ชิ้น รับ 0.5 CF Point เครื่องตัดคอนกรีต 5 M4101XB Makita เครื่องตัดคอนกรีต 4 M4100ZX1B Makita",
+            "promotion_products": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF/products"
+        },
+        {
+            "promotion_code": "DEMO_PER_TOTAL 2",
+            "promotion_name": "Demo - Per Total From Group Of Products 2",
+            "promotion_priority": "3",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "promotion_products": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF/products"
+        },
+        {
+            "promotion_code": "CF point Sep 2",
+            "promotion_name": "CF point Sep 2",
+            "promotion_priority": "4",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/CFPOINTCF",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00",
+            "promotion_description": "ซื้อสินค้าที่รวมรายการครบ 5 ชิ้น รับ 0.5 CF Point เครื่องตัดคอนกรีต 5 M4101XB Makita เครื่องตัดคอนกรีต 4 M4100ZX1B Makita"
+        },
+        {
+            "promotion_code": "DEMO_PER_TOTAL 3",
+            "promotion_name": "Demo - Per Total From Group Of Products 3",
+            "promotion_priority": "5",
+            "promotion_banner": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+            "promotion_page": "line://app/1654018489-4RD6o50o?type=prompt&goto=banners/ALLREGIONBANNER",
+            "valid_from": "2021-09-21 07:00:00",
+            "valid_to": "2021-09-30 07:00:00"
         }
     ]
 }

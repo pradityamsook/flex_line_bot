@@ -1,5 +1,7 @@
 node.warn(msg.payload);
 const preContents = msg.payload.messages[0].contents.contents;
+var setDataBody =
+  msg.payload.messages[0].contents.contents[0].body.contents[1].text.split("|");
 let newData = [];
 
 preContents.map((v) => {
@@ -65,6 +67,7 @@ preContents.map((v) => {
               size: "12px",
               margin: "7.09091px",
             },
+            {},
           ],
           paddingAll: "5px",
           offsetBottom: "10px",
@@ -109,8 +112,9 @@ preContents.map((v) => {
     },
   };
 
-  bodyContent.footer.contents[0].action.uri = v.hero.url;
-  bodyContent.body.contents[0].url = v.hero.url;
+  bodyContent.footer.contents[0].action.uri = v.hero.url; //set url image;
+  bodyContent.body.contents[0].url = v.hero.url; //set url button
+  bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
 
   node.warn(v.body.contents[1].text);
   if (!v.body.contents[1].text) {
@@ -119,7 +123,7 @@ preContents.map((v) => {
   } else {
     bodyContent.body.contents[2].contents[0].text = v.body.contents[1].text;
   }
-  newData.push(bodyContent);
+  newData.push(...bodyContent);
 });
 msg.payload.messages[0].contents.contents = newData;
 // node.warn(msg.payload.messages);

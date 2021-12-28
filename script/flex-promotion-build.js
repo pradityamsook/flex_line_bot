@@ -6,17 +6,13 @@ require("dayjs/locale/th");
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Bangkok");
-// console.log(dayjs())
 
 var data = require("../json/api-promotion-data-set.json");
 
-// console.log(dayjs());
-// node.warn(msg.payload.data)
-// let data = JSON.parse(msg.payload);
-// node.warn(data.data);
-
+var valid_from;
 for (let index = 0; index < data.data.length; index++) {
-  console.log(formatDate(data.data[index].valid_from));
+  valid_from = formatDate(data.data[index].valid_from).split(" ");
+  console.log(`${valid_from[0]} - ${formatDate(data.data[index].valid_to)}`);
 }
 
 function formatDate(date) {
