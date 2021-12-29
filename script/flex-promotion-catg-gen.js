@@ -170,37 +170,40 @@ preContents.map((v, index) => {
   };
 
   let footerContent = {
-    footer: {
-      type: "box",
-      layout: "vertical",
-      contents: [
-        {
-          type: "button",
-          action: {
-            type: "uri",
-            label: "action",
-            uri: "http://linecorp.com/",
-          },
-          gravity: "center",
-          adjustMode: "shrink-to-fit",
-          style: "primary",
-          color: "#ED1C24",
+    type: "box",
+    layout: "vertical",
+    contents: [
+      {
+        type: "button",
+        action: {
+          type: "uri",
+          label: "action",
+          uri: "http://linecorp.com/",
         },
-      ],
-      backgroundColor: "#FFFFFF",
-      height: "120px",
-      position: "relative",
-      offsetBottom: "10px",
-      justifyContent: "center",
-    },
+        gravity: "center",
+        adjustMode: "shrink-to-fit",
+        style: "primary",
+        color: "#ED1C24",
+      },
+    ],
+    backgroundColor: "#FFFFFF",
+    height: "120px",
+    position: "relative",
+    offsetBottom: "10px",
+    justifyContent: "center",
   };
 
   if (v.footer.contents[0].action.label === "null") {
-    node.warn("footer");
-    footerContent.footer.contents.action.label =
-      v.footer.contents[1].action.label;
-    footerContent.footer.contents.action.uri = v.footer.contents[1].action.uri;
+    footerContent.contents[0].action.label = v.footer.contents[1].action.label;
+    footerContent.contents[0].action.uri = v.footer.contents[1].action.uri;
     bodyContent.footer = footerContent;
+  } else {
+    bodyContent.footer.contents[0].action.label =
+      v.footer.contents[0].action.label;
+    bodyContent.footer.contents[0].action.uri = v.footer.contents[0].action.uri;
+    bodyContent.footer.contents[1].action.label =
+      v.footer.contents[1].action.label;
+    bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri;
   }
 
   if (index === preContents.length - 1) {
@@ -209,15 +212,13 @@ preContents.map((v, index) => {
     lastBodyContent.body.contents[0].url = v.hero.url;
     newData.push(lastBodyContent);
   } else {
-    bodyContent.footer.contents[0].action.uri = v.hero.url; //set url image;
-    bodyContent.body.contents[0].url = v.hero.url; //set url button
+    bodyContent.body.contents[0].url = v.hero.url; //set url image
     bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
     if (setDataBody.length === 1)
       bodyContent.body.contents[4].contents.text = v.body.contents[1].text;
     else bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
 
     if (!v.body.contents[1].text) {
-      node.warn("test");
       bodyContent.body.contents.text = "";
     } else {
       bodyContent.body.contents[2].contents[0].text = setDataBody[1];
