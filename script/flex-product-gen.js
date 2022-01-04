@@ -2,10 +2,11 @@
 var getData = msg.payload.messages[0].text.split("|");
 // node.warn(getData);
 getData.shift();
-node.warn(getData.length);
+// node.warn(getData.length);
 node.warn(getData);
 
 var newData = [];
+var lastDataContents = [];
 let contents = {
   type: "carousel",
   contents: newData,
@@ -352,35 +353,35 @@ for (var index = 0; index < getData.length; index++) {
     },
   };
 
+  if (getData[index] === "end_list") {
+    bodyListData.contents[0].url = getData[index - 1];
+    bodyListData.contents[1].text = getData[index - 2];
+    lastDataContents.push(bodyListData);
+    bodyContent.body.contents.push(lastDataContents);
+    // node.warn(bodyContent);
+  }
+
   if (getData[index] === "end_card" && index != getData.length - 2) {
     newData.push(bodyContent);
     bodyContent.header.contents[1].text = getData[index + 1];
-    node.warn(`-------${bodyContent.header.contents[1].text}`);
+    bodyContent.footer.contents[0].type.uri = getData[index + 3];
+    // node.warn(`-------${bodyContent.header.contents[1].text}`);
   } else if (index === 0) {
     bodyContent.header.contents[1].text = getData[0];
+    bodyContent.footer.contents[0].action.uri = getData[2];
     newData.push(bodyContent);
   } else if (index === getData.length - 1) {
     newData.push(lastContent);
   }
-
-  if (getData[index] === "end_list") {
-    bodyContent.body.contents.splice();
-    bodyContent.body.contents.push(bodyListData);
-    bodyListData.contents[0].url = getData[index - 1];
-    bodyListData.contents[1].text = getData[index - 2];
-  }
-  //   if (getData[index] === "") {
-  //       getData.shift();
-  //   }
-  //   node.warn(bodyContent.header.contents[1].text);
 }
-
-node.warn(bodyContent.body.contents);
+// node.warn(lastDataContents);
 msg.payload.messages[0].type = "flex";
 msg.payload.messages[0].altText = "Products";
 msg.payload.messages[0].contents = contents;
-
+msg.payload.messages[0].contents.contents[0].body.contents = lastDataContents;
+msg.payload.messages[0].contents.contents[1].body.contents = lastDataContents;
+msg.payload.messages[0].contents.contents[2].body.contents = lastDataContents;
 delete msg.payload.messages[0].text;
 msg.backup_payload = msg.payload;
-// node.warn(msg.payload);
+node.warn(msg.payload);
 return msg;
