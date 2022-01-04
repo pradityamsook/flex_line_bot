@@ -14,8 +14,7 @@
         ],
         "width": "300px",
         "height": "162px",
-        "justifyContent": "center",
-        "backgroundColor": "#EFFEFA"
+        "justifyContent": "center"
     },
     "body": {
         "type": "box",
@@ -28,7 +27,7 @@
                     {
                         "type": "text",
                         "text": "เลขคำสั่งซื้อ:",
-                        "size": "10px",
+                        "size": "12px",
                         "gravity": "center",
                         "weight": "bold"
                     },
@@ -38,11 +37,9 @@
                         "align": "end"
                     }
                 ],
-                "backgroundColor": "#E6E7E8",
                 "width": "300px"
             }
-        ],
-        "backgroundColor": "#E6E7E8"
+        ]
     },
     "footer": {
         "type": "box",
@@ -50,53 +47,84 @@
         "contents": [
             {
                 "type": "box",
-                "layout": "horizontal",
+                "layout": "vertical",
                 "contents": [
                     {
-                        "type": "text",
-                        "text": "ยอดรวม",
-                        "size": "13px",
-                        "color": "#A7A9AC",
-                        "flex": 0
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดรวม",
+                                "size": "13px",
+                                "color": "#A7A9AC",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "text": "฿ 43,588.00",
+                                "size": "13px",
+                                "color": "#111111",
+                                "align": "end"
+                            }
+                        ]
                     },
                     {
-                        "type": "text",
-                        "text": "฿ 43,588.00",
-                        "size": "13px",
-                        "color": "#111111",
-                        "align": "end"
-                    }
-                ]
-            },
-            {
-                "type": "separator",
-                "margin": "xxl"
-            },
-            {
-                "type": "box",
-                "layout": "horizontal",
-                "contents": [
-                    {
-                        "type": "text",
-                        "text": "โปรโมชั่น ส่วนลด",
-                        "size": "13px",
-                        "color": "#A7A9AC",
-                        "wrap": true
+                        "type": "separator",
+                        "margin": "xxl"
                     },
                     {
-                        "type": "text",
-                        "text": "- ฿ 270.00",
-                        "size": "13px",
-                        "color": "#111111",
-                        "align": "end"
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "โปรโมชั่น ส่วนลด",
+                                "size": "13px",
+                                "color": "#A7A9AC",
+                                "wrap": true
+                            },
+                            {
+                                "type": "text",
+                                "text": "- ฿ 270.00",
+                                "size": "13px",
+                                "color": "#111111",
+                                "align": "end"
+                            }
+                        ],
+                        "height": "50px",
+                        "justifyContent": "center",
+                        "alignItems": "center"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดสุทธิ",
+                                "size": "13px",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "text": "฿ 43,318.00",
+                                "size": "13px",
+                                "align": "end",
+                                "color": "#111111"
+                            }
+                        ],
+                        "height": "50px",
+                        "alignItems": "center"
                     }
                 ],
-                "height": "50px",
-                "justifyContent": "center",
-                "alignItems": "center"
-            },
-            {
-                "type": "separator"
+                "paddingAll": "13px",
+                "backgroundColor": "#EEEEEE",
+                "cornerRadius": "10px",
+                "margin": "xl"
             },
             {
                 "type": "box",
@@ -104,20 +132,42 @@
                 "contents": [
                     {
                         "type": "text",
-                        "text": "ยอดสุทธิ",
-                        "size": "13px",
+                        "text": "วันที่สั่งซื้อ",
+                        "size": "12px",
                         "color": "#aaaaaa",
                         "flex": 0
                     },
                     {
                         "type": "text",
-                        "text": "฿ 43,318.00",
-                        "size": "13px",
+                        "text": "11/01/2564  17:21",
+                        "size": "12px",
                         "align": "end",
                         "color": "#111111"
                     }
                 ],
-                "height": "50px",
+                "height": "35px",
+                "alignItems": "center"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "ผู้แทนจำหน่าย",
+                        "size": "12px",
+                        "color": "#aaaaaa",
+                        "flex": 0
+                    },
+                    {
+                        "type": "text",
+                        "text": "เอสแอนด์พีนครหลวงอลูมิเนียม",
+                        "size": "12px",
+                        "align": "end",
+                        "color": "#111111"
+                    }
+                ],
+                "height": "20px",
                 "alignItems": "center"
             },
             {
@@ -132,7 +182,7 @@
                         "type": "button",
                         "action": {
                             "type": "uri",
-                            "label": "ติดต่อผู้แทนจำหน่าย",
+                            "label": "รายละเอียดคลิก",
                             "uri": "http://linecorp.com/"
                         },
                         "style": "primary",

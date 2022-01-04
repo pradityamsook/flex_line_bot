@@ -4,7 +4,6 @@ let newData = [];
 
 preContents.map((v, index) => {
   let setDataBody = v.body.contents[1].text.split("|");
-  node.warn(setDataBody.length);
   let bodyContent = {
     type: "bubble",
     body: {
@@ -110,7 +109,6 @@ preContents.map((v, index) => {
       offsetBottom: "10px",
     },
   };
-
   let lastBodyContent = {
     type: "bubble",
     body: {
@@ -168,7 +166,6 @@ preContents.map((v, index) => {
       justifyContent: "center",
     },
   };
-
   let footerContent = {
     type: "box",
     layout: "vertical",
