@@ -382,11 +382,12 @@ preContents.map((v) => {
   bodyContent.body.contents[0].contents[1].text = `วันที่: ${20} / ${
     dataContent[4]
   } / ${dataContent[3]}`; //date current
-  bodyContent.body.contents[1].contents[0].contents[0].text = dataContent[1]; // total point
-  bodyContent.body.contents[1].contents[0].contents[0].text = dataContent[2]; // expired point
-  bodyContent.body.contents[1].contents[0].contents[3].text = `${dataContent[4]}/${dataContent[3]}`; // expired date point
-  bodyContent.body.contents[1].contents[1].contents[2].contents[0].text =
-    dataContent[5]; //total balance
+  bodyContent.body.contents[1].contents[0].contents[0].contents[0].text =
+    dataContent[1]; // total point
+  bodyContent.body.contents[1].contents[0].contents[1].contents[0].text =
+    dataContent[2]; // expired point
+  bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${dataContent[4]}/${dataContent[3]}`; // expired date point
+  bodyContent.body.contents[1].contents[2].contents[0].text = dataContent[5]; //total balance
 
   newData.push(bodyContent);
 });
