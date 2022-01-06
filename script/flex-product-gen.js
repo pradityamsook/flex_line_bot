@@ -13,6 +13,7 @@ let contents = {
 };
 
 for (var index = 0; index < getData.length; index++) {
+  let indexList = 0;
   var bodyContent = {
     type: "bubble",
     direction: "ltr",
@@ -357,8 +358,7 @@ for (var index = 0; index < getData.length; index++) {
     bodyListData.contents[0].url = getData[index - 1];
     bodyListData.contents[1].text = getData[index - 2];
     lastDataContents.push(bodyListData);
-    bodyContent.body.contents.push(lastDataContents);
-    // node.warn(bodyContent);
+    // bodyContent.body.contents.push(lastDataContents);
   }
 
   if (getData[index] === "end_card" && index != getData.length - 2) {
@@ -374,13 +374,52 @@ for (var index = 0; index < getData.length; index++) {
     newData.push(lastContent);
   }
 }
+
+node.warn(lastDataContents);
 // node.warn(lastDataContents);
 msg.payload.messages[0].type = "flex";
 msg.payload.messages[0].altText = "Products";
 msg.payload.messages[0].contents = contents;
-msg.payload.messages[0].contents.contents[0].body.contents = lastDataContents;
-msg.payload.messages[0].contents.contents[1].body.contents = lastDataContents;
-msg.payload.messages[0].contents.contents[2].body.contents = lastDataContents;
+
+for (var index = 0; index < getData.length; index++) {
+  var bodyListData = {
+    type: "box",
+    layout: "baseline",
+    contents: [
+      {
+        type: "icon",
+        url: "https://i.imgur.com/pvinl1r.png",
+        aspectRatio: "1:1",
+        size: "40px",
+        offsetTop: "13px",
+      },
+      {
+        type: "text",
+        text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+        align: "center",
+        gravity: "center",
+        adjustMode: "shrink-to-fit",
+        position: "relative",
+        offsetBottom: "15px",
+        size: "13px",
+      },
+    ],
+    spacing: "sm",
+    height: "60px",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  };
+  var indexContents = 0;
+  if (getData[index] === "end_list") {
+    bodyListData.contents[0].url = getData[index - 1];
+    bodyListData.contents[1].text = getData[index - 2];
+    lastDataContents.push(bodyListData);
+    msg.payload.messages[0].contents.contents[indexContents].body.contents =
+      lastDataContents;
+    indexContents++;
+  }
+}
+
 delete msg.payload.messages[0].text;
 msg.backup_payload = msg.payload;
 node.warn(msg.payload);
