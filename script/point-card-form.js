@@ -1,4 +1,4 @@
-let payload = require('../json/point-data-api.json');
+let payload = require("../json/point-data-api.json");
 let msg = { payload };
 
 node.warn(msg);
@@ -8,10 +8,10 @@ node.warn(data);
 var items = [];
 var carouselsPromotion = {
   label: data.name,
-  subtitle: `${}`,
-  img: promotion.image,
+  subtitle: `${data.id}|${data.totalBalance}|${data.pointExpire[0]}|${data.pointExpire[1]}|${data.pointExpire[2]}|${data.cash.totalBalance}`,
+  img: "",
   btns: "คลิกเลย",
-  link: promotion.url,
+  link: "",
 };
 items.push(carouselsPromotion);
 
