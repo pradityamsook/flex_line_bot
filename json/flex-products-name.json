@@ -18,6 +18,29 @@
                         "layout": "baseline",
                         "contents": [
                             {
+                                "type": "text",
+                                "text": "จัดส่งภายใน 15 วัน",
+                                "color": "#FFFFFF",
+                                "offsetStart": "10px",
+                                "weight": "bold",
+                                "position": "absolute"
+                            }
+                        ],
+                        "offsetBottom": "50px",
+                        "cornerRadius": "5px",
+                        "backgroundColor": "#000000AA",
+                        "borderColor": "#000000AA",
+                        "width": "150px",
+                        "offsetStart": "120px",
+                        "height": "30px",
+                        "justifyContent": "center",
+                        "alignItems": "center"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/yUia3Sy.png",
                                 "position": "relative",
@@ -60,10 +83,28 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "1,023 บาท / ถัง ",
+                                "text": "฿1,023 บาท / ถัง ",
                                 "wrap": true,
                                 "weight": "regular",
-                                "flex": 0
+                                "flex": 0,
+                                "decoration": "line-through",
+                                "color": "#BCBEC0",
+                                "size": "14px"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "฿1,000 บาท / ถัง ",
+                                "wrap": true,
+                                "weight": "regular",
+                                "flex": 0,
+                                "color": "#ED4444",
+                                "size": "19px"
                             }
                         ]
                     },

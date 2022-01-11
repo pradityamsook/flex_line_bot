@@ -1,0 +1,107 @@
+[
+    {
+        "type": "flex",
+        "altText": "Interactive message - please check on your phone or update your Line app",
+        "contents": {
+            "type": "carousel",
+            "contents": [
+                {
+                    "type": "bubble",
+                    "direction": "ltr",
+                    "size": "kilo",
+                    "hero": {
+                        "type": "image",
+                        "url": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                        "size": "full",
+                        "aspectRatio": "1.51:1",
+                        "aspectMode": "cover"
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "none",
+                        "margin": "none",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                                "size": "md",
+                                "align": "start",
+                                "gravity": "top",
+                                "color": "#545556",
+                                "wrap": true
+                            },
+                            {
+                                "type": "text",
+                                "text": "search product keyword|https://upload.convolab.ai/scg-promptplus-dev%2Fe30a6fab-4d7a-4f1d-93fb-cf1d70fd9a7a.png|https://upload.convolab.ai/scg-promptplus-dev%2Fb60e10f2-6cc9-4f6c-bde1-80334a3e07f4.png|https://upload.convolab.ai/scg-promptplus-dev%2F5f9a6084-2174-4534-a1ee-6b603175a26d.png|https://upload.convolab.ai/scg-promptplus-dev%2F39d57e5b-5d85-48d7-ad85-f04dafdaeca4.png|",
+                                "margin": "sm",
+                                "size": "sm",
+                                "align": "start",
+                                "color": "#5B5B5B",
+                                "wrap": true,
+                                "maxLines": 2
+                            },
+                            {
+                                "type": "separator",
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": []
+                    }
+                },
+                {
+                    "type": "bubble",
+                    "direction": "ltr",
+                    "size": "kilo",
+                    "hero": {
+                        "type": "image",
+                        "url": "https://storage.googleapis.com/scg-prompt-plus-qas-public-assets/products/images/00a202a1-542c-402b-b977-93d69cc1800e__C1142.jpg",
+                        "size": "full",
+                        "aspectRatio": "1.51:1",
+                        "aspectMode": "cover"
+                    },
+                    "body": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "spacing": "none",
+                        "margin": "none",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ปูนซีเมนต์ถุง ปอร์ตแลนด์ประเภท1 50kg SCG",
+                                "size": "md",
+                                "align": "start",
+                                "gravity": "top",
+                                "color": "#545556",
+                                "wrap": true
+                            },
+                            {
+                                "type": "text",
+                                "text": "search product keyword|https://upload.convolab.ai/scg-promptplus-dev%2Fe30a6fab-4d7a-4f1d-93fb-cf1d70fd9a7a.png|https://upload.convolab.ai/scg-promptplus-dev%2Fb60e10f2-6cc9-4f6c-bde1-80334a3e07f4.png|https://upload.convolab.ai/scg-promptplus-dev%2F5f9a6084-2174-4534-a1ee-6b603175a26d.png|https://upload.convolab.ai/scg-promptplus-dev%2F39d57e5b-5d85-48d7-ad85-f04dafdaeca4.png|https://upload.convolab.ai/scg-promptplus-dev%2Fe30a6fab-4d7a-4f1d-93fb-cf1d70fd9a7a.png|https://upload.convolab.ai/scg-promptplus-dev%2Fb60e10f2-6cc9-4f6c-bde1-80334a3e07f4.png|https://upload.convolab.ai/scg-promptplus-dev%2F5f9a6084-2174-4534-a1ee-6b603175a26d.png|https://upload.convolab.ai/scg-promptplus-dev%2F39d57e5b-5d85-48d7-ad85-f04dafdaeca4.png|",
+                                "margin": "sm",
+                                "size": "sm",
+                                "align": "start",
+                                "color": "#5B5B5B",
+                                "wrap": true,
+                                "maxLines": 2
+                            },
+                            {
+                                "type": "separator",
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": []
+                    }
+                }
+            ]
+        }
+    }
+]
