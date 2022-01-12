@@ -5,6 +5,7 @@ let newData = [];
 preContents.map((v, index) => {
   let dataContent = v.body.contents[index].text.split("|");
   dataContent.shift();
+  node.warn(dataContent);
   let bodyContent = {
     type: "bubble",
     hero: {
@@ -53,18 +54,36 @@ preContents.map((v, index) => {
               aspectRatio: "10:3",
               offsetTop: "10px",
             },
-            {
-              type: "icon",
-              url: "https://i.imgur.com/en2oNPK.png",
-              size: "xxl",
-              aspectRatio: "3:2",
-              offsetTop: "10px",
-              offsetStart: "140px",
-            },
           ],
           offsetBottom: "200px",
           height: "70px",
           paddingTop: "15px",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "-40%",
+              color: "#FFFFFF",
+              align: "center",
+              gravity: "center",
+            },
+          ],
+          offsetBottom: "240px",
+          offsetStart: "240px",
+          width: "40px",
+          height: "24px",
+          cornerRadius: "4px",
+          backgroundColor: "#ED4444",
+          background: {
+            type: "linearGradient",
+            angle: "135deg",
+            startColor: "#FF8A00",
+            endColor: "#ED4444",
+            centerColor: "#FF290C",
+          },
         },
       ],
       height: "180px",
@@ -128,7 +147,7 @@ preContents.map((v, index) => {
           contents: [
             {
               type: "icon",
-              url: "https://i.imgur.com/ynXV8ia.png",
+              url: "https://i.imgur.com/vVcsjMQ.png",
               aspectRatio: "1:1",
               size: "3xl",
             },
@@ -182,7 +201,17 @@ preContents.map((v, index) => {
   //   bodyContent.footer.contents[0].action.uri = v.hero.url;
   bodyContent.hero.contents[0].url = v.hero.url; //image
   bodyContent.body.contents[0].text = v.body.contents[0].text; //description
-  bodyContent.node.warn(v.body.contents[1].text);
+
+  for (var indexData = 0; indexData < dataContent.length; indexData++) {
+    if (dataContent[indexData] === "logo") {
+      bodyContent.body.contents[4].contents[0].url = dataContent[indexData + 1];
+      bodyContent.body.contents[4].contents[0].url = JSON.parse(
+        JSON.stringify(bodyContent.body.contents[4].contents[0].url)
+      );
+    }
+  }
+  node.warn(bodyContent.body.contents[4].contents[0].url);
+
   if (!v.body.contents[1].text) {
     bodyContent.body.contents.text = "";
   } else {
