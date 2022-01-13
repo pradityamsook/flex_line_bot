@@ -30,10 +30,12 @@ function toThaiDateString(date) {
 
 const preContents = msg.payload.messages[0].contents.contents;
 let newData = [];
+let date = new Date();
 
 preContents.map((v, index) => {
-  let dataContent = v.body.contents[index].text.split("|");
+  let dataContent = v.body.contents[1].text.split("|");
   dataContent.shift();
+  node.warn(index);
   node.warn(dataContent);
   let bodyContent = {
     type: "bubble",
@@ -233,18 +235,44 @@ preContents.map((v, index) => {
 
   for (var indexData = 0; indexData < dataContent.length; indexData++) {
     if (dataContent[indexData] === "logo") {
+      // add chang icon
       bodyContent.body.contents[4].contents[0].url = dataContent[indexData + 1];
-      bodyContent.body.contents[4].contents[0].url = JSON.parse(
-        JSON.stringify(bodyContent.body.contents[4].contents[0].url)
-      );
+    }
+    if (dataContent[indexData] === "points") {
+      // add points icon
+      bodyContent.body.contents[4].contents[1].url = dataContent[indexData + 1];
+    }
+    if (dataContent[indexData] === "wallet") {
+      // add wallet icon
+      bodyContent.body.contents[4].contents[2].url = dataContent[indexData + 1];
+    }
+    if (dataContent[indexData] === "free goods") {
+      // add free goods icon
+      bodyContent.body.contents[4].contents[3].url = dataContent[indexData + 1];
+    }
+    if (dataContent[indexData] === "flash sale") {
+      // add flash sale tag's image
+      bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 1];
     }
   }
-  node.warn(bodyContent.body.contents[4].contents[0].url);
-
+  bodyContent.hero.contents[3].contents[0].text = `-${
+    dataContent[dataContent.length - 2]
+  }%`; // percent discount
+  bodyContent.body.contents[1].contents[0].text = `฿ ${
+    dataContent[dataContent.length - 3]
+  } / ${dataContent[dataContent.length - 1]}`; // base price
+  bodyContent.body.contents[2].contents[0].text = `฿ ${
+    dataContent[dataContent.length - 4]
+  } / ${dataContent[dataContent.length - 1]}`; // net price
+  bodyContent.body.contents[3].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(
+    date
+  )}`; // Thai date
   if (!v.body.contents[1].text) {
     bodyContent.body.contents.text = "";
   } else {
-    bodyContent.body.contents[2].contents[0].text = v.body.contents[1].text;
+    bodyContent.body.contents[2].contents[0].text = `฿ ${
+      dataContent[dataContent.length - 4]
+    } / ${dataContent[dataContent.length - 1]}`; // net price
   }
   newData.push(bodyContent);
 });
