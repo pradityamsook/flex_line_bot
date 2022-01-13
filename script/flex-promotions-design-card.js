@@ -1,19 +1,118 @@
-const preData = require("../json/pre-promotion-payload.json");
-
-const preContents = preData.messages[0].contents.contents;
-
+node.warn(msg.payload);
+const preContents = msg.payload.messages[0].contents.contents;
 let newData = [];
 
-preContents.map((v) => {
+preContents.map((v, index) => {
   let bodyContent = {
     type: "bubble",
-    direction: "ltr",
-    size: "kilo",
     body: {
       type: "box",
       layout: "vertical",
-      spacing: "none",
-      margin: "none",
+      contents: [
+        {
+          type: "image",
+          url: "https://i.imgur.com/VrLnVgK.jpg",
+          size: "full",
+          aspectMode: "cover",
+          aspectRatio: "1.5:1.2",
+          gravity: "top",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Lorem ipsum dolor sit amet, cons",
+              gravity: "center",
+              align: "center",
+              weight: "bold",
+              size: "14px",
+              style: "normal",
+            },
+          ],
+          paddingTop: "10px",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
+              maxLines: 2,
+              size: "12px",
+              color: "#808285",
+              wrap: true,
+              adjustMode: "shrink-to-fit",
+            },
+          ],
+          paddingAll: "7px",
+          position: "relative",
+        },
+        {
+          type: "separator",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "1 - 30 พ.ย. 2564",
+              offsetStart: "10px",
+              color: "#808285",
+              size: "12px",
+              margin: "7.09091px",
+            },
+          ],
+          paddingAll: "5px",
+          offsetBottom: "10px",
+        },
+      ],
+      paddingAll: "0px",
+    },
+    footer: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "button",
+          action: {
+            type: "uri",
+            label: "action",
+            uri: "http://linecorp.com/",
+          },
+          gravity: "center",
+          adjustMode: "shrink-to-fit",
+          style: "primary",
+          color: "#ED1C24",
+        },
+        {
+          type: "button",
+          action: {
+            type: "uri",
+            label: "action",
+            uri: "http://linecorp.com/",
+          },
+          gravity: "center",
+          adjustMode: "shrink-to-fit",
+          style: "primary",
+          color: "#ED1C24",
+          offsetTop: "5px",
+        },
+      ],
+      backgroundColor: "#FFFFFF",
+      height: "120px",
+      position: "relative",
+      offsetBottom: "10px",
+    },
+  };
+  let promotionBodyContent = {
+    type: "bubble",
+    body: {
+      type: "box",
+      layout: "vertical",
       contents: [
         {
           type: "image",
@@ -28,67 +127,77 @@ preContents.map((v) => {
           layout: "vertical",
           contents: [
             {
-              type: "box",
-              layout: "vertical",
-              contents: [
-                {
-                  type: "filler",
-                },
-                {
-                  type: "box",
-                  layout: "baseline",
-                  contents: [
-                    {
-                      type: "filler",
-                    },
-                    {
-                      type: "text",
-                      text: "คลิกเลย",
-                      color: "#ffffff",
-                      flex: 0,
-                      offsetTop: "-2px",
-                    },
-                    {
-                      type: "filler",
-                    },
-                  ],
-                  spacing: "sm",
-                },
-                {
-                  type: "filler",
-                },
-              ],
-              borderWidth: "1px",
-              cornerRadius: "20px",
-              spacing: "sm",
-              borderColor: "#A7A9ACAA",
-              margin: "xxl",
-              height: "40px",
-              width: "100px",
-              offsetTop: "10px",
-              offsetStart: "65px",
-              backgroundColor: "#A7A9ACAA",
-              action: {
-                type: "uri",
-                label: "action",
-                uri: "http://linecorp.com/",
-              },
+              type: "text",
+              text: "โปรโมชั่นอื่น ๆ",
+              gravity: "center",
+              align: "center",
+              weight: "bold",
+              size: "14px",
+              style: "normal",
             },
           ],
-          position: "absolute",
-          offsetBottom: "0px",
-          offsetStart: "0px",
-          offsetEnd: "0px",
-          paddingAll: "20px",
-          paddingTop: "18px",
+          paddingTop: "50px",
         },
       ],
+      paddingAll: "0px",
+    },
+    footer: {
+      type: "box",
+      layout: "vertical",
+      contents: [
+        {
+          type: "button",
+          action: {
+            type: "uri",
+            label: "action",
+            uri: "http://linecorp.com/",
+          },
+          gravity: "center",
+          adjustMode: "shrink-to-fit",
+          style: "primary",
+          color: "#ED1C24",
+          offsetTop: "33px",
+        },
+      ],
+      backgroundColor: "#FFFFFF",
+      height: "120px",
+      position: "relative",
+      offsetBottom: "10px",
+      justifyContent: "center",
     },
   };
-
+  bodyContent.footer.contents[0].action.uri = v.hero.url;
   bodyContent.body.contents[0].url = v.hero.url;
-  newData.push(bodyContent);
-});
 
-console.log(newData[0].body.contents[0].url);
-console.log(newData[1].body.contents[0].url);
+  if (index === preContents.length - 1) {
+    promotionBodyContent.footer.contents[0].action.label = "รายละเอียด";
+    //   v.footer.contents[1].action.label;
+    promotionBodyContent.body.contents[0].url = v.hero.url;
+    newData.push(promotionBodyContent);
+  } else {
+    bodyContent.body.contents[0].url = v.hero.url; //set url image
+    bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
+    // if (setDataBody.length === 1)
+    //   bodyContent.body.contents[4].contents.text = v.body.contents[1].text;
+    // else bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
+
+    // if (!v.body.contents[1].text) {
+    //   bodyContent.body.contents.text = "";
+    // } else {
+    //   bodyContent.body.contents[2].contents[0].text = setDataBody[1];
+    // }
+    newData.push(JSON.parse(JSON.stringify(bodyContent)));
+  }
+
+  //   node.warn(v.body.contents[1].text);
+  //   if (!v.body.contents[1].text) {
+  //     bodyContent.body.contents.text = "";
+  //   } else {
+  //     bodyContent.body.contents[2].contents[0].text = v.body.contents[1].text;
+  //   }
+  //   newData.push(bodyContent);
+});
+msg.payload.messages[0].contents.contents = newData;
+msg.backup_payload = JSON.parse(JSON.stringify(msg.payload));
+
+return msg;
