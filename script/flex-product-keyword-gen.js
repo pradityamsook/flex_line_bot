@@ -232,6 +232,17 @@ preContents.map((v, index) => {
   //   bodyContent.footer.contents[0].action.uri = v.hero.url;
   bodyContent.hero.contents[0].url = v.hero.url; //image
   bodyContent.body.contents[0].text = v.body.contents[0].text; //description
+  bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount}%`; // percent discount
+  bodyContent.body.contents[3].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(
+    date
+  )}`; // Thai date
+  bodyContent.body.contents[1].contents[0].text = `฿ ${netPrice} / ${unit}`; // net price
+
+  var salePrice;
+  var percenDiscount = dataContent[dataContent.length - 2];
+  var basePrice = dataContent[dataContent.length - 3];
+  var netPrice = dataContent[dataContent.length - 4];
+  var unit = dataContent[dataContent.length - 1];
 
   for (var indexData = 0; indexData < dataContent.length; indexData++) {
     if (dataContent[indexData] === "logo") {
@@ -251,22 +262,13 @@ preContents.map((v, index) => {
       bodyContent.body.contents[4].contents[3].url = dataContent[indexData + 1];
     }
     if (dataContent[indexData] === "flash sale") {
-      // add flash sale tag's image
-      bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 1];
+      salePrice = (percenDiscount / 100) * netPrice + netPrice; // calculate sale price
+      bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 1]; // add flash sale tag's image
+      bodyContent.body.contents[1].contents[0].text = `฿ ${netPrice} / ${unit}`; // net price if has flash sale
+      bodyContent.body.contents[2].contents[0].text = `฿ ${salePrice} / ${unit}`; // sale price
     }
   }
-  bodyContent.hero.contents[3].contents[0].text = `-${
-    dataContent[dataContent.length - 2]
-  }%`; // percent discount
-  bodyContent.body.contents[1].contents[0].text = `฿ ${
-    dataContent[dataContent.length - 3]
-  } / ${dataContent[dataContent.length - 1]}`; // base price
-  bodyContent.body.contents[2].contents[0].text = `฿ ${
-    dataContent[dataContent.length - 4]
-  } / ${dataContent[dataContent.length - 1]}`; // net price
-  bodyContent.body.contents[3].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(
-    date
-  )}`; // Thai date
+
   if (!v.body.contents[1].text) {
     bodyContent.body.contents.text = "";
   } else {
