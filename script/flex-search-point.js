@@ -115,7 +115,7 @@ preContents.map((v) => {
                       flex: 0,
                       align: "center",
                       margin: "80px",
-                      weight: "regular",
+                      weight: "bold",
                     },
                     {
                       type: "text",
@@ -124,7 +124,7 @@ preContents.map((v) => {
                       color: "#FFFFFF",
                       flex: 0,
                       align: "center",
-                      weight: "regular",
+                      weight: "bold",
                       gravity: "center",
                       margin: "18px",
                     },
@@ -178,7 +178,7 @@ preContents.map((v) => {
               cornerRadius: "10px",
               margin: "xl",
               height: "90px",
-              width: "300px",
+              width: "270px",
             },
             {
               type: "box",
@@ -205,6 +205,7 @@ preContents.map((v) => {
                   color: "#FFFFFF",
                   align: "center",
                   margin: "90px",
+                  weight: "bold",
                 },
                 {
                   type: "text",
@@ -215,6 +216,7 @@ preContents.map((v) => {
                   position: "relative",
                   decoration: "none",
                   gravity: "center",
+                  weight: "bold",
                 },
               ],
               margin: "9px",
@@ -254,6 +256,11 @@ preContents.map((v) => {
               margin: "sm",
               height: "70px",
               width: "125px",
+              action: {
+                type: "uri",
+                label: "action",
+                uri: "http://linecorp.com/",
+              },
             },
             {
               type: "box",
@@ -283,6 +290,11 @@ preContents.map((v) => {
               margin: "sm",
               height: "70px",
               width: "125px",
+              action: {
+                type: "uri",
+                label: "action",
+                uri: "http://linecorp.com/",
+              },
             },
           ],
         },
@@ -319,6 +331,11 @@ preContents.map((v) => {
               margin: "sm",
               height: "70px",
               width: "125px",
+              action: {
+                type: "uri",
+                label: "action",
+                uri: "http://linecorp.com/",
+              },
             },
             {
               type: "box",
@@ -364,6 +381,11 @@ preContents.map((v) => {
               margin: "sm",
               height: "70px",
               width: "125px",
+              action: {
+                type: "uri",
+                label: "action",
+                uri: "http://linecorp.com/",
+              },
             },
           ],
         },
