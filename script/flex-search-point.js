@@ -1,4 +1,12 @@
 node.warn(msg.payload);
+
+function formatMoneyTHB(money) {
+  return money.toLocaleString("th-TH", {
+    style: "currency",
+    currency: "THB",
+  });
+}
+
 const preContents = msg.payload.messages[0].contents.contents;
 let newData = [];
 preContents.map((v) => {
