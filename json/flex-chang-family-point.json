@@ -109,7 +109,7 @@
                     "flex": 0,
                     "align": "center",
                     "margin": "80px",
-                    "weight": "regular"
+                    "weight": "bold"
                   },
                   {
                     "type": "text",
@@ -118,7 +118,7 @@
                     "color": "#FFFFFF",
                     "flex": 0,
                     "align": "center",
-                    "weight": "regular",
+                    "weight": "bold",
                     "gravity": "center",
                     "margin": "18px"
                   }
@@ -172,7 +172,7 @@
             "cornerRadius": "10px",
             "margin": "xl",
             "height": "90px",
-            "width": "300px"
+            "width": "270px"
           },
           {
             "type": "box",
@@ -198,7 +198,8 @@
                 "size": "28px",
                 "color": "#FFFFFF",
                 "align": "center",
-                "margin": "90px"
+                "margin": "90px",
+                "weight": "bold"
               },
               {
                 "type": "text",
@@ -208,7 +209,8 @@
                 "align": "end",
                 "position": "relative",
                 "decoration": "none",
-                "gravity": "center"
+                "gravity": "center",
+                "weight": "bold"
               }
             ],
             "margin": "9px"
@@ -247,7 +249,12 @@
             "cornerRadius": "10px",
             "margin": "sm",
             "height": "70px",
-            "width": "125px"
+            "width": "125px",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
           },
           {
             "type": "box",
@@ -276,7 +283,12 @@
             "cornerRadius": "10px",
             "margin": "sm",
             "height": "70px",
-            "width": "125px"
+            "width": "125px",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
           }
         ]
       },
@@ -312,7 +324,12 @@
             "cornerRadius": "10px",
             "margin": "sm",
             "height": "70px",
-            "width": "125px"
+            "width": "125px",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
           },
           {
             "type": "box",
@@ -357,7 +374,12 @@
             "cornerRadius": "10px",
             "margin": "sm",
             "height": "70px",
-            "width": "125px"
+            "width": "125px",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
           }
         ]
       }
