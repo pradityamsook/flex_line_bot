@@ -103,12 +103,12 @@
                 "contents": [
                   {
                     "type": "text",
-                    "text": "7,950",
+                    "text": "0",
                     "size": "28px",
                     "color": "#FFFFFF",
                     "flex": 0,
                     "align": "center",
-                    "margin": "80px",
+                    "margin": "85px",
                     "weight": "bold"
                   },
                   {
@@ -130,10 +130,10 @@
                 "contents": [
                   {
                     "type": "text",
-                    "text": "350",
+                    "text": "0",
                     "size": "12px",
                     "color": "#FFFFFF",
-                    "margin": "35px",
+                    "margin": "45px",
                     "flex": 0
                   },
                   {
@@ -193,24 +193,33 @@
             "layout": "horizontal",
             "contents": [
               {
-                "type": "text",
-                "text": "5,790",
-                "size": "28px",
-                "color": "#FFFFFF",
-                "align": "center",
-                "margin": "90px",
-                "weight": "bold"
-              },
-              {
-                "type": "text",
-                "text": "บาท",
-                "size": "16px",
-                "color": "#FFFFFF",
-                "align": "end",
-                "position": "relative",
-                "decoration": "none",
-                "gravity": "center",
-                "weight": "bold"
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "999,999",
+                    "size": "28px",
+                    "color": "#FFFFFF",
+                    "weight": "bold",
+                    "margin": "90px",
+                    "position": "absolute",
+                    "align": "center",
+                    "adjustMode": "shrink-to-fit"
+                  },
+                  {
+                    "type": "text",
+                    "text": "บาท",
+                    "size": "20px",
+                    "color": "#FFFFFF",
+                    "align": "end",
+                    "position": "relative",
+                    "decoration": "none",
+                    "gravity": "center",
+                    "weight": "bold"
+                  }
+                ],
+                "height": "50px"
               }
             ],
             "margin": "9px"
