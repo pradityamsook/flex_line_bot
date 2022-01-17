@@ -14,7 +14,7 @@ preContents.map((v, index) => {
           url: "https://i.imgur.com/VrLnVgK.jpg",
           size: "full",
           aspectMode: "cover",
-          aspectRatio: "1.5:1.2",
+          aspectRatio: "1:1",
           gravity: "top",
         },
         {
@@ -31,7 +31,9 @@ preContents.map((v, index) => {
               style: "normal",
             },
           ],
-          paddingTop: "10px",
+          paddingStart: "20px",
+          paddingEnd: "20px",
+          offsetTop: "10px",
         },
         {
           type: "box",
@@ -40,14 +42,13 @@ preContents.map((v, index) => {
             {
               type: "text",
               text: "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
-              maxLines: 2,
+              maxLines: 5,
               size: "12px",
               color: "#808285",
               wrap: true,
-              adjustMode: "shrink-to-fit",
             },
           ],
-          paddingAll: "7px",
+          paddingAll: "20px",
           position: "relative",
         },
         {
@@ -66,7 +67,7 @@ preContents.map((v, index) => {
               margin: "7.09091px",
             },
           ],
-          paddingAll: "5px",
+          paddingAll: "10px",
           offsetBottom: "10px",
         },
       ],
@@ -77,29 +78,55 @@ preContents.map((v, index) => {
       layout: "vertical",
       contents: [
         {
-          type: "button",
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "รายละเอียด",
+              gravity: "center",
+              align: "center",
+              offsetTop: "15px",
+              color: "#FFFFFF",
+              weight: "bold",
+              size: "16px",
+            },
+          ],
+          cornerRadius: "10px",
+          borderColor: "#ED1C24",
+          backgroundColor: "#ED1C24",
+          height: "50px",
           action: {
             type: "uri",
             label: "action",
             uri: "http://linecorp.com/",
           },
-          gravity: "center",
-          adjustMode: "shrink-to-fit",
-          style: "primary",
-          color: "#ED1C24",
         },
         {
-          type: "button",
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "รายละเอียด",
+              gravity: "center",
+              align: "center",
+              offsetTop: "15px",
+              color: "#FFFFFF",
+              weight: "bold",
+              size: "16px",
+            },
+          ],
+          cornerRadius: "10px",
+          borderColor: "#ED1C24",
+          backgroundColor: "#ED1C24",
+          height: "50px",
+          offsetTop: "5px",
           action: {
             type: "uri",
             label: "action",
             uri: "http://linecorp.com/",
           },
-          gravity: "center",
-          adjustMode: "shrink-to-fit",
-          style: "primary",
-          color: "#ED1C24",
-          offsetTop: "5px",
         },
       ],
       backgroundColor: "#FFFFFF",
@@ -146,17 +173,25 @@ preContents.map((v, index) => {
       layout: "vertical",
       contents: [
         {
-          type: "button",
-          action: {
-            type: "uri",
-            label: "action",
-            uri: "http://linecorp.com/",
-          },
-          gravity: "center",
-          adjustMode: "shrink-to-fit",
-          style: "primary",
-          color: "#ED1C24",
-          offsetTop: "33px",
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "รายละเอียด",
+              gravity: "center",
+              align: "center",
+              offsetTop: "15px",
+              color: "#FFFFFF",
+              weight: "bold",
+              size: "16px",
+            },
+          ],
+          cornerRadius: "10px",
+          borderColor: "#ED1C24",
+          backgroundColor: "#ED1C24",
+          height: "50px",
+          offsetTop: "30px",
         },
       ],
       backgroundColor: "#FFFFFF",
@@ -168,6 +203,9 @@ preContents.map((v, index) => {
   };
   bodyContent.footer.contents[0].action.uri = v.hero.url;
   bodyContent.body.contents[0].url = v.hero.url;
+
+  if (condition) {
+  }
 
   if (index === preContents.length - 1) {
     promotionBodyContent.footer.contents[0].action.label = "รายละเอียด";

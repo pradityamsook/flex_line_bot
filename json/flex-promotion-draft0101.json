@@ -20,6 +20,189 @@
                         "layout": "vertical",
                         "contents": [
                             {
+                                "type": "text",
+                                "text": "Lorem ipsum dolor sit amet, cons",
+                                "gravity": "center",
+                                "align": "center",
+                                "weight": "bold",
+                                "size": "14px",
+                                "style": "normal"
+                            }
+                        ],
+                        "paddingStart": "20px",
+                        "paddingEnd": "20px",
+                        "offsetTop": "10px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
+                                "maxLines": 2,
+                                "size": "12px",
+                                "color": "#808285",
+                                "wrap": true,
+                                "adjustMode": "shrink-to-fit"
+                            }
+                        ],
+                        "paddingAll": "20px",
+                        "position": "relative"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "1 - 30 พ.ย. 2564",
+                                "offsetStart": "10px",
+                                "color": "#808285",
+                                "size": "12px",
+                                "margin": "7.09091px"
+                            }
+                        ],
+                        "paddingAll": "10px",
+                        "offsetBottom": "10px"
+                    }
+                ],
+                "paddingAll": "0px"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "gravity": "center",
+                                "align": "center",
+                                "offsetTop": "15px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "size": "16px"
+                            }
+                        ],
+                        "cornerRadius": "10px",
+                        "borderColor": "#ED1C24",
+                        "backgroundColor": "#ED1C24",
+                        "height": "50px",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "gravity": "center",
+                                "align": "center",
+                                "offsetTop": "15px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "size": "16px"
+                            }
+                        ],
+                        "cornerRadius": "10px",
+                        "borderColor": "#ED1C24",
+                        "backgroundColor": "#ED1C24",
+                        "height": "50px",
+                        "offsetTop": "5px",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        }
+                    }
+                ],
+                "backgroundColor": "#FFFFFF",
+                "height": "120px",
+                "position": "relative",
+                "offsetBottom": "10px"
+            }
+        },
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/VrLnVgK.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "gravity": "top"
+                    }
+                ],
+                "paddingAll": "0px"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "gravity": "center",
+                                "align": "center",
+                                "offsetTop": "15px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "size": "16px"
+                            }
+                        ],
+                        "cornerRadius": "10px",
+                        "borderColor": "#ED1C24",
+                        "backgroundColor": "#ED1C24",
+                        "height": "50px",
+                        "offsetTop": "30px"
+                    }
+                ],
+                "backgroundColor": "#FFFFFF",
+                "height": "120px",
+                "position": "relative",
+                "offsetBottom": "10px",
+                "justifyContent": "center"
+            }
+        },
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/VrLnVgK.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "1:1",
+                        "gravity": "top"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
                                 "type": "filler"
                             },
                             {
@@ -95,169 +278,6 @@
                 "backgroundColor": "#ED1C24",
                 "height": "63.81px",
                 "position": "relative"
-            }
-        },
-        {
-            "type": "bubble",
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "image",
-                        "url": "https://i.imgur.com/VrLnVgK.jpg",
-                        "size": "full",
-                        "aspectMode": "cover",
-                        "aspectRatio": "1:1",
-                        "gravity": "top"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "Lorem ipsum dolor sit amet, cons",
-                                "gravity": "center",
-                                "align": "center",
-                                "weight": "bold",
-                                "size": "14px",
-                                "style": "normal"
-                            }
-                        ],
-                        "paddingTop": "10px"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
-                                "maxLines": 2,
-                                "size": "12px",
-                                "color": "#808285",
-                                "wrap": true,
-                                "adjustMode": "shrink-to-fit"
-                            }
-                        ],
-                        "paddingAll": "7px",
-                        "position": "relative"
-                    },
-                    {
-                        "type": "separator"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "1 - 30 พ.ย. 2564",
-                                "offsetStart": "10px",
-                                "color": "#808285",
-                                "size": "12px",
-                                "margin": "7.09091px"
-                            }
-                        ],
-                        "paddingAll": "5px",
-                        "offsetBottom": "10px"
-                    }
-                ],
-                "paddingAll": "0px"
-            },
-            "footer": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "button",
-                        "action": {
-                            "type": "uri",
-                            "label": "action",
-                            "uri": "http://linecorp.com/"
-                        },
-                        "gravity": "center",
-                        "adjustMode": "shrink-to-fit",
-                        "style": "primary",
-                        "color": "#ED1C24"
-                    },
-                    {
-                        "type": "button",
-                        "action": {
-                            "type": "uri",
-                            "label": "action",
-                            "uri": "http://linecorp.com/"
-                        },
-                        "gravity": "center",
-                        "adjustMode": "shrink-to-fit",
-                        "style": "primary",
-                        "color": "#ED1C24",
-                        "offsetTop": "10px"
-                    }
-                ],
-                "backgroundColor": "#FFFFFF",
-                "height": "120px",
-                "position": "relative",
-                "offsetBottom": "10px"
-            }
-        },
-        {
-            "type": "bubble",
-            "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "image",
-                        "url": "https://i.imgur.com/VrLnVgK.jpg",
-                        "size": "full",
-                        "aspectMode": "cover",
-                        "aspectRatio": "1:1",
-                        "gravity": "top"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                            {
-                                "type": "text",
-                                "text": "โปรโมชั่นอื่น ๆ",
-                                "gravity": "center",
-                                "align": "center",
-                                "weight": "bold",
-                                "size": "14px",
-                                "style": "normal"
-                            }
-                        ],
-                        "paddingTop": "50px"
-                    }
-                ],
-                "paddingAll": "0px"
-            },
-            "footer": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                    {
-                        "type": "button",
-                        "action": {
-                            "type": "uri",
-                            "label": "action",
-                            "uri": "http://linecorp.com/"
-                        },
-                        "gravity": "center",
-                        "adjustMode": "shrink-to-fit",
-                        "style": "primary",
-                        "color": "#ED1C24",
-                        "offsetTop": "35px"
-                    }
-                ],
-                "backgroundColor": "#FFFFFF",
-                "height": "120px",
-                "position": "relative",
-                "offsetBottom": "10px",
-                "justifyContent": "center"
             }
         }
     ]
