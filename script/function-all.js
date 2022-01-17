@@ -1,4 +1,5 @@
-/** function format money to Thai bath
+/*
+ * function format money to Thai bath
  * e.g. 1996 -> ฿1,996
  */
 function formatMoneyTHB(money) {
@@ -7,11 +8,12 @@ function formatMoneyTHB(money) {
     currency: "THB",
   });
 }
+a;
 
-/**function format date to Thai data
+/*
+ *function format date to Thai data
  * but years reference from A.D. (e.g. 2022)
  */
-// format to Thai data
 function toThaiDateString(date) {
   let monthNames = [
     "ม.ค.",
