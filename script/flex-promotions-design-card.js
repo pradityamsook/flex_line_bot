@@ -204,8 +204,10 @@ preContents.map((v, index) => {
   bodyContent.footer.contents[0].action.uri = v.hero.url;
   bodyContent.body.contents[0].url = v.hero.url;
 
-  if (condition) {
-  }
+  // if (condition) {
+  //   footer.contents.splice(1, 1);
+  //   footer.contents[0].offsetTop = "55px";
+  // }
 
   if (index === preContents.length - 1) {
     promotionBodyContent.footer.contents[0].action.label = "รายละเอียด";
