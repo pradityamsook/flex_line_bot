@@ -23,7 +23,8 @@
                                 "color": "#FFFFFF",
                                 "offsetStart": "10px",
                                 "weight": "bold",
-                                "position": "absolute"
+                                "position": "absolute",
+                                "offsetTop": "4px"
                             }
                         ],
                         "offsetBottom": "50px",
@@ -31,7 +32,7 @@
                         "backgroundColor": "#000000AA",
                         "borderColor": "#000000AA",
                         "width": "150px",
-                        "offsetStart": "120px",
+                        "offsetStart": "132px",
                         "height": "30px",
                         "justifyContent": "center",
                         "alignItems": "center"
@@ -47,10 +48,10 @@
                                 "margin": "none",
                                 "size": "xxl",
                                 "aspectRatio": "10:3",
-                                "offsetTop": "10px"
+                                "offsetTop": "-10px"
                             }
                         ],
-                        "offsetBottom": "200px",
+                        "offsetBottom": "210px",
                         "height": "70px",
                         "paddingTop": "15px"
                     },
@@ -66,7 +67,7 @@
                                 "gravity": "center"
                             }
                         ],
-                        "offsetBottom": "240px",
+                        "offsetBottom": "270px",
                         "offsetStart": "240px",
                         "width": "40px",
                         "height": "24px",
@@ -78,7 +79,8 @@
                             "startColor": "#FF8A00",
                             "endColor": "#ED4444",
                             "centerColor": "#FF290C"
-                        }
+                        },
+                        "paddingAll": "1px"
                     }
                 ],
                 "height": "180px"
@@ -92,8 +94,8 @@
                         "type": "text",
                         "wrap": true,
                         "weight": "bold",
-                        "size": "xl",
-                        "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)"
+                        "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)",
+                        "size": "16px"
                     },
                     {
                         "type": "box",
@@ -117,12 +119,18 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "฿1,000 บาท / ถัง ",
+                                "text": "฿1,000 บาท ",
                                 "wrap": true,
                                 "weight": "regular",
                                 "flex": 0,
                                 "color": "#ED4444",
                                 "size": "19px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "/ ถัง",
+                                "color": "#808285",
+                                "size": "14px"
                             }
                         ]
                     },
@@ -132,7 +140,9 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "ราคา ณ วันที่ 22 พ.ย. 2021"
+                                "text": "ราคา ณ วันที่ 22 พ.ย. 2021",
+                                "color": "#808285",
+                                "size": "14px"
                             }
                         ]
                     },
@@ -143,32 +153,33 @@
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/ynXV8ia.png",
-                                "aspectRatio": "1:1",
+                                "aspectRatio": "1.5:1",
                                 "size": "3xl"
                             },
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/vVcsjMQ.png",
                                 "position": "relative",
-                                "aspectRatio": "1:1",
+                                "aspectRatio": "1:1.5",
                                 "size": "xxl",
-                                "offsetStart": "115px"
+                                "offsetStart": "130px"
                             },
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/OabotYy.png",
                                 "size": "xxl",
-                                "aspectRatio": "1:1",
-                                "offsetStart": "120px"
+                                "aspectRatio": "1:1.5",
+                                "offsetStart": "135px"
                             },
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/RHJXfvA.png",
                                 "size": "xxl",
-                                "aspectRatio": "1:1",
-                                "offsetStart": "125px"
+                                "aspectRatio": "1:1.5",
+                                "offsetStart": "140px"
                             }
-                        ]
+                        ],
+                        "width": "600px"
                     }
                 ]
             },
@@ -178,18 +189,24 @@
                 "spacing": "sm",
                 "contents": [
                     {
-                        "type": "button",
-                        "action": {
-                            "type": "uri",
-                            "label": "เลือก",
-                            "uri": "https://linecorp.com"
-                        },
+                        "type": "text",
+                        "text": "คลิกดูสินค้า",
+                        "size": "18px",
                         "color": "#FFFFFF",
-                        "height": "sm"
+                        "weight": "bold",
+                        "style": "normal",
+                        "align": "center",
+                        "gravity": "center",
+                        "offsetTop": "10px"
                     }
                 ],
                 "backgroundColor": "#ED1C24",
-                "height": "65px"
+                "height": "65px",
+                "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "http://linecorp.com/"
+                }
             }
         },
         {
