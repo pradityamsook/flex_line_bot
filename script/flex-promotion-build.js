@@ -1,23 +1,24 @@
-var dayjs = require("dayjs");
-var utc = require("dayjs/plugin/utc");
-var timezone = require("dayjs/plugin/timezone"); // dependent on utc plugin
-require("dayjs/locale/th");
+// var dayjs = require("dayjs");
+// var utc = require("dayjs/plugin/utc");
+// var timezone = require("dayjs/plugin/timezone"); // dependent on utc plugin
+// require("dayjs/locale/th");
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Asia/Bangkok");
+// dayjs.extend(utc);
+// dayjs.extend(timezone);
+// dayjs.tz.setDefault("Asia/Bangkok");
 
 var data = require("../json/api-promotion-data-set.json");
 
 var valid_from;
 for (let index = 0; index < data.data.length; index++) {
-  valid_from = formatDate(data.data[index].valid_from).split(" ");
-  console.log(`${valid_from[0]} - ${formatDate(data.data[index].valid_to)}`);
+  valid_from = data.data[index].valid_from.split(" ");
+  valid_from = valid_from[0];
+  console.log(`${valid_from.split("-")}`);
 }
 
-function formatDate(date) {
-  return dayjs(date).locale("th").add(543, "year").format("DD MMM YYYY");
-}
+// function formatDate(date) {
+//   return dayjs(date).locale("th").add(543, "year").format("DD MMM YYYY");
+// }
 // const item = [];
 // for (let index = 0; index < data.data.length; index++) {
 //   var carousel = {

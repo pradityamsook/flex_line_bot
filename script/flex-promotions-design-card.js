@@ -14,7 +14,7 @@ preContents.map((v, index) => {
           url: "https://i.imgur.com/VrLnVgK.jpg",
           size: "full",
           aspectMode: "cover",
-          aspectRatio: "1:1",
+          aspectRatio: "4:3",
           gravity: "top",
         },
         {
@@ -25,15 +25,15 @@ preContents.map((v, index) => {
               type: "text",
               text: "Lorem ipsum dolor sit amet, cons",
               gravity: "center",
-              align: "center",
+              align: "start",
               weight: "bold",
               size: "14px",
               style: "normal",
             },
           ],
-          paddingStart: "20px",
-          paddingEnd: "20px",
           offsetTop: "10px",
+          paddingStart: "16px",
+          paddingEnd: "16px",
         },
         {
           type: "box",
@@ -41,34 +41,25 @@ preContents.map((v, index) => {
           contents: [
             {
               type: "text",
-              text: "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
               maxLines: 5,
               size: "12px",
               color: "#808285",
+              adjustMode: "shrink-to-fit",
               wrap: true,
+              text: 'The JSON is data only, and if you include a comment, then it will be data too.  You could have a designated data element called "_comment" (or something) that should be ignored by apps that use the JSON data.  You would probably be better having the comment in the processes that generates/receives the JSON, as they are supposed to know what the JSON data will be in advance, or at least the structure of it.',
             },
-          ],
-          paddingAll: "20px",
-          position: "relative",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "vertical",
-          contents: [
             {
-              type: "text",
-              text: "1 - 30 พ.ย. 2564",
-              offsetStart: "10px",
-              color: "#808285",
-              size: "12px",
-              margin: "7.09091px",
+              type: "box",
+              layout: "vertical",
+              contents: [],
+              paddingStart: "16px",
+              paddingEnd: "16px",
+              paddingTop: "5px",
             },
           ],
-          paddingAll: "10px",
-          offsetBottom: "10px",
+          paddingStart: "16px",
+          paddingEnd: "16px",
+          paddingTop: "12px",
         },
       ],
       paddingAll: "0px",
@@ -82,6 +73,25 @@ preContents.map((v, index) => {
           layout: "vertical",
           contents: [
             {
+              type: "separator",
+            },
+            {
+              type: "text",
+              text: "1 - 30 พ.ย. 2564",
+              color: "#808285",
+              size: "12px",
+              margin: "7.09091px",
+              offsetBottom: "5px",
+            },
+          ],
+          offsetBottom: "5px",
+          paddingStart: "5px",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
               type: "text",
               text: "รายละเอียด",
               gravity: "center",
@@ -121,18 +131,18 @@ preContents.map((v, index) => {
           borderColor: "#ED1C24",
           backgroundColor: "#ED1C24",
           height: "50px",
-          offsetTop: "5px",
           action: {
             type: "uri",
             label: "action",
             uri: "http://linecorp.com/",
           },
+          offsetTop: "5px",
         },
       ],
       backgroundColor: "#FFFFFF",
-      height: "120px",
+      height: "150px",
       position: "relative",
-      offsetBottom: "10px",
+      offsetBottom: "0px",
     },
   };
   let promotionBodyContent = {
@@ -146,7 +156,7 @@ preContents.map((v, index) => {
           url: "https://i.imgur.com/VrLnVgK.jpg",
           size: "full",
           aspectMode: "cover",
-          aspectRatio: "1:1",
+          aspectRatio: "4:3",
           gravity: "top",
         },
         {
@@ -155,15 +165,43 @@ preContents.map((v, index) => {
           contents: [
             {
               type: "text",
-              text: "โปรโมชั่นอื่น ๆ",
+              text: "​",
               gravity: "center",
-              align: "center",
+              align: "start",
               weight: "bold",
               size: "14px",
               style: "normal",
             },
           ],
-          paddingTop: "50px",
+          offsetTop: "10px",
+          paddingStart: "16px",
+          paddingEnd: "16px",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "​",
+              maxLines: 5,
+              size: "12px",
+              color: "#808285",
+              adjustMode: "shrink-to-fit",
+              wrap: true,
+            },
+            {
+              type: "box",
+              layout: "vertical",
+              contents: [],
+              paddingStart: "16px",
+              paddingEnd: "16px",
+              paddingTop: "5px",
+            },
+          ],
+          paddingStart: "16px",
+          paddingEnd: "16px",
+          paddingTop: "12px",
         },
       ],
       paddingAll: "0px",
@@ -172,6 +210,47 @@ preContents.map((v, index) => {
       type: "box",
       layout: "vertical",
       contents: [
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "​",
+              color: "#808285",
+              size: "12px",
+              margin: "7.09091px",
+              offsetBottom: "5px",
+            },
+          ],
+          offsetBottom: "5px",
+          paddingStart: "5px",
+        },
+        {
+          type: "box",
+          layout: "vertical",
+          contents: [
+            {
+              type: "text",
+              text: "รายละเอียด",
+              gravity: "center",
+              align: "center",
+              offsetTop: "15px",
+              color: "#FFFFFF",
+              weight: "bold",
+              size: "16px",
+            },
+          ],
+          cornerRadius: "10px",
+          borderColor: "#FFFFFF",
+          backgroundColor: "#FFFFFF",
+          height: "50px",
+          action: {
+            type: "uri",
+            label: "action",
+            uri: "http://linecorp.com/",
+          },
+        },
         {
           type: "box",
           layout: "vertical",
@@ -191,32 +270,38 @@ preContents.map((v, index) => {
           borderColor: "#ED1C24",
           backgroundColor: "#ED1C24",
           height: "50px",
-          offsetTop: "30px",
+          action: {
+            type: "uri",
+            label: "action",
+            uri: "http://linecorp.com/",
+          },
+          offsetTop: "5px",
         },
       ],
       backgroundColor: "#FFFFFF",
-      height: "120px",
+      height: "150px",
       position: "relative",
-      offsetBottom: "10px",
-      justifyContent: "center",
+      offsetBottom: "0px",
     },
   };
-  bodyContent.footer.contents[0].action.uri = v.hero.url;
+  bodyContent.footer.contents[1].action.uri = v.hero.url;
   bodyContent.body.contents[0].url = v.hero.url;
 
-  // if (condition) {
-  //   footer.contents.splice(1, 1);
-  //   footer.contents[0].offsetTop = "55px";
-  // }
-
   if (index === preContents.length - 1) {
-    promotionBodyContent.footer.contents[0].action.label = "รายละเอียด";
+    // promotionBodyContent.footer.contents[0].contents[0].text = "รายละเอียด";
     //   v.footer.contents[1].action.label;
     promotionBodyContent.body.contents[0].url = v.hero.url;
     newData.push(promotionBodyContent);
   } else {
     bodyContent.body.contents[0].url = v.hero.url; //set url image
     bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
+
+    var details = v.body.contents[1].text.split("|");
+    if (details[0] === "") {
+      details[0] = "​";
+    }
+    bodyContent.body.contents[2].contents[0].text = details[0]; // details promotion
+    bodyContent.footer.contents[1].action.uri = details[2]; // url button go to mew page
     // if (setDataBody.length === 1)
     //   bodyContent.body.contents[4].contents.text = v.body.contents[1].text;
     // else bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
