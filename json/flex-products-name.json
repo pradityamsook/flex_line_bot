@@ -11,28 +11,35 @@
                         "type": "image",
                         "url": "https://i.imgur.com/Hy7OVI5.png",
                         "size": "full",
-                        "aspectRatio": "20:13"
+                        "aspectRatio": "4:3"
                     },
                     {
                         "type": "box",
                         "layout": "baseline",
                         "contents": [
                             {
+                                "type": "icon",
+                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                                "offsetTop": "5px",
+                                "offsetStart": "-65px"
+                            },
+                            {
                                 "type": "text",
-                                "text": "จัดส่งภายใน 15 วัน",
+                                "text": "จัดส่งใน 15 วัน",
                                 "color": "#FFFFFF",
-                                "offsetStart": "10px",
+                                "offsetStart": "25px",
                                 "weight": "bold",
                                 "position": "absolute",
-                                "offsetTop": "4px"
+                                "offsetTop": "6px",
+                                "size": "14px"
                             }
                         ],
-                        "offsetBottom": "50px",
+                        "offsetBottom": "40px",
                         "cornerRadius": "5px",
                         "backgroundColor": "#000000AA",
                         "borderColor": "#000000AA",
                         "width": "150px",
-                        "offsetStart": "132px",
+                        "offsetStart": "143px",
                         "height": "30px",
                         "justifyContent": "center",
                         "alignItems": "center"
@@ -51,7 +58,7 @@
                                 "offsetTop": "-10px"
                             }
                         ],
-                        "offsetBottom": "210px",
+                        "offsetBottom": "258px",
                         "height": "70px",
                         "paddingTop": "15px"
                     },
@@ -64,11 +71,13 @@
                                 "text": "-40%",
                                 "color": "#FFFFFF",
                                 "align": "center",
-                                "gravity": "center"
+                                "gravity": "center",
+                                "size": "12px",
+                                "offsetTop": "3px"
                             }
                         ],
-                        "offsetBottom": "270px",
-                        "offsetStart": "240px",
+                        "offsetBottom": "320px",
+                        "offsetStart": "253px",
                         "width": "40px",
                         "height": "24px",
                         "cornerRadius": "4px",
@@ -83,7 +92,7 @@
                         "paddingAll": "1px"
                     }
                 ],
-                "height": "180px"
+                "height": "220px"
             },
             "body": {
                 "type": "box",
@@ -95,7 +104,8 @@
                         "wrap": true,
                         "weight": "bold",
                         "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)",
-                        "size": "16px"
+                        "size": "16px",
+                        "offsetBottom": "10px"
                     },
                     {
                         "type": "box",
@@ -103,15 +113,16 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "฿1,023 บาท / ถัง ",
+                                "text": "฿1,023 / ถัง ",
                                 "wrap": true,
-                                "weight": "regular",
+                                "weight": "bold",
                                 "flex": 0,
                                 "decoration": "line-through",
                                 "color": "#BCBEC0",
                                 "size": "14px"
                             }
-                        ]
+                        ],
+                        "offsetBottom": "10px"
                     },
                     {
                         "type": "box",
@@ -119,20 +130,22 @@
                         "contents": [
                             {
                                 "type": "text",
-                                "text": "฿1,000 บาท ",
+                                "text": "฿1,000 ",
                                 "wrap": true,
-                                "weight": "regular",
+                                "weight": "bold",
                                 "flex": 0,
                                 "color": "#ED4444",
                                 "size": "19px"
                             },
                             {
                                 "type": "text",
-                                "text": "/ ถัง",
+                                "text": "⠀/ ถัง",
                                 "color": "#808285",
-                                "size": "14px"
+                                "size": "14px",
+                                "weight": "bold"
                             }
-                        ]
+                        ],
+                        "offsetBottom": "10px"
                     },
                     {
                         "type": "box",
@@ -144,7 +157,8 @@
                                 "color": "#808285",
                                 "size": "14px"
                             }
-                        ]
+                        ],
+                        "offsetBottom": "10px"
                     },
                     {
                         "type": "box",
@@ -153,14 +167,15 @@
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/ynXV8ia.png",
-                                "aspectRatio": "1.5:1",
-                                "size": "3xl"
+                                "aspectRatio": "4:3",
+                                "size": "3xl",
+                                "offsetTop": "4px"
                             },
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/vVcsjMQ.png",
                                 "position": "relative",
-                                "aspectRatio": "1:1.5",
+                                "aspectRatio": "1:1.2",
                                 "size": "xxl",
                                 "offsetStart": "130px"
                             },
@@ -168,18 +183,19 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/OabotYy.png",
                                 "size": "xxl",
-                                "aspectRatio": "1:1.5",
+                                "aspectRatio": "1:1.2",
                                 "offsetStart": "135px"
                             },
                             {
                                 "type": "icon",
                                 "url": "https://i.imgur.com/RHJXfvA.png",
                                 "size": "xxl",
-                                "aspectRatio": "1:1.5",
+                                "aspectRatio": "1:1.2",
                                 "offsetStart": "140px"
                             }
                         ],
-                        "width": "600px"
+                        "width": "600px",
+                        "offsetBottom": "10px"
                     }
                 ]
             },
