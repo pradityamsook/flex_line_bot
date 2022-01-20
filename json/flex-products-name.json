@@ -35,12 +35,12 @@
                                 "size": "14px"
                             }
                         ],
-                        "offsetBottom": "40px",
+                        "offsetBottom": "35px",
                         "cornerRadius": "5px",
                         "backgroundColor": "#000000AA",
                         "borderColor": "#000000AA",
                         "width": "140px",
-                        "offsetStart": "143px",
+                        "offsetStart": "153px",
                         "height": "30px",
                         "justifyContent": "center",
                         "alignItems": "center"
