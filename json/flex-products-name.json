@@ -19,15 +19,16 @@
                         "contents": [
                             {
                                 "type": "icon",
-                                "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
-                                "offsetTop": "5px",
-                                "offsetStart": "-65px"
+                                "url": "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "-50px",
+                                "aspectRatio": "1:1"
                             },
                             {
                                 "type": "text",
                                 "text": "จัดส่งใน 15 วัน",
                                 "color": "#FFFFFF",
-                                "offsetStart": "25px",
+                                "offsetStart": "40px",
                                 "weight": "bold",
                                 "position": "absolute",
                                 "offsetTop": "6px",
@@ -38,7 +39,7 @@
                         "cornerRadius": "5px",
                         "backgroundColor": "#000000AA",
                         "borderColor": "#000000AA",
-                        "width": "150px",
+                        "width": "140px",
                         "offsetStart": "143px",
                         "height": "30px",
                         "justifyContent": "center",
