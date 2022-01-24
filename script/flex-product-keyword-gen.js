@@ -76,7 +76,7 @@ preContents.map((v, index) => {
           cornerRadius: "5px",
           backgroundColor: "#000000AA",
           borderColor: "#000000AA",
-          width: "160px",
+          width: "170px",
           offsetStart: "120px",
           height: "30px",
           justifyContent: "center",
