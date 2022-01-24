@@ -24,6 +24,8 @@ for (let index = 0; index < data.data.products.length; index++) {
   var net_price = data.data.products[index].net_price;
   var discount_percentage = data.data.products[index].discount_percentage;
   var unit = data.data.products[index].unit;
+  var eta_text = data.data.products[index].eta_text;
+  var product_url = data.data.products[index].product_url;
   var sale_price = net_price;
 
   if (data.data.products[index].is_changfamily === "true") {
@@ -67,6 +69,8 @@ for (let index = 0; index < data.data.products.length; index++) {
     is_tags += `${tagsJson[5].Image}|`;
   }
 
+  is_tags += `${tagsJson[6].Image}|`;
+
   var carousels = {
     label: data.data.products[index].product_name,
     subtitle:
@@ -75,7 +79,9 @@ for (let index = 0; index < data.data.products.length; index++) {
       `|${formatMoneyTHB(base_price)}` +
       `|${formatMoneyTHB(net_price)}` +
       `|${discount_percentage}` +
-      `|${unit}`,
+      `|${unit}` +
+      `|${eta_text}` +
+      `|${product_url}`,
     img: data.data.products[index].product_image,
     btns: "คลิกดูสินค้า",
     link: data.data.products[index].product_url,
