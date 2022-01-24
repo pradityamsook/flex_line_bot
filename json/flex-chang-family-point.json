@@ -103,13 +103,15 @@
                 "contents": [
                   {
                     "type": "text",
-                    "text": "0",
+                    "text": "1,000,000",
                     "size": "28px",
                     "color": "#FFFFFF",
+                    "align": "start",
+                    "margin": "0px",
+                    "weight": "bold",
                     "flex": 0,
-                    "align": "center",
-                    "margin": "85px",
-                    "weight": "bold"
+                    "gravity": "center",
+                    "adjustMode": "shrink-to-fit"
                   },
                   {
                     "type": "text",
@@ -120,9 +122,10 @@
                     "align": "center",
                     "weight": "bold",
                     "gravity": "center",
-                    "margin": "18px"
+                    "margin": "10px"
                   }
-                ]
+                ],
+                "justifyContent": "center"
               },
               {
                 "type": "box",
@@ -130,11 +133,12 @@
                 "contents": [
                   {
                     "type": "text",
-                    "text": "0",
+                    "text": "1,000",
                     "size": "12px",
                     "color": "#FFFFFF",
                     "margin": "45px",
-                    "flex": 0
+                    "flex": 0,
+                    "adjustMode": "shrink-to-fit"
                   },
                   {
                     "type": "text",
@@ -198,11 +202,11 @@
                 "contents": [
                   {
                     "type": "text",
-                    "text": "999,999",
+                    "text": "1,000,000",
                     "size": "28px",
                     "color": "#FFFFFF",
                     "weight": "bold",
-                    "margin": "90px",
+                    "margin": "0px",
                     "position": "absolute",
                     "align": "center",
                     "adjustMode": "shrink-to-fit"
@@ -216,10 +220,12 @@
                     "position": "relative",
                     "decoration": "none",
                     "gravity": "center",
-                    "weight": "bold"
+                    "weight": "bold",
+                    "offsetBottom": "6px"
                   }
                 ],
-                "height": "50px"
+                "height": "50px",
+                "justifyContent": "center"
               }
             ],
             "margin": "9px"
@@ -354,9 +360,10 @@
                     "size": "10px",
                     "color": "#CD242B",
                     "flex": 0,
-                    "align": "start",
+                    "align": "center",
                     "margin": "1px",
-                    "weight": "regular"
+                    "weight": "regular",
+                    "wrap": true
                   }
                 ],
                 "margin": "8px"

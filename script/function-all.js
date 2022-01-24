@@ -1,6 +1,6 @@
 /*
  * function format money to Thai bath
- * e.g. 1996 -> ฿1,996
+ * e.g. 1996 -> ฿1,996.00
  */
 function formatMoneyTHB(money) {
   return money.toLocaleString("th-TH", {
@@ -40,4 +40,12 @@ function toThaiDateString(date) {
   let second = date.getSeconds().toString().padStart(2, "0");
 
   return `${numOfDay} ${month} ${year}`;
+}
+
+/**
+ * function format number to add commas without dot-number
+ * e.g. 1996 -> 1,996
+ */
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

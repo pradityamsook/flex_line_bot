@@ -117,13 +117,15 @@ preContents.map((v) => {
                   contents: [
                     {
                       type: "text",
-                      text: "7,950",
+                      text: "1,000,000",
                       size: "28px",
                       color: "#FFFFFF",
-                      flex: 0,
-                      align: "center",
-                      margin: "80px",
+                      align: "start",
+                      margin: "0px",
                       weight: "bold",
+                      flex: 0,
+                      gravity: "center",
+                      adjustMode: "shrink-to-fit",
                     },
                     {
                       type: "text",
@@ -134,9 +136,10 @@ preContents.map((v) => {
                       align: "center",
                       weight: "bold",
                       gravity: "center",
-                      margin: "18px",
+                      margin: "10px",
                     },
                   ],
+                  justifyContent: "center",
                 },
                 {
                   type: "box",
@@ -144,11 +147,12 @@ preContents.map((v) => {
                   contents: [
                     {
                       type: "text",
-                      text: "350",
+                      text: "1,000",
                       size: "12px",
                       color: "#FFFFFF",
-                      margin: "35px",
+                      margin: "45px",
                       flex: 0,
+                      adjustMode: "shrink-to-fit",
                     },
                     {
                       type: "text",
@@ -207,24 +211,35 @@ preContents.map((v) => {
               layout: "horizontal",
               contents: [
                 {
-                  type: "text",
-                  text: "5,790",
-                  size: "28px",
-                  color: "#FFFFFF",
-                  align: "center",
-                  margin: "90px",
-                  weight: "bold",
-                },
-                {
-                  type: "text",
-                  text: "บาท",
-                  size: "16px",
-                  color: "#FFFFFF",
-                  align: "end",
-                  position: "relative",
-                  decoration: "none",
-                  gravity: "center",
-                  weight: "bold",
+                  type: "box",
+                  layout: "horizontal",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "1,000,000",
+                      size: "28px",
+                      color: "#FFFFFF",
+                      weight: "bold",
+                      margin: "0px",
+                      position: "absolute",
+                      align: "center",
+                      adjustMode: "shrink-to-fit",
+                    },
+                    {
+                      type: "text",
+                      text: "บาท",
+                      size: "20px",
+                      color: "#FFFFFF",
+                      align: "end",
+                      position: "relative",
+                      decoration: "none",
+                      gravity: "center",
+                      weight: "bold",
+                      offsetBottom: "6px",
+                    },
+                  ],
+                  height: "50px",
+                  justifyContent: "center",
                 },
               ],
               margin: "9px",
@@ -359,9 +374,10 @@ preContents.map((v) => {
                       size: "10px",
                       color: "#CD242B",
                       flex: 0,
-                      align: "start",
+                      align: "center",
                       margin: "1px",
                       weight: "regular",
+                      wrap: true,
                     },
                   ],
                   margin: "8px",
@@ -417,7 +433,8 @@ preContents.map((v) => {
   bodyContent.body.contents[1].contents[0].contents[1].contents[0].text =
     dataContent[2]; // expired point
   bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${dataContent[4]}/${dataContent[3]}`; // expired date point
-  bodyContent.body.contents[1].contents[2].contents[0].text = dataContent[5]; //total balance
+  bodyContent.body.contents[1].contents[2].contents[0].contents[0].text =
+    dataContent[5]; //total balance
 
   newData.push(bodyContent);
 });
