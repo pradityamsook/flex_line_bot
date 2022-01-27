@@ -1,4 +1,4 @@
-// node.warn(msg);
+node.warn(msg);
 
 function formatMoneyTHB(money) {
   return money.toLocaleString("th-TH", {
@@ -6,11 +6,18 @@ function formatMoneyTHB(money) {
     currency: "THB",
   });
 }
+let data = {};
+if (
+  msg.context.search_product.products &&
+  msg.context.search_product.products.length > 0
+) {
+  data = msg.context.search_product.products;
+} else {
+  data = msg.context.search_similar_products.products;
+}
 
-let data = JSON.parse(msg.data);
-let getTags = msg.product_tags.hits; // data from catalogue(entity).
 // node.warn(data);
-
+let getTags = msg.product_tags.hits; // data from catalogue(entity).
 var tagsJson = [];
 for (let index = 0; index < getTags.length; index++) {
   //use data from catalogue for inplement image on flex messages.
@@ -19,60 +26,65 @@ for (let index = 0; index < getTags.length; index++) {
 
 var items = [];
 let is_tags = "search product keyword|";
-for (let index = 0; index < data.data.products.length; index++) {
-  var base_price = data.data.products[index].base_price;
-  var net_price = data.data.products[index].net_price;
-  var discount_percentage = data.data.products[index].discount_percentage;
-  var unit = data.data.products[index].unit;
-  var eta_text = data.data.products[index].eta_text;
-  var product_url = data.data.products[index].product_url;
+for (let index = 0; index <= data.length && index <= 9; index++) {
+  var base_price = data[index].base_price;
+  var net_price = data[index].net_price;
+  var discount_percentage = data[index].discount_percentage;
+  var unit = data[index].unit;
+  var eta_text = data[index].eta_text;
+  var product_url = encodeURI(data[index].product_url);
   var sale_price = net_price;
+  var product_image = data[index].product_image;
 
-  if (data.data.products[index].is_changfamily === "true") {
+  if (data[index].is_changfamily === "true") {
     is_tags += "logo|";
     is_tags += `${tagsJson[0].Image}|`;
-  } else if (data.data.products[index].is_changfamily === "false") {
+  } else if (data[index].is_changfamily === "false") {
     is_tags += "!logo|";
     is_tags += `${tagsJson[0].Image}|`;
   }
 
-  if (data.data.products[index].is_special_point === "true") {
+  if (data[index].is_special_point === "true") {
     is_tags += "points|";
     is_tags += `${tagsJson[1].Image}|`;
-  } else if (data.data.products[index].is_special_point === "false") {
+  } else if (data[index].is_special_point === "false") {
     is_tags += "!points|";
     is_tags += `${tagsJson[1].Image}|`;
   }
 
-  if (data.data.products[index].is_wallet === "true") {
+  if (data[index].is_wallet === "true") {
     is_tags += "wallet|";
     is_tags += `${tagsJson[2].Image}|`;
-  } else if (data.data.products[index].is_wallet === "false") {
+  } else if (data[index].is_wallet === "false") {
     is_tags += "!wallet|";
     is_tags += `${tagsJson[2].Image}|`;
   }
 
-  if (data.data.products[index].is_freegoods === "true") {
+  if (data[index].is_freegoods === "true") {
     is_tags += "free goods|";
     is_tags += `${tagsJson[3].Image}|`;
-  } else if (data.data.products[index].is_freegoods === "false") {
+  } else if (data[index].is_freegoods === "false") {
     is_tags += "!free goods|";
     is_tags += `${tagsJson[3].Image}|`;
   }
 
-  if (data.data.products[index].is_flash_sale === "true") {
+  if (data[index].is_flash_sale === "true") {
     is_tags += "flash sale|";
     is_tags += `${tagsJson[5].Image}|`;
     sale_price = (discount_percentage / 100) * net_price + net_price;
-  } else if (data.data.products[index].is_flash_sale === "false") {
+  } else if (data[index].is_flash_sale === "false") {
     is_tags += "!flash sale|";
     is_tags += `${tagsJson[5].Image}|`;
   }
 
   is_tags += `${tagsJson[6].Image}|`;
 
+  product_image === null
+    ? (product_image = `${tagsJson[7].Image}`)
+    : (product_image = product_image);
+
   var carousels = {
-    label: data.data.products[index].product_name,
+    label: data[index].product_name,
     subtitle:
       `${is_tags}` +
       `${formatMoneyTHB(sale_price)}` +
@@ -82,10 +94,18 @@ for (let index = 0; index < data.data.products.length; index++) {
       `|${unit}` +
       `|${eta_text}` +
       `|${product_url}`,
-    img: data.data.products[index].product_image,
+    img: encodeURI(product_image),
     btns: "คลิกดูสินค้า",
-    link: data.data.products[index].product_url,
+    link: data[index].product_url,
   };
+
+  if (index === data.length || index === 9) {
+    carousels.label = `${tagsJson[8].Detail}`;
+    carousels.subtitle = `${tagsJson[8].url}`;
+    carousels.img = `${tagsJson[8].Image}`;
+    carousels.link = `${tagsJson[8].url}`;
+  }
+
   carousels = JSON.parse(JSON.stringify(carousels));
   items.push(carousels);
 }

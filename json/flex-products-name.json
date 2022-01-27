@@ -231,7 +231,7 @@
             "hero": {
                 "type": "image",
                 "size": "full",
-                "aspectRatio": "20:13",
+                "aspectRatio": "4:3",
                 "aspectMode": "cover",
                 "url": "https://i.imgur.com/Hy7OVI5.png"
             },
@@ -287,7 +287,7 @@
             "hero": {
                 "type": "image",
                 "size": "full",
-                "aspectRatio": "20:13",
+                "aspectRatio": "4:3",
                 "aspectMode": "cover",
                 "url": "https://i.imgur.com/tBBRiDI.png"
             },
@@ -300,7 +300,7 @@
                         "type": "text",
                         "wrap": true,
                         "weight": "bold",
-                        "size": "xl",
+                        "size": "16px",
                         "text": "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมด ได้ที่นี่!    "
                     }
                 ]
@@ -311,18 +311,24 @@
                 "spacing": "sm",
                 "contents": [
                     {
-                        "type": "button",
-                        "action": {
-                            "type": "uri",
-                            "label": "เลือก",
-                            "uri": "https://linecorp.com"
-                        },
+                        "type": "text",
+                        "text": "คลิกดูสินค้า",
+                        "size": "18px",
                         "color": "#FFFFFF",
-                        "height": "sm"
+                        "weight": "bold",
+                        "style": "normal",
+                        "align": "center",
+                        "gravity": "center",
+                        "offsetTop": "10px"
                     }
                 ],
                 "backgroundColor": "#ED1C24",
-                "height": "65px"
+                "height": "65px",
+                "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "http://linecorp.com/"
+                }
             }
         }
     ]
