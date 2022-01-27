@@ -34,7 +34,10 @@ let date = new Date();
 
 preContents.map((v, index) => {
   let dataContent = v.body.contents[1].text.split("|");
+  const white =
+    "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
   dataContent.shift();
+
   let bodyContent = {
     type: "bubble",
     hero: {
@@ -313,10 +316,43 @@ preContents.map((v, index) => {
     },
   };
 
+  let etaContent = {
+    type: "box",
+    layout: "baseline",
+    contents: [
+      {
+        type: "icon",
+        url: "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
+        offsetTop: "8px",
+        offsetStart: "-50px",
+        aspectRatio: "1:1",
+      },
+      {
+        type: "text",
+        text: "จัดส่งใน 15 วัน",
+        color: "#FFFFFF",
+        offsetStart: "40px",
+        weight: "bold",
+        position: "absolute",
+        offsetTop: "6px",
+        size: "14px",
+      },
+    ],
+    offsetBottom: "35px",
+    cornerRadius: "5px",
+    backgroundColor: "#000000AA",
+    borderColor: "#000000AA",
+    width: "140px",
+    offsetStart: "153px",
+    height: "30px",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
   if (index === preContents.length - 1) {
     lastContent.hero.url = v.hero.url;
     lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
-    lastContent.footer.contents[0].action.uri = v.body.contents[1].text; // url all products
+    lastContent.footer.action.uri = v.body.contents[1].text; // url all products
     newData.push(JSON.parse(JSON.stringify(lastContent)));
   } else {
     var salePrice = dataContent[dataContent.length - 7];
@@ -326,8 +362,6 @@ preContents.map((v, index) => {
     var unit = dataContent[dataContent.length - 3];
     var eta = dataContent[dataContent.length - 2];
     var url = dataContent[dataContent.length - 1];
-
-    //   bodyContent.footer.contents[0].action.uri = v.hero.url;
     bodyContent.hero.contents[0].url = v.hero.url; //image
     bodyContent.body.contents[0].text = v.body.contents[0].text; //description
     bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount}%`; // percent discount
@@ -335,7 +369,6 @@ preContents.map((v, index) => {
       date
     )}`; // Thai date
     bodyContent.body.contents[1].contents[0].text = `${netPrice} / ${unit}`; // net price
-    bodyContent.hero.contents[1].contents[1].text = eta;
     bodyContent.footer.action.uri = url; // url of products
 
     for (var indexData = 0; indexData < dataContent.length; indexData++) {
@@ -343,28 +376,38 @@ preContents.map((v, index) => {
         // add chang icon
         bodyContent.body.contents[4].contents[0].url =
           dataContent[indexData + 1];
+      } else if (dataContent[indexData] === "!logo") {
+        bodyContent.body.contents[4].contents[0].url = white;
       }
 
       if (dataContent[indexData] === "points") {
         // add points icon
         bodyContent.body.contents[4].contents[1].url =
           dataContent[indexData + 1];
+      } else if (dataContent[indexData] === "!points") {
+        // hide points icon
+        bodyContent.body.contents[4].contents[1].url = white;
       }
 
       if (dataContent[indexData] === "wallet") {
         // add wallet icon
         bodyContent.body.contents[4].contents[2].url =
           dataContent[indexData + 1];
+      } else if (dataContent[indexData] === "!wallet") {
+        // hide wallet icon
+        bodyContent.body.contents[4].contents[2].url = white;
       }
 
       if (dataContent[indexData] === "free goods") {
         // add free goods icon
         bodyContent.body.contents[4].contents[3].url =
           dataContent[indexData + 1];
+      } else if (dataContent[indexData] === "!free goods") {
+        // hide free goods icon
+        bodyContent.body.contents[4].contents[3].url = white;
       }
 
       if (dataContent[indexData] === "flash sale") {
-        // salePrice = (percenDiscount / 100) * netPrice + netPrice; // calculate sale price
         bodyContent.hero.contents[2].contents[0].url =
           dataContent[indexData + 1]; // add flash sale tag's image
         bodyContent.body.contents[1].contents[0].text = `${netPrice}`; // net price if has flash sale
@@ -375,8 +418,14 @@ preContents.map((v, index) => {
         bodyContent.hero.contents.splice(3, 1); // remove percent discount
         bodyContent.body.contents[1].contents[0].text = "​"; // remove net price
         bodyContent.body.contents[2].contents[0].text = `${netPrice}`; // net price
+        bodyContent.body.contents[2].contents[1].text = ` / ${unit}`;
         bodyContent.body.contents[2].contents[0].color = "#000000";
       }
+    }
+    if (eta === "undefined") {
+      bodyContent.hero.contents.splice(1, 1);
+    } else {
+      bodyContent.hero.contents[1].contents[1].text = eta; // in delivery
     }
 
     // if (!v.body.contents[1].text) {
