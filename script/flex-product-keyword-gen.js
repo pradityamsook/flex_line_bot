@@ -202,39 +202,55 @@ preContents.map((v, index) => {
         },
         {
           type: "box",
-          layout: "baseline",
+          layout: "horizontal",
           contents: [
             {
-              type: "icon",
-              url: "https://i.imgur.com/ynXV8ia.png",
-              aspectRatio: "4:3",
-              size: "3xl",
-              offsetTop: "4px",
+              type: "box",
+              layout: "baseline",
+              contents: [
+                {
+                  type: "icon",
+                  url: "https://i.imgur.com/ynXV8ia.png",
+                  aspectRatio: "4:3",
+                  size: "3xl",
+                  offsetTop: "4px",
+                },
+              ],
+              justifyContent: "flex-start",
             },
             {
-              type: "icon",
-              url: "https://i.imgur.com/vVcsjMQ.png",
-              position: "relative",
-              aspectRatio: "1:1.2",
-              size: "xxl",
-              offsetStart: "120px",
-            },
-            {
-              type: "icon",
-              url: "https://i.imgur.com/OabotYy.png",
-              size: "xxl",
-              aspectRatio: "1:1.2",
-              offsetStart: "125px",
-            },
-            {
-              type: "icon",
-              url: "https://i.imgur.com/RHJXfvA.png",
-              size: "xxl",
-              aspectRatio: "1:1.2",
-              offsetStart: "130px",
+              type: "box",
+              layout: "baseline",
+              contents: [
+                {
+                  type: "icon",
+                  url: "https://i.imgur.com/vVcsjMQ.png",
+                  position: "relative",
+                  aspectRatio: "1:1.2",
+                  size: "xxl",
+                  offsetTop: "4px",
+                },
+                {
+                  type: "icon",
+                  url: "https://i.imgur.com/OabotYy.png",
+                  size: "xxl",
+                  aspectRatio: "1:1.2",
+                  offsetTop: "4px",
+                },
+                {
+                  type: "icon",
+                  url: "https://i.imgur.com/RHJXfvA.png",
+                  size: "xxl",
+                  aspectRatio: "1:1.2",
+                  offsetTop: "4px",
+                },
+              ],
+              justifyContent: "flex-end",
+              alignItems: "center",
+              spacing: "4px",
             },
           ],
-          width: "570px",
+          width: "600px",
           offsetBottom: "10px",
         },
       ],
@@ -382,29 +398,29 @@ preContents.map((v, index) => {
 
       if (dataContent[indexData] === "points") {
         // add points icon
-        bodyContent.body.contents[4].contents[1].contenst[0].url =
+        bodyContent.body.contents[4].contents[1].contents[0].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!points") {
         // hide points icon
-        bodyContent.body.contents[4].contents[1].contenst.splice(0, 1);
+        bodyContent.body.contents[4].contents[1].contents.splice(0, 1);
       }
 
       if (dataContent[indexData] === "wallet") {
         // add wallet icon
-        bodyContent.body.contents[4].contents[2].contenst[1].url =
+        bodyContent.body.contents[4].contents[1].contents[1].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!wallet") {
         // hide wallet icon
-        bodyContent.body.contents[4].contents[2].contenst.splice(1, 1);
+        bodyContent.body.contents[4].contents[1].contents.splice(1, 1);
       }
 
       if (dataContent[indexData] === "free goods") {
         // add free goods icon
-        bodyContent.body.contents[4].contents[3].contenst[2].url =
+        bodyContent.body.contents[4].contents[1].contents[2].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!free goods") {
         // hide free goods icon
-        bodyContent.body.contents[4].contents[3].contenst.splice(2, 1);
+        bodyContent.body.contents[4].contents[1].contents.splice(2, 1);
       }
 
       if (dataContent[indexData] === "flash sale") {
