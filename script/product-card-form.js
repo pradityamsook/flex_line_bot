@@ -19,17 +19,24 @@ for (let index = 0; index < data.data.length; index++) {
     indexProd < data.data[index].products.length;
     indexProd++
   ) {
+    var product_image = data.data[index].products[indexProd].product_image;
+    product_image.toString() != "null"
+      ? (product_image = product_image)
+      : (product_image = "https://imgur.com/VCMGiHY.png");
+
     formatData += `
         ${data.data[index].products[indexProd].product_code}|
         ${data.data[index].products[indexProd].product_name}|
         ${data.data[index].products[indexProd].product_type}|
         ${data.data[index].products[indexProd].product_barcode}|
-        ${data.data[index].products[indexProd].product_image}|
+        ${product_image}|
         ${data.data[index].products[indexProd].product_url}|
         ${data.data[index].products[indexProd].product_priority}
     `;
     formatData += "|";
+    formatData += "end_list";
   }
+  formatData += "end_card|";
 }
 var splitDataLayer0 = formatData.split("Products");
 console.log();

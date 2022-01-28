@@ -1,17 +1,11 @@
-// node.warn(msg.payload);
 var getData = msg.payload.messages[0].text.split("|");
-// node.warn(getData);
+
 getData.shift();
-// node.warn(getData.length);
-node.warn(getData);
 
 var newData = [];
-var lastDataContents = [];
-let contents = {
-  type: "carousel",
-  contents: newData,
-};
+var listData = []; // use for last flex's card go to another products in websites.
 
+// loop for add each a product in card
 for (var index = 0; index < getData.length; index++) {
   let indexList = 0;
   var bodyContent = {
@@ -36,11 +30,12 @@ for (var index = 0; index < getData.length; index++) {
           align: "center",
           gravity: "center",
           color: "#FFFFFF",
-          offsetBottom: "10px",
+          offsetBottom: "14px",
+          size: "21px",
           position: "absolute",
         },
       ],
-      height: "40px",
+      height: "55px",
       backgroundColor: "#CD242B",
       justifyContent: "center",
       alignItems: "center",
@@ -54,188 +49,9 @@ for (var index = 0; index < getData.length; index++) {
     body: {
       type: "box",
       layout: "vertical",
-      contents: [
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-        {
-          type: "box",
-          layout: "baseline",
-          contents: [
-            {
-              type: "icon",
-              url: "https://i.imgur.com/pvinl1r.png",
-              aspectRatio: "1:1",
-              size: "40px",
-              offsetTop: "13px",
-            },
-            {
-              type: "text",
-              text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-              align: "center",
-              gravity: "center",
-              adjustMode: "shrink-to-fit",
-              position: "relative",
-              offsetBottom: "15px",
-              size: "13px",
-            },
-          ],
-          spacing: "sm",
-          height: "60px",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        },
-        {
-          type: "separator",
-        },
-      ],
+      contents: [],
+      paddingTop: "2px",
+      height: "530px",
     },
     footer: {
       type: "box",
@@ -277,12 +93,12 @@ for (var index = 0; index < getData.length; index++) {
       {
         type: "text",
         text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-        align: "center",
+        align: "start",
         gravity: "center",
-        adjustMode: "shrink-to-fit",
+
         position: "relative",
-        offsetBottom: "15px",
-        size: "13px",
+        offsetBottom: "10px",
+        size: "9px",
       },
     ],
     spacing: "sm",
@@ -354,73 +170,87 @@ for (var index = 0; index < getData.length; index++) {
     },
   };
 
+  // bodyContent.body.contents = [];
   if (getData[index] === "end_list") {
-    bodyListData.contents[0].url = getData[index - 1];
-    bodyListData.contents[1].text = getData[index - 2];
-    lastDataContents.push(bodyListData);
-    // bodyContent.body.contents.push(lastDataContents);
+    bodyListData.contents[0].url = getData[index - 3].replace(/\s/g, "");
+    bodyListData.contents[1].text = getData[index - 6];
+    listData.push(JSON.parse(JSON.stringify(bodyListData)));
+    //   bodyContent.body.contents
   }
 
   if (getData[index] === "end_card" && index != getData.length - 2) {
-    newData.push(bodyContent);
-    bodyContent.header.contents[1].text = getData[index + 1];
-    bodyContent.footer.contents[0].type.uri = getData[index + 3];
-    // node.warn(`-------${bodyContent.header.contents[1].text}`);
+    bodyContent.header.contents[1].text = getData[index + 2];
+    bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(
+      /\s/g,
+      ""
+    );
+    bodyContent.body.contents = listData;
+    newData.push(JSON.parse(JSON.stringify(bodyContent)));
+    listData = [];
   } else if (index === 0) {
-    bodyContent.header.contents[1].text = getData[0];
-    bodyContent.footer.contents[0].action.uri = getData[2];
-    newData.push(bodyContent);
+    bodyContent.header.contents[1].text = getData[2];
+    bodyContent.footer.contents[0].action.uri = getData[3].replace(/\s/g, "");
+
+    newData.push(JSON.parse(JSON.stringify(bodyContent)));
   } else if (index === getData.length - 1) {
-    newData.push(lastContent);
+    newData.push(JSON.parse(JSON.stringify(lastContent)));
   }
 }
 
-node.warn(lastDataContents);
-// node.warn(lastDataContents);
 msg.payload.messages[0].type = "flex";
 msg.payload.messages[0].altText = "Products";
-msg.payload.messages[0].contents = contents;
 
-for (var index = 0; index < getData.length; index++) {
-  var bodyListData = {
-    type: "box",
-    layout: "baseline",
-    contents: [
-      {
-        type: "icon",
-        url: "https://i.imgur.com/pvinl1r.png",
-        aspectRatio: "1:1",
-        size: "40px",
-        offsetTop: "13px",
-      },
-      {
-        type: "text",
-        text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-        align: "center",
-        gravity: "center",
-        adjustMode: "shrink-to-fit",
-        position: "relative",
-        offsetBottom: "15px",
-        size: "13px",
-      },
-    ],
-    spacing: "sm",
-    height: "60px",
-    alignItems: "center",
-    justifyContent: "flex-start",
-  };
-  var indexContents = 0;
-  if (getData[index] === "end_list") {
-    bodyListData.contents[0].url = getData[index - 1];
-    bodyListData.contents[1].text = getData[index - 2];
-    lastDataContents.push(bodyListData);
-    msg.payload.messages[0].contents.contents[indexContents].body.contents =
-      lastDataContents;
-    indexContents++;
-  }
-}
+// listData = [];
+// for (var index = 0; index < getData.length; index++) {
+//   var bodyListData = {
+//     type: "box",
+//     layout: "baseline",
+//     contents: [
+//       {
+//         type: "icon",
+//         url: "https://i.imgur.com/pvinl1r.png",
+//         aspectRatio: "1:1",
+//         size: "40px",
+//         offsetTop: "8px",
+//       },
+//       {
+//         type: "text",
+//         text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
+//         align: "start",
+//         gravity: "center",
 
+//         position: "relative",
+//         offsetBottom: "10px",
+//         size: "9px",
+//       },
+//     ],
+//     spacing: "sm",
+//     height: "60px",
+//     alignItems: "center",
+//     justifyContent: "flex-start",
+//   };
+//   var indexContents = 0;
+//   if (getData[index] === "end_list") {
+//     bodyListData.contents[0].url = getData[index - 1];
+//     bodyListData.contents[1].text = getData[index - 2];
+//     listData.push(JSON.parse(JSON.stringify(bodyListData)));
+//     for (
+//       var indexContents = 0;
+//       indexContents < msg.payload.messages[0].contents.contents.length - 1;
+//       indexContents++
+//     )
+//       msg.payload.messages[0].contents.contents[indexContents].body.contents =
+//         listData;
+//     listData = [];
+//   }
+// }
+newData.splice(0, 1);
+let contents = {
+  type: "carousel",
+  contents: JSON.parse(JSON.stringify(newData)),
+};
 delete msg.payload.messages[0].text;
-msg.backup_payload = msg.payload;
+msg.payload.messages[0].contents = JSON.parse(JSON.stringify(contents));
+msg.backup_payload = JSON.parse(JSON.stringify(msg.payload));
 node.warn(msg.payload);
 return msg;
