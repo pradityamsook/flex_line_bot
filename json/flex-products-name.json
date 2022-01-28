@@ -163,36 +163,52 @@
                     },
                     {
                         "type": "box",
-                        "layout": "baseline",
+                        "layout": "horizontal",
                         "contents": [
                             {
-                                "type": "icon",
-                                "url": "https://i.imgur.com/ynXV8ia.png",
-                                "aspectRatio": "4:3",
-                                "size": "3xl",
-                                "offsetTop": "4px"
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/ynXV8ia.png",
+                                        "aspectRatio": "4:3",
+                                        "size": "3xl",
+                                        "offsetTop": "4px"
+                                    }
+                                ],
+                                "justifyContent": "flex-start"
                             },
                             {
-                                "type": "icon",
-                                "url": "https://i.imgur.com/vVcsjMQ.png",
-                                "position": "relative",
-                                "aspectRatio": "1:1.2",
-                                "size": "xxl",
-                                "offsetStart": "130px"
-                            },
-                            {
-                                "type": "icon",
-                                "url": "https://i.imgur.com/OabotYy.png",
-                                "size": "xxl",
-                                "aspectRatio": "1:1.2",
-                                "offsetStart": "135px"
-                            },
-                            {
-                                "type": "icon",
-                                "url": "https://i.imgur.com/RHJXfvA.png",
-                                "size": "xxl",
-                                "aspectRatio": "1:1.2",
-                                "offsetStart": "140px"
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/vVcsjMQ.png",
+                                        "position": "relative",
+                                        "aspectRatio": "1:1.2",
+                                        "size": "xxl",
+                                        "offsetTop": "4px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/OabotYy.png",
+                                        "size": "xxl",
+                                        "aspectRatio": "1:1.2",
+                                        "offsetTop": "4px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/RHJXfvA.png",
+                                        "size": "xxl",
+                                        "aspectRatio": "1:1.2",
+                                        "offsetTop": "4px"
+                                    }
+                                ],
+                                "justifyContent": "flex-end",
+                                "alignItems": "center",
+                                "spacing": "4px"
                             }
                         ],
                         "width": "600px",
