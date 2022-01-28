@@ -175,7 +175,6 @@ for (var index = 0; index < getData.length; index++) {
     bodyListData.contents[0].url = getData[index - 3].replace(/\s/g, "");
     bodyListData.contents[1].text = getData[index - 6];
     listData.push(JSON.parse(JSON.stringify(bodyListData)));
-    //   bodyContent.body.contents
   }
 
   if (getData[index] === "end_card" && index != getData.length - 2) {
@@ -200,51 +199,7 @@ for (var index = 0; index < getData.length; index++) {
 msg.payload.messages[0].type = "flex";
 msg.payload.messages[0].altText = "Products";
 
-// listData = [];
-// for (var index = 0; index < getData.length; index++) {
-//   var bodyListData = {
-//     type: "box",
-//     layout: "baseline",
-//     contents: [
-//       {
-//         type: "icon",
-//         url: "https://i.imgur.com/pvinl1r.png",
-//         aspectRatio: "1:1",
-//         size: "40px",
-//         offsetTop: "8px",
-//       },
-//       {
-//         type: "text",
-//         text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-//         align: "start",
-//         gravity: "center",
-
-//         position: "relative",
-//         offsetBottom: "10px",
-//         size: "9px",
-//       },
-//     ],
-//     spacing: "sm",
-//     height: "60px",
-//     alignItems: "center",
-//     justifyContent: "flex-start",
-//   };
-//   var indexContents = 0;
-//   if (getData[index] === "end_list") {
-//     bodyListData.contents[0].url = getData[index - 1];
-//     bodyListData.contents[1].text = getData[index - 2];
-//     listData.push(JSON.parse(JSON.stringify(bodyListData)));
-//     for (
-//       var indexContents = 0;
-//       indexContents < msg.payload.messages[0].contents.contents.length - 1;
-//       indexContents++
-//     )
-//       msg.payload.messages[0].contents.contents[indexContents].body.contents =
-//         listData;
-//     listData = [];
-//   }
-// }
-newData.splice(0, 1);
+newData.splice(0, 1); // remove blank card
 let contents = {
   type: "carousel",
   contents: JSON.parse(JSON.stringify(newData)),
