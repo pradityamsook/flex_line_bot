@@ -288,8 +288,6 @@ preContents.map((v, index) => {
   bodyContent.body.contents[0].url = v.hero.url;
 
   if (index === preContents.length - 1) {
-    // promotionBodyContent.footer.contents[0].contents[0].text = "รายละเอียด";
-    //   v.footer.contents[1].action.label;
     promotionBodyContent.body.contents[0].url = v.hero.url;
     newData.push(promotionBodyContent);
   } else {
@@ -297,30 +295,25 @@ preContents.map((v, index) => {
     bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
 
     var details = v.body.contents[1].text.split("|");
+    // Check if no contents set details as zero space character
     if (details[0] === "") {
       details[0] = "​";
     }
-    bodyContent.body.contents[2].contents[0].text = details[0]; // details promotion
-    bodyContent.footer.contents[1].action.uri = details[2]; // url button go to mew page
-    // if (setDataBody.length === 1)
-    //   bodyContent.body.contents[4].contents.text = v.body.contents[1].text;
-    // else bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
 
-    // if (!v.body.contents[1].text) {
-    //   bodyContent.body.contents.text = "";
-    // } else {
-    //   bodyContent.body.contents[2].contents[0].text = setDataBody[1];
-    // }
+    bodyContent.body.contents[2].contents[0].text = details[0]; // details promotion
+    if (details.length > 3) {
+      // if has object's key promotion_page and promotion_products
+      bodyContent.footer.contents[1].action.uri = details[2]; // url button go to new page of promotion page
+      bodyContent.footer.contents[2].action.uri = details[3]; // url button go to new page of promotion products
+    } else {
+      // but converse of above if object's either
+      bodyContent.footer.contents[2].action.uri = details[2]; // url button go to new page of promotion page or promotion products
+      bodyContent.footer.contents[1].borderColor = "#FFFFFF";
+      bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+    }
+
     newData.push(JSON.parse(JSON.stringify(bodyContent)));
   }
-
-  //   node.warn(v.body.contents[1].text);
-  //   if (!v.body.contents[1].text) {
-  //     bodyContent.body.contents.text = "";
-  //   } else {
-  //     bodyContent.body.contents[2].contents[0].text = v.body.contents[1].text;
-  //   }
-  //   newData.push(bodyContent);
 });
 msg.payload.messages[0].contents.contents = newData;
 msg.backup_payload = JSON.parse(JSON.stringify(msg.payload));

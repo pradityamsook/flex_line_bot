@@ -1,44 +1,52 @@
-// var dayjs = require("dayjs");
-// var utc = require("dayjs/plugin/utc");
-// var timezone = require("dayjs/plugin/timezone"); // dependent on utc plugin
-// require("dayjs/locale/th");
+let datas = JSON.parse(msg.data);
+let promotionData = msg.prompt_plus_promotion.hits[0]._source.item;
+node.warn(datas);
+// node.warn(promotionData);
 
-// dayjs.extend(utc);
-// dayjs.extend(timezone);
-// dayjs.tz.setDefault("Asia/Bangkok");
-
-var data = require("../json/api-promotion-data-set.json");
-
+const items = [];
 var valid_from;
-for (let index = 0; index < data.data.length; index++) {
-  valid_from = data.data[index].valid_from.split(" ");
-  valid_from = valid_from[0];
-  console.log(`${valid_from.split("-")}`);
+var valid_date;
+for (let index = 0; index <= datas.data.length; index++) {
+  // valid_from = formatDate(datas.data[index].valid_from);
+  // valid_date = `${valid_from[0]} - ${formatDate(datas.data[index].valid_to)}`;
+  if (index === datas.data.length) {
+    var carouselsPromotion = {
+      label: promotionData.name,
+      subtitle: promotionData.detail,
+      img: promotionData.image,
+      btns: "รายละเอียด",
+      link: promotionData.url,
+    };
+    items.push(carouselsPromotion);
+  } else {
+    var promotionURL = "|";
+    if (datas.data[index].hasOwnProperty("promotion_page"))
+      promotionURL += `${datas.data[index].promotion_page}|`;
+    if (datas.data[index].hasOwnProperty("promotion_products"))
+      promotionURL += `${datas.data[index].promotion_products}|`;
+    var carouselsCard = {
+      label: datas.data[index].promotion_name,
+      subtitle: `${datas.data[index].promotion_description}|${valid_date}|${promotionURL}`,
+      img: encodeURI(datas.data[index].promotion_banner),
+      btns: "รายละเอียด",
+      link: datas.data[index].promotion_page,
+    };
+    items.push(carouselsCard);
+  }
 }
 
-// function formatDate(date) {
-//   return dayjs(date).locale("th").add(543, "year").format("DD MMM YYYY");
-// }
-// const item = [];
-// for (let index = 0; index < data.data.length; index++) {
-//   var carousel = {
-//     label: data.data[index].promotion_name,
-//     subtitle: `${data.data[index].details}|${data.data[index].promotion_page}`,
-//     img: data.data[index],
-//     btns: "รายละเอียด",
-//     // link: data.data[index].promotion_page,
-//   };
-//   item.push(carousel);
-// }
+// node.warn(items);
 
-// msg.payload = {
-//   config: {
-//     question: "กรุณาลงทะเบียน",
-//   },
-//   info: {
-//     info_format: "items",
-//     question_first: true,
-//     items: item,
-//   },
-// };
-// return msg;
+msg.payload = {
+  info: {
+    info_format: "items",
+    square_image: false,
+    items: items,
+  },
+  config: {
+    combine_output: false,
+  },
+};
+
+// node.warn(msg)
+return msg;
