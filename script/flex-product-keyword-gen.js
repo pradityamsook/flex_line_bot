@@ -374,37 +374,37 @@ preContents.map((v, index) => {
     for (var indexData = 0; indexData < dataContent.length; indexData++) {
       if (dataContent[indexData] === "logo") {
         // add chang icon
-        bodyContent.body.contents[4].contents[0].url =
+        bodyContent.body.contents[4].contents[0].contents[0].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!logo") {
-        bodyContent.body.contents[4].contents[0].url = white;
+        bodyContent.body.contents[4].contents[0].contents.splice(0, 0);
       }
 
       if (dataContent[indexData] === "points") {
         // add points icon
-        bodyContent.body.contents[4].contents[1].url =
+        bodyContent.body.contents[4].contents[1].contenst[0].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!points") {
         // hide points icon
-        bodyContent.body.contents[4].contents[1].url = white;
+        bodyContent.body.contents[4].contents[1].contenst.splice(0, 1);
       }
 
       if (dataContent[indexData] === "wallet") {
         // add wallet icon
-        bodyContent.body.contents[4].contents[2].url =
+        bodyContent.body.contents[4].contents[2].contenst[1].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!wallet") {
         // hide wallet icon
-        bodyContent.body.contents[4].contents[2].url = white;
+        bodyContent.body.contents[4].contents[2].contenst.splice(1, 1);
       }
 
       if (dataContent[indexData] === "free goods") {
         // add free goods icon
-        bodyContent.body.contents[4].contents[3].url =
+        bodyContent.body.contents[4].contents[3].contenst[2].url =
           dataContent[indexData + 1];
       } else if (dataContent[indexData] === "!free goods") {
         // hide free goods icon
-        bodyContent.body.contents[4].contents[3].url = white;
+        bodyContent.body.contents[4].contents[3].contenst.splice(2, 1);
       }
 
       if (dataContent[indexData] === "flash sale") {
