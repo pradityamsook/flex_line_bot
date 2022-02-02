@@ -799,7 +799,7 @@ function trans_flex_pp_promotion(message) {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
             bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
 
-            var details = v.body.contents[1].text.split("|");
+            let details = v.body.contents[1].text.split("|");
             details.shift();
             // Check if no contents set details as zero space character
             if (details[0] === "") {
@@ -1430,6 +1430,7 @@ function trans_flex_point(message) {
     preContents.forEach((v) => {
         let dataContent = v.body.contents[1].text.split("|");
         dataContent.shift();
+        node.warn(dataContent);
         let bodyContent = {
             type: "bubble",
             header: {
@@ -1685,7 +1686,7 @@ function trans_flex_point(message) {
                                                 flex: 0,
                                                 align: "start",
                                                 margin: "10px",
-                                                weight: "regular",
+                                                weight: "bold",
                                             },
                                         ],
                                         margin: "10px",
@@ -1719,7 +1720,7 @@ function trans_flex_point(message) {
                                                 flex: 0,
                                                 align: "start",
                                                 margin: "6px",
-                                                weight: "regular",
+                                                weight: "bold",
                                             },
                                         ],
                                         margin: "12px",
@@ -1731,11 +1732,6 @@ function trans_flex_point(message) {
                                 margin: "sm",
                                 height: "70px",
                                 width: "125px",
-                                action: {
-                                    type: "uri",
-                                    label: "action",
-                                    uri: "http://linecorp.com/",
-                                },
                             },
                         ],
                     },
@@ -1760,7 +1756,7 @@ function trans_flex_point(message) {
                                                 flex: 0,
                                                 align: "center",
                                                 margin: "20px",
-                                                weight: "regular",
+                                                weight: "bold",
                                             },
                                         ],
                                         margin: "10px",
@@ -1788,33 +1784,17 @@ function trans_flex_point(message) {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "ดาวน์โหลดแอปพลิเคชั่น",
-                                                size: "10px",
+                                                text: "ดาวน์โหลดแอปพลิเคชั่น ช้างแฟมิลี่",
+                                                size: "9px",
                                                 color: "#CD242B",
                                                 flex: 0,
                                                 align: "center",
                                                 margin: "1px",
-                                                weight: "regular",
+                                                weight: "bold",
                                                 wrap: true,
                                             },
                                         ],
                                         margin: "8px",
-                                    },
-                                    {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ช้างแฟมิลี่",
-                                                size: "10px",
-                                                color: "#CD242B",
-                                                flex: 0,
-                                                align: "start",
-                                                margin: "30px",
-                                                weight: "regular",
-                                            },
-                                        ],
                                     },
                                 ],
                                 paddingAll: "13px",
@@ -1847,7 +1827,16 @@ function trans_flex_point(message) {
         bodyContent.body.contents[1].contents[0].contents[1].contents[0].text = dataContent[2]; // expired point
         bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${dataContent[4]}/${dataContent[3]}`; // expired date point
         bodyContent.body.contents[1].contents[2].contents[0].contents[0].text = dataContent[5]; //total balance
-        newData.push(bodyContent);
+        bodyContent.body.contents[2].contents[0].contents[0].contents[0].text = dataContent[7]; // btn1
+        bodyContent.body.contents[2].contents[1].contents[0].contents[0].text = dataContent[8]; // btn2
+        bodyContent.body.contents[3].contents[0].contents[0].contents[0].text = dataContent[9]; // btn3
+        bodyContent.body.contents[3].contents[1].contents[0].contents[0].text = dataContent[10]; // btn4
+        node.warn(dataContent[10]);
+        bodyContent.body.contents[2].contents[0].action.uri = encodeURI(dataContent[11]); // url1
+        // bodyContent.body.contents[2].contents[1].action.uri = encodeURI(dataContent[12]); // url2
+        bodyContent.body.contents[3].contents[0].action.uri = encodeURI(dataContent[13]); // url3
+        bodyContent.body.contents[3].contents[1].action.uri = encodeURI(dataContent[14]); // url4
+        newData.push(JSON.parse(JSON.stringify(bodyContent)));
     });
     message.contents.contents = newData;
 }
@@ -1869,7 +1858,7 @@ function trans_flex_promotion(message) {
                         url: "https://i.imgur.com/VrLnVgK.jpg",
                         size: "full",
                         aspectMode: "cover",
-                        aspectRatio: "1:1",
+                        aspectRatio: "4:3",
                         gravity: "top",
                     },
                     {
@@ -1880,13 +1869,15 @@ function trans_flex_promotion(message) {
                                 type: "text",
                                 text: "Lorem ipsum dolor sit amet, cons",
                                 gravity: "center",
-                                align: "center",
+                                align: "start",
                                 weight: "bold",
                                 size: "14px",
                                 style: "normal",
                             },
                         ],
-                        paddingTop: "10px",
+                        offsetTop: "10px",
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
                     },
                     {
                         type: "box",
@@ -1894,35 +1885,24 @@ function trans_flex_promotion(message) {
                         contents: [
                             {
                                 type: "text",
-                                text: "Lorem ipsum dolor sit amet, consectetu adipiscing elit. Proin blandit, odio acoorn suscipit, turpis risus volutpat nulla, utpn dui quis felis. Orci varius natoque penati et magnis dis parturient montes.",
-                                maxLines: 2,
+                                maxLines: 5,
                                 size: "12px",
                                 color: "#808285",
                                 wrap: true,
-                                adjustMode: "shrink-to-fit",
+                                text: 'The JSON is data only, and if you include a comment, then it will be data too.  You could have a designated data element called "_comment" (or something) that should be ignored by apps that use the JSON data.  You would probably be better having the comment in the processes that generates/receives the JSON, as they are supposed to know what the JSON data will be in advance, or at least the structure of it.',
                             },
-                        ],
-                        paddingAll: "7px",
-                        position: "relative",
-                    },
-                    {
-                        type: "separator",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
                             {
-                                type: "text",
-                                text: "1 - 30 พ.ย. 2564",
-                                offsetStart: "10px",
-                                color: "#808285",
-                                size: "12px",
-                                margin: "7.09091px",
+                                type: "box",
+                                layout: "vertical",
+                                contents: [],
+                                paddingStart: "16px",
+                                paddingEnd: "16px",
+                                paddingTop: "5px",
                             },
                         ],
-                        paddingAll: "5px",
-                        offsetBottom: "10px",
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                        paddingTop: "12px",
                     },
                 ],
                 paddingAll: "0px",
@@ -1932,35 +1912,80 @@ function trans_flex_promotion(message) {
                 layout: "vertical",
                 contents: [
                     {
-                        type: "button",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
-                        gravity: "center",
-                        adjustMode: "shrink-to-fit",
-                        style: "primary",
-                        color: "#ED1C24",
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "separator",
+                            },
+                            {
+                                type: "text",
+                                text: "1 - 30 พ.ย. 2564",
+                                color: "#808285",
+                                size: "12px",
+                                margin: "7.09091px",
+                                offsetBottom: "5px",
+                            },
+                        ],
+                        offsetBottom: "5px",
+                        paddingStart: "5px",
                     },
                     {
-                        type: "button",
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "15px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "50px",
                         action: {
                             type: "uri",
                             label: "action",
                             uri: "http://linecorp.com/",
                         },
-                        gravity: "center",
-                        adjustMode: "shrink-to-fit",
-                        style: "primary",
-                        color: "#ED1C24",
-                        offsetTop: "10px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "15px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "50px",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                        offsetTop: "5px",
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "120px",
+                height: "150px",
                 position: "relative",
-                offsetBottom: "10px",
+                offsetBottom: "0px",
             },
         };
 
@@ -1975,7 +2000,7 @@ function trans_flex_promotion(message) {
                         url: "https://i.imgur.com/VrLnVgK.jpg",
                         size: "full",
                         aspectMode: "cover",
-                        aspectRatio: "1:1",
+                        aspectRatio: "4:3",
                         gravity: "top",
                     },
                     {
@@ -1984,15 +2009,43 @@ function trans_flex_promotion(message) {
                         contents: [
                             {
                                 type: "text",
-                                text: "โปรโมชั่นอื่น ๆ",
+                                text: "​",
                                 gravity: "center",
-                                align: "center",
+                                align: "start",
                                 weight: "bold",
                                 size: "14px",
                                 style: "normal",
                             },
                         ],
-                        paddingTop: "50px",
+                        offsetTop: "10px",
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "​",
+                                maxLines: 5,
+                                size: "12px",
+                                color: "#808285",
+                                adjustMode: "shrink-to-fit",
+                                wrap: true,
+                            },
+                            {
+                                type: "box",
+                                layout: "vertical",
+                                contents: [],
+                                paddingStart: "16px",
+                                paddingEnd: "16px",
+                                paddingTop: "5px",
+                            },
+                        ],
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                        paddingTop: "12px",
                     },
                 ],
                 paddingAll: "0px",
@@ -2002,73 +2055,105 @@ function trans_flex_promotion(message) {
                 layout: "vertical",
                 contents: [
                     {
-                        type: "button",
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "​",
+                                color: "#808285",
+                                size: "12px",
+                                margin: "7.09091px",
+                                offsetBottom: "5px",
+                            },
+                        ],
+                        offsetBottom: "5px",
+                        paddingStart: "5px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "15px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#FFFFFF",
+                        backgroundColor: "#FFFFFF",
+                        height: "50px",
                         action: {
                             type: "uri",
                             label: "action",
                             uri: "http://linecorp.com/",
                         },
-                        gravity: "center",
-                        adjustMode: "shrink-to-fit",
-                        style: "primary",
-                        color: "#ED1C24",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "15px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "50px",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                        offsetTop: "5px",
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "120px",
+                height: "150px",
                 position: "relative",
-                offsetBottom: "10px",
-                justifyContent: "center",
+                offsetBottom: "0px",
             },
         };
 
-        let footerContent = {
-            type: "box",
-            layout: "vertical",
-            contents: [
-                {
-                    type: "button",
-                    action: {
-                        type: "uri",
-                        label: "action",
-                        uri: "http://linecorp.com/",
-                    },
-                    gravity: "center",
-                    adjustMode: "shrink-to-fit",
-                    style: "primary",
-                    color: "#ED1C24",
-                },
-            ],
-            backgroundColor: "#FFFFFF",
-            height: "120px",
-            position: "relative",
-            offsetBottom: "10px",
-            justifyContent: "center",
-        };
-
         if (v.footer.contents[0].action.label === "null") {
-            footerContent.contents[0].action.label = v.footer.contents[1].action.label;
-            footerContent.contents[0].action.uri = v.footer.contents[1].action.uri;
-            bodyContent.footer = footerContent;
+            bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
+            bodyContent.footer.contents[1].borderColor = "#FFFFFF";
+            bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+            bodyContent.footer.contents[1].action.uri = encodeURI("https://google.com");
         } else {
-            bodyContent.footer.contents[0].action.label = v.footer.contents[0].action.label;
-            bodyContent.footer.contents[0].action.uri = v.footer.contents[0].action.uri;
-            bodyContent.footer.contents[1].action.label = v.footer.contents[1].action.label;
-            bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri;
+            bodyContent.footer.contents[1].action.label = v.footer.contents[0].action.label;
+            bodyContent.footer.contents[1].action.uri = v.footer.contents[0].action.uri;
+            bodyContent.footer.contents[2].action.label = v.footer.contents[1].action.label;
+            bodyContent.footer.contents[2].action.uri = encodeURI(v.footer.contents[1].action.uri);
         }
 
         if (index === preContents.length - 1) {
-            lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
+            // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
             lastBodyContent.body.contents[0].url = v.hero.url;
-            newData.push(lastBodyContent);
+            lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
+            newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
             bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
-            if (setDataBody.length === 1) bodyContent.body.contents[4].contents.text = v.body.contents[1].text;
-            else bodyContent.body.contents[4].contents[0].text = setDataBody[2]; //set valid date;
+            if (setDataBody.length === 1) bodyContent.body.contents[1].contents[0].text = "​";
+            else bodyContent.footer.contents[0].contents[1].text = setDataBody[2]; //set valid date;
 
             if (!v.body.contents[1].text) {
-                bodyContent.body.contents.text = "";
+                bodyContent.body.contents.text = "​";
             } else {
                 bodyContent.body.contents[2].contents[0].text = setDataBody[1];
             }
@@ -2086,9 +2171,10 @@ function trans_text_to_flex(message) {
 
     // Loop for add each a product in card
     node.error(getData);
-    for (var index = 0; index < getData.length; index++) {
+    let bodyContentTemp = {};
+    for (let index = 0; index < getData.length; index++) {
         let indexList = 0;
-        var bodyContent = {
+        let bodyContent = {
             type: "bubble",
             direction: "ltr",
             size: "kilo",
@@ -2131,7 +2217,7 @@ function trans_text_to_flex(message) {
                 layout: "vertical",
                 contents: [],
                 paddingTop: "2px",
-                height: "530px",
+                height: "380px",
             },
             footer: {
                 type: "box",
@@ -2159,7 +2245,7 @@ function trans_text_to_flex(message) {
             },
         };
 
-        var bodyListData = {
+        let bodyListData = {
             type: "box",
             layout: "baseline",
             contents: [
@@ -2193,7 +2279,11 @@ function trans_text_to_flex(message) {
             },
         };
 
-        var lastContent = {
+        let separator = {
+            type: "separator",
+        };
+
+        let lastContent = {
             type: "bubble",
             direction: "ltr",
             size: "kilo",
@@ -2259,19 +2349,20 @@ function trans_text_to_flex(message) {
         if (getData[index] === "start") {
             bodyContent.header.contents[1].text = getData[index + 2];
             bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(/\s/g, "");
-            bodyContent = JSON.parse(JSON.stringify(bodyContent));
+            bodyContentTemp = JSON.parse(JSON.stringify(bodyContent));
         }
         if (getData[index] === "end_list") {
             bodyListData.contents[0].url = getData[index - 3].replace(/\s/g, "");
             bodyListData.contents[1].text = getData[index - 6];
             bodyListData.action.uri = getData[index - 2];
             listData.push(JSON.parse(JSON.stringify(bodyListData)));
+            listData.push(JSON.parse(JSON.stringify(separator)));
         }
         if (getData[index] === "end_card" && index != getData.length - 2) {
             // bodyContent.header.contents[1].text = getData[index + 2];
             // bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(/\s/g, "");
-            bodyContent.body.contents = JSON.parse(JSON.stringify(listData));
-            newData.push(JSON.parse(JSON.stringify(bodyContent)));
+            bodyContentTemp.body.contents = JSON.parse(JSON.stringify(listData));
+            newData.push(JSON.parse(JSON.stringify(bodyContentTemp)));
             listData = [];
         } else if (index === getData.length - 1) {
             newData.push(JSON.parse(JSON.stringify(lastContent)));
