@@ -81,6 +81,12 @@ function trans_flex_product(message) {
     const preContents = message.contents.contents;
     let newData = [];
     let date = new Date();
+    let countStr = 0;
+
+    //loop for count any card have name string length more than 36 without last card.
+    for (let index = 0; index < preContents.length - 1; index++) {
+        preContents[index].body.contents[0].text.length > 28 ? (countStr += 1) : (countStr = 0);
+    }
 
     preContents.forEach((v, index) => {
         let dataContent = v.body.contents[1].text.split("|");
@@ -195,6 +201,7 @@ function trans_flex_product(message) {
                         text: "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)",
                         size: "16px",
                         offsetBottom: "10px",
+                        maxLines: 2,
                     },
                     {
                         type: "box",
@@ -211,7 +218,7 @@ function trans_flex_product(message) {
                                 size: "14px",
                             },
                         ],
-                        offsetBottom: "10px",
+                        offsetTop: "0px",
                     },
                     {
                         type: "box",
@@ -234,7 +241,7 @@ function trans_flex_product(message) {
                                 weight: "bold",
                             },
                         ],
-                        offsetBottom: "10px",
+                        offsetTop: "0px",
                     },
                     {
                         type: "box",
@@ -247,7 +254,7 @@ function trans_flex_product(message) {
                                 size: "14px",
                             },
                         ],
-                        offsetBottom: "10px",
+                        offsetTop: "0px",
                     },
                     {
                         type: "box",
@@ -300,7 +307,7 @@ function trans_flex_product(message) {
                             },
                         ],
                         width: "600px",
-                        offsetBottom: "10px",
+                        offsetTop: "0px",
                     },
                 ],
             },
@@ -414,6 +421,15 @@ function trans_flex_product(message) {
             alignItems: "center",
         };
 
+        // check any card to string length less than 37 and any card
+        // have string more than 36 then set offsetTop of 20px.
+        if (countStr > 0 && v.body.contents[0].text.length <= 28) {
+            bodyContent.body.contents[1].offsetTop = "20px";
+            bodyContent.body.contents[2].offsetTop = "20px";
+            bodyContent.body.contents[3].offsetTop = "20px";
+            bodyContent.body.contents[4].offsetTop = "20px";
+        }
+
         if (index === preContents.length - 1) {
             lastContent.hero.url = v.hero.url;
             lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
@@ -439,7 +455,6 @@ function trans_flex_product(message) {
                     // add chang icon
                     bodyContent.body.contents[4].contents[0].contents[0].url = dataContent[indexData + 1];
                 } else if (dataContent[indexData] === "!logo") {
-                    node.warn("396");
                     bodyContent.body.contents[4].contents[0].contents.splice(0, 0);
                 }
 
@@ -447,7 +462,6 @@ function trans_flex_product(message) {
                     // add points icon
                     bodyContent.body.contents[4].contents[1].contents[0].url = dataContent[indexData + 1];
                 } else if (dataContent[indexData] === "!points") {
-                    node.warn("405");
                     // hide points icon
                     bodyContent.body.contents[4].contents[1].contents.splice(0, 1);
                 }
@@ -465,7 +479,6 @@ function trans_flex_product(message) {
                     // add free goods icon
                     bodyContent.body.contents[4].contents[1].contents[2].url = dataContent[indexData + 1];
                 } else if (dataContent[indexData] === "!free goods") {
-                    node.warn("425");
                     // hide free goods icon
                     bodyContent.body.contents[4].contents[1].contents.splice(2, 1);
                 }
@@ -506,7 +519,6 @@ function trans_flex_product(message) {
 function trans_flex_pp_promotion(message) {
     const preContents = message.contents.contents;
     let newData = [];
-
     preContents.forEach((v, index) => {
         let bodyContent = {
             type: "bubble",
@@ -750,11 +762,6 @@ function trans_flex_pp_promotion(message) {
                         borderColor: "#FFFFFF",
                         backgroundColor: "#FFFFFF",
                         height: "50px",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
                     },
                     {
                         type: "box",
@@ -793,7 +800,9 @@ function trans_flex_pp_promotion(message) {
         bodyContent.body.contents[0].url = v.hero.url;
 
         if (index === preContents.length - 1) {
+            let getURLFromCatalogue = v.body.contents[1].text.split("|");
             promotionBodyContent.body.contents[0].url = v.hero.url;
+            promotionBodyContent.footer.contents[2].action.uri = encodeURI(getURLFromCatalogue[2]);
             newData.push(promotionBodyContent);
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
@@ -2144,7 +2153,7 @@ function trans_flex_promotion(message) {
         if (index === preContents.length - 1) {
             // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
             lastBodyContent.body.contents[0].url = v.hero.url;
-            lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
+            lastBodyContent.footer.contents[2].action.uri = encodeURI(v.footer.contents[1].action.uri);
             newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
