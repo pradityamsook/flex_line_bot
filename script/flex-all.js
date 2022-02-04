@@ -24,6 +24,8 @@ if (msg.payload.messages) {
                 trans_flex_product(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "pp promotion") {
                 trans_flex_pp_promotion(messages);
+            } else if (check_catalogue[0] && check_catalogue[0] === "chang member") {
+                trans_flex_part_products_member(messages);
             }
         } else if (messages.type == "text") {
             const getData = messages.text.split("|");
@@ -2386,4 +2388,94 @@ function trans_text_to_flex(message) {
     message.type = "flex";
     message.altText = "Products";
     message.contents = JSON.parse(JSON.stringify(contents));
+}
+
+function trans_flex_part_products_member(message) {
+    const preContents = message.contents.contents;
+    let newData = [];
+
+    preContents.forEach((v) => {
+        let bodyContent = {
+            type: "bubble",
+            body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip3.jpg",
+                        size: "full",
+                        aspectMode: "cover",
+                        aspectRatio: "4:3",
+                        gravity: "center",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [],
+                        position: "absolute",
+                        width: "100%",
+                        height: "40%",
+                        offsetBottom: "0px",
+                        offsetStart: "0px",
+                        offsetEnd: "0px",
+                    },
+                    {
+                        type: "box",
+                        layout: "horizontal",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "vertical",
+                                contents: [
+                                    {
+                                        type: "box",
+                                        layout: "horizontal",
+                                        contents: [
+                                            {
+                                                type: "text",
+                                                text: "คลิกเลย",
+                                                size: "12px",
+                                                color: "#ffffff",
+                                                align: "center",
+                                                gravity: "center",
+                                                style: "normal",
+                                            },
+                                        ],
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        cornerRadius: "12px",
+                                        borderColor: "#A7A9AC",
+                                        backgroundColor: "#A7A9AC",
+                                        height: "24.99px",
+                                        width: "78.71px",
+                                        action: {
+                                            type: "uri",
+                                            label: "action",
+                                            uri: "http://linecorp.com/",
+                                        },
+                                    },
+                                ],
+                                spacing: "xs",
+                                justifyContent: "center",
+                                alignItems: "center",
+                            },
+                        ],
+                        position: "absolute",
+                        offsetBottom: "0px",
+                        offsetStart: "0px",
+                        offsetEnd: "0px",
+                        paddingAll: "20px",
+                    },
+                ],
+                paddingAll: "0px",
+            },
+        };
+
+        bodyContent.body.contents[0].url = v.hero.url; // image of card.
+        bodyContent.body.contents[2].contents[0].contents[0].action = JSON.parse(JSON.stringify(v.footer.contents[0].action)); // action button of card
+        newData.push(JSON.parse(JSON.stringify(bodyContent)));
+    });
+
+    message.contents.contents = newData;
 }
