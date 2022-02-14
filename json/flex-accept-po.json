@@ -199,3 +199,560 @@
         }
     }
 }
+/*reference*/
+{
+    "type": "bubble",
+    "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "image",
+                "url": "https://i.imgur.com/vRXUCaq.png",
+                "aspectRatio": "3:1",
+                "aspectMode": "cover",
+                "size": "250px"
+            }
+        ],
+        "width": "300px",
+        "height": "162px",
+        "justifyContent": "center",
+        "backgroundColor": "#FFF2F2"
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "เลขคำสั่งซื้อ:",
+                        "size": "12px",
+                        "gravity": "center",
+                        "weight": "regular",
+                        "color": "#000000"
+                    },
+                    {
+                        "type": "text",
+                        "text": "`${order_number}`",
+                        "align": "start",
+                        "margin": "20px",
+                        "weight": "bold"
+                    }
+                ],
+                "width": "300px"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดรวม",
+                                "size": "14px",
+                                "color": "#808285",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "color": "#424242",
+                                "align": "end",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "`${net_amount}`"
+                                    }
+                                ]
+                            }
+                        ],
+                        "margin": "7px"
+                    },
+                    {
+                        "type": "separator",
+                        "margin": "xxl"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "โปรโมชั่น",
+                                                "contents": [],
+                                                "size": "14px",
+                                                "flex": 0,
+                                                "color": "#808285"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "ส่วนลด",
+                                                "flex": 0,
+                                                "size": "14px",
+                                                "color": "#808285"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "spacing": "xs"
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "color": "#424242",
+                                "align": "end",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "-฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "`${total_discount}`"
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "55px",
+                        "justifyContent": "center",
+                        "alignItems": "center"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดสุทธิ",
+                                "size": "14px",
+                                "flex": 0,
+                                "color": "#000000"
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "align": "end",
+                                "color": "#424242",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "`${total_sale}`"
+                                    }
+                                ],
+                                "weight": "bold"
+                            }
+                        ],
+                        "alignItems": "center",
+                        "margin": "8px",
+                        "height": "35px"
+                    }
+                ],
+                "paddingAll": "13px",
+                "backgroundColor": "#F8F8F9",
+                "cornerRadius": "10px"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "วันที่สั่งซื้อ",
+                        "size": "12px",
+                        "color": "#808285"
+                    },
+                    {
+                        "type": "text",
+                        "text": "`${newDateTime}`",
+                        "size": "14px",
+                        "align": "end",
+                        "color": "#808285"
+                    }
+                ],
+                "height": "16px",
+                "alignItems": "center",
+                "margin": "13px"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "ผู้แทนจำหน่าย",
+                        "size": "12px",
+                        "color": "#808285",
+                        "flex": 0
+                    },
+                    {
+                        "type": "text",
+                        "text": "`${dealer_name}`",
+                        "size": "14px",
+                        "align": "end",
+                        "color": "#2D2D2D"
+                    }
+                ],
+                "height": "16px",
+                "alignItems": "center",
+                "position": "relative",
+                "flex": 0,
+                "margin": "6px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "`${btn}`",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "https://google.com"
+                        },
+                        "color": "#FFFFFF",
+                        "align": "center",
+                        "size": "16px",
+                        "weight": "bold"
+                    }
+                ],
+                "cornerRadius": "8px",
+                "margin": "14px",
+                "backgroundColor": "#D61F26",
+                "paddingAll": "14px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [],
+                "height": "6px"
+            }
+        ]
+    },
+    "styles": {
+        "footer": {
+            "separator": false
+        }
+    }
+}
+/*useful*/
+{
+    "type": "bubble",
+    "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "image",
+                "url": "https://i.imgur.com/vRXUCaq.png",
+                "aspectRatio": "3:1",
+                "aspectMode": "cover",
+                "size": "250px"
+            }
+        ],
+        "width": "300px",
+        "height": "100px",
+        "justifyContent": "center",
+        "backgroundColor": "#FFF2F2"
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "เลขคำสั่งซื้อ:",
+                        "size": "12px",
+                        "gravity": "center",
+                        "weight": "regular",
+                        "color": "#000000"
+                    },
+                    {
+                        "type": "text",
+                        "text": "255555666",
+                        "align": "start",
+                        "margin": "20px",
+                        "weight": "bold"
+                    }
+                ],
+                "width": "300px"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดรวม",
+                                "size": "14px",
+                                "color": "#808285",
+                                "flex": 0
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "color": "#424242",
+                                "align": "end",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "20,000"
+                                    }
+                                ]
+                            }
+                        ],
+                        "offsetBottom": "5px"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                    {
+                                        "type": "box",
+                                        "layout": "horizontal",
+                                        "contents": [
+                                            {
+                                                "type": "text",
+                                                "text": "โปรโมชั่นส่วนลด",
+                                                "contents": [],
+                                                "size": "14px",
+                                                "flex": 0,
+                                                "color": "#808285"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "spacing": "xs"
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "color": "#424242",
+                                "align": "end",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "-฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "-500"
+                                    }
+                                ]
+                            }
+                        ],
+                        "height": "30px",
+                        "justifyContent": "center",
+                        "alignItems": "center",
+                        "offsetTop": "1px"
+                    },
+                    {
+                        "type": "separator"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ยอดสุทธิ",
+                                "size": "14px",
+                                "flex": 0,
+                                "color": "#000000"
+                            },
+                            {
+                                "type": "text",
+                                "size": "14px",
+                                "align": "end",
+                                "color": "#424242",
+                                "contents": [
+                                    {
+                                        "type": "span",
+                                        "text": "฿"
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": " "
+                                    },
+                                    {
+                                        "type": "span",
+                                        "text": "400,000"
+                                    }
+                                ],
+                                "weight": "bold"
+                            }
+                        ],
+                        "alignItems": "center",
+                        "height": "20px",
+                        "offsetTop": "5px"
+                    }
+                ],
+                "paddingAll": "13px",
+                "backgroundColor": "#F8F8F9",
+                "cornerRadius": "10px",
+                "height": "90px"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "วันที่สั่งซื้อ",
+                        "size": "12px",
+                        "color": "#808285"
+                    },
+                    {
+                        "type": "text",
+                        "text": "`${newDateTime}`",
+                        "size": "14px",
+                        "align": "end",
+                        "color": "#808285"
+                    }
+                ],
+                "height": "16px",
+                "alignItems": "center",
+                "margin": "13px"
+            },
+            {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "ผู้แทนจำหน่าย",
+                        "size": "12px",
+                        "color": "#808285",
+                        "flex": 0
+                    },
+                    {
+                        "type": "text",
+                        "text": "`${dealer_name}`",
+                        "size": "14px",
+                        "align": "end",
+                        "color": "#2D2D2D"
+                    }
+                ],
+                "height": "16px",
+                "alignItems": "center",
+                "position": "relative",
+                "flex": 0,
+                "margin": "6px"
+            },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "`${btn}`",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "https://google.com"
+                        },
+                        "color": "#FFFFFF",
+                        "align": "center",
+                        "size": "16px",
+                        "weight": "bold",
+                        "gravity": "center",
+                        "offsetBottom": "10px"
+                    }
+                ],
+                "cornerRadius": "8px",
+                "margin": "14px",
+                "backgroundColor": "#D61F26",
+                "paddingAll": "14px",
+                "height": "30px"
+            }
+        ]
+    },
+    "styles": {
+        "footer": {
+            "separator": false
+        }
+    }
+}
