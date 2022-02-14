@@ -52,12 +52,14 @@
                             {
                                 "type": "text",
                                 "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-                                "align": "center",
+                                "align": "start",
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
                                 "offsetBottom": "15px",
-                                "size": "13px"
+                                "size": "13px",
+                                "wrap": true,
+                                "maxLines": 2
                             }
                         ],
                         "spacing": "sm",
