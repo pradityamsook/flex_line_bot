@@ -720,8 +720,8 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/pvinl1r.png",
                                 "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
+                                "size": "30px",
+                                "offsetTop": "10px"
                             },
                             {
                                 "type": "text",
@@ -730,13 +730,14 @@
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
-                                "offsetBottom": "15px",
+                                "offsetBottom": "10px",
                                 "size": "13px",
-                                "wrap": true
+                                "wrap": true,
+                                "weight": "bold"
                             }
                         ],
                         "spacing": "sm",
-                        "height": "60px",
+                        "height": "50px",
                         "alignItems": "center",
                         "justifyContent": "flex-start"
                     },
@@ -751,8 +752,8 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/pvinl1r.png",
                                 "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
+                                "size": "30px",
+                                "offsetTop": "10px"
                             },
                             {
                                 "type": "text",
@@ -761,13 +762,14 @@
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
-                                "offsetBottom": "15px",
+                                "offsetBottom": "10px",
                                 "size": "13px",
-                                "wrap": true
+                                "wrap": true,
+                                "weight": "bold"
                             }
                         ],
                         "spacing": "sm",
-                        "height": "60px",
+                        "height": "50px",
                         "alignItems": "center",
                         "justifyContent": "flex-start"
                     },
@@ -782,8 +784,8 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/pvinl1r.png",
                                 "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
+                                "size": "30px",
+                                "offsetTop": "10px"
                             },
                             {
                                 "type": "text",
@@ -792,13 +794,14 @@
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
-                                "offsetBottom": "15px",
+                                "offsetBottom": "10px",
                                 "size": "13px",
-                                "wrap": true
+                                "wrap": true,
+                                "weight": "bold"
                             }
                         ],
                         "spacing": "sm",
-                        "height": "60px",
+                        "height": "50px",
                         "alignItems": "center",
                         "justifyContent": "flex-start"
                     },
@@ -813,8 +816,8 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/pvinl1r.png",
                                 "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
+                                "size": "30px",
+                                "offsetTop": "10px"
                             },
                             {
                                 "type": "text",
@@ -823,13 +826,14 @@
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
-                                "offsetBottom": "15px",
+                                "offsetBottom": "10px",
                                 "size": "13px",
-                                "wrap": true
+                                "wrap": true,
+                                "weight": "bold"
                             }
                         ],
                         "spacing": "sm",
-                        "height": "60px",
+                        "height": "50px",
                         "alignItems": "center",
                         "justifyContent": "flex-start"
                     },
@@ -844,8 +848,8 @@
                                 "type": "icon",
                                 "url": "https://i.imgur.com/pvinl1r.png",
                                 "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
+                                "size": "30px",
+                                "offsetTop": "10px"
                             },
                             {
                                 "type": "text",
@@ -854,51 +858,22 @@
                                 "gravity": "center",
                                 "adjustMode": "shrink-to-fit",
                                 "position": "relative",
-                                "offsetBottom": "15px",
+                                "offsetBottom": "10px",
                                 "size": "13px",
-                                "wrap": true
+                                "wrap": true,
+                                "weight": "bold"
                             }
                         ],
                         "spacing": "sm",
-                        "height": "60px",
-                        "alignItems": "center",
-                        "justifyContent": "flex-start"
-                    },
-                    {
-                        "type": "separator"
-                    },
-                    {
-                        "type": "box",
-                        "layout": "baseline",
-                        "contents": [
-                            {
-                                "type": "icon",
-                                "url": "https://i.imgur.com/pvinl1r.png",
-                                "aspectRatio": "1:1",
-                                "size": "40px",
-                                "offsetTop": "13px"
-                            },
-                            {
-                                "type": "text",
-                                "text": "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
-                                "align": "start",
-                                "gravity": "center",
-                                "adjustMode": "shrink-to-fit",
-                                "position": "relative",
-                                "offsetBottom": "15px",
-                                "size": "13px",
-                                "wrap": true
-                            }
-                        ],
-                        "spacing": "sm",
-                        "height": "60px",
+                        "height": "50px",
                         "alignItems": "center",
                         "justifyContent": "flex-start"
                     },
                     {
                         "type": "separator"
                     }
-                ]
+                ],
+                "height": "255px"
             },
             "footer": {
                 "type": "box",
@@ -912,12 +887,13 @@
                             "uri": "http://linecorp.com/"
                         },
                         "style": "primary",
-                        "color": "#D61F26"
+                        "color": "#D61F26",
+                        "height": "sm"
                     }
                 ],
                 "borderWidth": "8px",
-                "height": "90px",
-                "cornerRadius": "8px"
+                "cornerRadius": "8px",
+                "height": "70px"
             },
             "styles": {
                 "header": {
