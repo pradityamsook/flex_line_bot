@@ -505,39 +505,45 @@
         "justifyContent": "center",
         "backgroundColor": "#FFF2F2"
     },
-    "body": {
+    "footer": {
         "type": "box",
         "layout": "vertical",
         "contents": [
             {
                 "type": "box",
-                "layout": "horizontal",
+                "layout": "vertical",
                 "contents": [
                     {
-                        "type": "text",
-                        "text": "เลขคำสั่งซื้อ:",
-                        "size": "12px",
-                        "gravity": "center",
-                        "weight": "regular",
-                        "color": "#000000"
-                    },
-                    {
-                        "type": "text",
-                        "text": "255555666",
-                        "align": "start",
-                        "margin": "20px",
-                        "weight": "bold"
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "เลขคำสั่งซื้อ:",
+                                "size": "12px",
+                                "gravity": "center",
+                                "weight": "regular",
+                                "color": "#000000",
+                                "offsetStart": "11px"
+                            },
+                            {
+                                "type": "text",
+                                "weight": "bold",
+                                "margin": "20px",
+                                "text": "PO16515",
+                                "flex": 0,
+                                "offsetEnd": "20px"
+                            }
+                        ],
+                        "width": "300px",
+                        "justifyContent": "center",
+                        "alignItems": "center",
+                        "offsetBottom": "3px",
+                        "paddingEnd": "10px"
                     }
                 ],
-                "width": "300px"
-            }
-        ],
-        "height": "50px"
-    },
-    "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
+                "height": "20px"
+            },
             {
                 "type": "box",
                 "layout": "vertical",
@@ -575,9 +581,6 @@
                             }
                         ],
                         "offsetBottom": "5px"
-                    },
-                    {
-                        "type": "separator"
                     },
                     {
                         "type": "box",
@@ -631,9 +634,6 @@
                         "offsetTop": "1px"
                     },
                     {
-                        "type": "separator"
-                    },
-                    {
                         "type": "box",
                         "layout": "horizontal",
                         "contents": [
@@ -674,7 +674,8 @@
                 "paddingAll": "13px",
                 "backgroundColor": "#F8F8F9",
                 "cornerRadius": "10px",
-                "height": "90px"
+                "height": "90px",
+                "offsetBottom": "3px"
             },
             {
                 "type": "box",
@@ -694,10 +695,10 @@
                         "color": "#808285"
                     }
                 ],
-                "height": "16px",
+                "height": "20px",
                 "alignItems": "center",
                 "margin": "13px",
-                "offsetBottom": "5px"
+                "offsetBottom": "10px"
             },
             {
                 "type": "box",
@@ -712,30 +713,41 @@
                     },
                     {
                         "type": "text",
-                        "text": "`${dealer_name}`",
+                        "text": "ผู้สร้าง",
                         "size": "14px",
                         "align": "end",
                         "color": "#2D2D2D"
                     }
                 ],
-                "height": "16px",
+                "height": "20px",
                 "alignItems": "center",
                 "position": "relative",
                 "flex": 0,
                 "margin": "6px",
-                "offsetBottom": "5px"
+                "offsetBottom": "15px"
             },
             {
-                "type": "button",
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "คลิกเลย",
+                        "align": "center",
+                        "gravity": "center",
+                        "size": "14px",
+                        "weight": "bold",
+                        "color": "#FFFFFF"
+                    }
+                ],
+                "backgroundColor": "#D61F26",
+                "borderWidth": "10px",
+                "cornerRadius": "10px",
                 "action": {
                     "type": "uri",
                     "label": "คลิกเลย",
                     "uri": "http://linecorp.com/"
-                },
-                "height": "sm",
-                "style": "primary",
-                "color": "#D61F26",
-                "offsetTop": "5px"
+                }
             }
         ]
     },
