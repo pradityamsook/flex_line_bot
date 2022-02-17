@@ -103,7 +103,7 @@
                         "cornerRadius": "10px",
                         "borderColor": "#ED1C24",
                         "backgroundColor": "#ED1C24",
-                        "height": "50px",
+                        "height": "45px",
                         "action": {
                             "type": "uri",
                             "label": "action",
@@ -128,7 +128,7 @@
                         "cornerRadius": "10px",
                         "borderColor": "#ED1C24",
                         "backgroundColor": "#ED1C24",
-                        "height": "50px",
+                        "height": "45px",
                         "action": {
                             "type": "uri",
                             "label": "action",
@@ -138,7 +138,7 @@
                     }
                 ],
                 "backgroundColor": "#FFFFFF",
-                "height": "150px",
+                "height": "140px",
                 "position": "relative",
                 "offsetBottom": "0px"
             }
@@ -242,7 +242,7 @@
                         "cornerRadius": "10px",
                         "borderColor": "#FFFFFF",
                         "backgroundColor": "#FFFFFF",
-                        "height": "50px",
+                        "height": "45px",
                         "action": {
                             "type": "uri",
                             "label": "action",
@@ -267,7 +267,7 @@
                         "cornerRadius": "10px",
                         "borderColor": "#ED1C24",
                         "backgroundColor": "#ED1C24",
-                        "height": "50px",
+                        "height": "45px",
                         "action": {
                             "type": "uri",
                             "label": "action",
@@ -277,7 +277,245 @@
                     }
                 ],
                 "backgroundColor": "#FFFFFF",
-                "height": "150px",
+                "height": "140px",
+                "position": "relative",
+                "offsetBottom": "0px"
+            }
+        }
+    ]
+}
+/*one button*/
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/VrLnVgK.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "4:3",
+                        "gravity": "top"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Lorem ipsum dolor sit amet, cons",
+                                "gravity": "center",
+                                "align": "start",
+                                "weight": "bold",
+                                "size": "14px",
+                                "style": "normal"
+                            }
+                        ],
+                        "offsetTop": "10px",
+                        "paddingStart": "16px",
+                        "paddingEnd": "16px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "maxLines": 2,
+                                "size": "12px",
+                                "color": "#808285",
+                                "wrap": true,
+                                "text": "เพลงหวานๆ คลั่งรักแห่งปี2021มากเวอร์ เราฟังครั้งแรกแล้วติดเลยฟังเพลินมากๆ หวังว่าจะชอบกันนะคับ!"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [],
+                                "paddingStart": "16px",
+                                "paddingEnd": "16px",
+                                "paddingTop": "5px"
+                            }
+                        ],
+                        "paddingStart": "16px",
+                        "paddingEnd": "16px",
+                        "paddingTop": "12px"
+                    }
+                ],
+                "paddingAll": "0px"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "text",
+                                "text": "1 - 30 พ.ย. 2564",
+                                "color": "#808285",
+                                "size": "12px",
+                                "margin": "7.09091px",
+                                "offsetBottom": "5px"
+                            }
+                        ],
+                        "offsetBottom": "5px",
+                        "paddingStart": "5px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "gravity": "center",
+                                "align": "center",
+                                "offsetTop": "13px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "size": "16px"
+                            }
+                        ],
+                        "cornerRadius": "10px",
+                        "borderColor": "#ED1C24",
+                        "backgroundColor": "#ED1C24",
+                        "height": "45px",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "offsetTop": "5px"
+                    }
+                ],
+                "backgroundColor": "#FFFFFF",
+                "height": "95px",
+                "position": "relative",
+                "offsetBottom": "0px"
+            }
+        },
+        {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/VrLnVgK.jpg",
+                        "size": "full",
+                        "aspectMode": "cover",
+                        "aspectRatio": "4:3",
+                        "gravity": "top"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "Lorem ipsum dolor sit amet, cons",
+                                "gravity": "center",
+                                "align": "start",
+                                "weight": "bold",
+                                "size": "14px",
+                                "style": "normal"
+                            }
+                        ],
+                        "offsetTop": "10px",
+                        "paddingStart": "16px",
+                        "paddingEnd": "16px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "maxLines": 2,
+                                "size": "12px",
+                                "color": "#808285",
+                                "wrap": true,
+                                "text": "เพลงหวานๆ คลั่งรักแห่งปี2021มากเวอร์ "
+                            },
+                            {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [],
+                                "paddingStart": "16px",
+                                "paddingEnd": "16px",
+                                "paddingTop": "5px"
+                            }
+                        ],
+                        "paddingStart": "16px",
+                        "paddingEnd": "16px",
+                        "paddingTop": "12px"
+                    }
+                ],
+                "paddingAll": "0px"
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "separator"
+                            },
+                            {
+                                "type": "text",
+                                "text": "1 - 30 พ.ย. 2564",
+                                "color": "#808285",
+                                "size": "12px",
+                                "margin": "7.09091px",
+                                "offsetBottom": "5px"
+                            }
+                        ],
+                        "offsetBottom": "5px",
+                        "paddingStart": "5px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "รายละเอียด",
+                                "gravity": "center",
+                                "align": "center",
+                                "offsetTop": "13px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "size": "16px"
+                            }
+                        ],
+                        "cornerRadius": "10px",
+                        "borderColor": "#ED1C24",
+                        "backgroundColor": "#ED1C24",
+                        "height": "45px",
+                        "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                        },
+                        "offsetTop": "5px"
+                    }
+                ],
+                "backgroundColor": "#FFFFFF",
+                "height": "95px",
                 "position": "relative",
                 "offsetBottom": "0px"
             }

@@ -560,10 +560,9 @@ function trans_flex_pp_promotion(message) {
                         contents: [
                             {
                                 type: "text",
-                                maxLines: 5,
+                                maxLines: 2,
                                 size: "12px",
                                 color: "#808285",
-                                adjustMode: "shrink-to-fit",
                                 wrap: true,
                                 text: 'The JSON is data only, and if you include a comment, then it will be data too.  You could have a designated data element called "_comment" (or something) that should be ignored by apps that use the JSON data.  You would probably be better having the comment in the processes that generates/receives the JSON, as they are supposed to know what the JSON data will be in advance, or at least the structure of it.',
                             },
@@ -615,7 +614,7 @@ function trans_flex_pp_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -624,7 +623,7 @@ function trans_flex_pp_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -640,7 +639,7 @@ function trans_flex_pp_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -649,7 +648,7 @@ function trans_flex_pp_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -659,7 +658,7 @@ function trans_flex_pp_promotion(message) {
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "150px",
+                height: "130px",
                 position: "relative",
                 offsetBottom: "0px",
             },
@@ -706,7 +705,6 @@ function trans_flex_pp_promotion(message) {
                                 maxLines: 5,
                                 size: "12px",
                                 color: "#808285",
-                                adjustMode: "shrink-to-fit",
                                 wrap: true,
                             },
                             {
@@ -754,27 +752,7 @@ function trans_flex_pp_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
-                                color: "#FFFFFF",
-                                weight: "bold",
-                                size: "16px",
-                            },
-                        ],
-                        cornerRadius: "10px",
-                        borderColor: "#FFFFFF",
-                        backgroundColor: "#FFFFFF",
-                        height: "50px",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "รายละเอียด",
-                                gravity: "center",
-                                align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -783,7 +761,7 @@ function trans_flex_pp_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -793,7 +771,7 @@ function trans_flex_pp_promotion(message) {
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "150px",
+                height: "95px",
                 position: "relative",
                 offsetBottom: "0px",
             },
@@ -804,7 +782,7 @@ function trans_flex_pp_promotion(message) {
         if (index === preContents.length - 1) {
             let getURLFromCatalogue = v.body.contents[1].text.split("|");
             promotionBodyContent.body.contents[0].url = v.hero.url;
-            promotionBodyContent.footer.contents[2].action.uri = encodeURI(getURLFromCatalogue[2]);
+            promotionBodyContent.footer.contents[1].action.uri = encodeURI(getURLFromCatalogue[2]);
             newData.push(promotionBodyContent);
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
@@ -818,17 +796,22 @@ function trans_flex_pp_promotion(message) {
             }
 
             bodyContent.body.contents[2].contents[0].text = details[0]; // details promotion
-            if (details.length > 3) {
+            if (details.length > 4) {
                 // if has object's key promotion_page and promotion_products
                 bodyContent.footer.contents[1].action.uri = details[2]; // url button go to new page of promotion page
                 bodyContent.footer.contents[2].action.uri = details[3]; // url button go to new page of promotion products
             } else {
-                // but converse of above if object's either
-                bodyContent.footer.contents[2].action.uri = details[2]; // url button go to new page of promotion page or promotion products
-                bodyContent.footer.contents[1].borderColor = "#FFFFFF";
-                bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+                if (details[details.length - 1] === "0") {
+                    bodyContent.footer.contents.splice(1, 1);
+                    bodyContent.footer.height = "90px";
+                    bodyContent.footer.contents[1].action.uri = details[2];
+                } else {
+                    // but converse of above if object's either
+                    bodyContent.footer.contents[2].action.uri = details[2]; // url button go to new page of promotion page or promotion products
+                    bodyContent.footer.contents[1].borderColor = "#FFFFFF";
+                    bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+                }
             }
-
             newData.push(JSON.parse(JSON.stringify(bodyContent)));
         }
     });
@@ -1855,6 +1838,10 @@ function trans_flex_point(message) {
 function trans_flex_promotion(message) {
     const preContents = message.contents.contents;
     let newData = [];
+    let countButton = 0;
+    for (let index = 0; index < preContents.length; index++) {
+        if (preContents[index].footer.contents[0].action.label !== "null") countButton += 1;
+    }
     preContents.forEach((v, index) => {
         let setDataBody = v.body.contents[1].text.split("|");
         node.warn(setDataBody.length);
@@ -1896,7 +1883,7 @@ function trans_flex_promotion(message) {
                         contents: [
                             {
                                 type: "text",
-                                maxLines: 5,
+                                maxLines: 2,
                                 size: "12px",
                                 color: "#808285",
                                 wrap: true,
@@ -1950,7 +1937,7 @@ function trans_flex_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -1959,7 +1946,7 @@ function trans_flex_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -1975,7 +1962,7 @@ function trans_flex_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -1984,7 +1971,7 @@ function trans_flex_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -1994,7 +1981,7 @@ function trans_flex_promotion(message) {
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "150px",
+                height: "130px",
                 position: "relative",
                 offsetBottom: "0px",
             },
@@ -2042,7 +2029,6 @@ function trans_flex_promotion(message) {
                                 maxLines: 5,
                                 size: "12px",
                                 color: "#808285",
-                                adjustMode: "shrink-to-fit",
                                 wrap: true,
                             },
                             {
@@ -2090,32 +2076,7 @@ function trans_flex_promotion(message) {
                                 text: "รายละเอียด",
                                 gravity: "center",
                                 align: "center",
-                                offsetTop: "15px",
-                                color: "#FFFFFF",
-                                weight: "bold",
-                                size: "16px",
-                            },
-                        ],
-                        cornerRadius: "10px",
-                        borderColor: "#FFFFFF",
-                        backgroundColor: "#FFFFFF",
-                        height: "50px",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "รายละเอียด",
-                                gravity: "center",
-                                align: "center",
-                                offsetTop: "15px",
+                                offsetTop: "8px",
                                 color: "#FFFFFF",
                                 weight: "bold",
                                 size: "16px",
@@ -2124,7 +2085,7 @@ function trans_flex_promotion(message) {
                         cornerRadius: "10px",
                         borderColor: "#ED1C24",
                         backgroundColor: "#ED1C24",
-                        height: "50px",
+                        height: "40px",
                         action: {
                             type: "uri",
                             label: "action",
@@ -2134,17 +2095,23 @@ function trans_flex_promotion(message) {
                     },
                 ],
                 backgroundColor: "#FFFFFF",
-                height: "150px",
+                height: "95px",
                 position: "relative",
                 offsetBottom: "0px",
             },
         };
 
         if (v.footer.contents[0].action.label === "null") {
-            bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
-            bodyContent.footer.contents[1].borderColor = "#FFFFFF";
-            bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
-            bodyContent.footer.contents[1].action.uri = encodeURI("https://google.com");
+            if (countButton === 0) {
+                bodyContent.footer.contents.splice(1, 1);
+                bodyContent.footer.height = "90px";
+                bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
+            } else {
+                bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
+                bodyContent.footer.contents[1].borderColor = "#FFFFFF";
+                bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+                bodyContent.footer.contents[1].action.uri = encodeURI("https://google.com");
+            }
         } else {
             bodyContent.footer.contents[1].action.label = v.footer.contents[0].action.label;
             bodyContent.footer.contents[1].action.uri = v.footer.contents[0].action.uri;
@@ -2155,7 +2122,7 @@ function trans_flex_promotion(message) {
         if (index === preContents.length - 1) {
             // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
             lastBodyContent.body.contents[0].url = v.hero.url;
-            lastBodyContent.footer.contents[2].action.uri = encodeURI(v.footer.contents[1].action.uri);
+            lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
             newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
@@ -2207,12 +2174,12 @@ function trans_text_to_flex(message) {
                         align: "center",
                         gravity: "center",
                         color: "#FFFFFF",
-                        offsetBottom: "14px",
-                        size: "21px",
+                        offsetBottom: "9px",
+                        size: "18px",
                         position: "absolute",
                     },
                 ],
-                height: "55px",
+                height: "40px",
                 backgroundColor: "#CD242B",
                 justifyContent: "center",
                 alignItems: "center",
@@ -2228,26 +2195,39 @@ function trans_text_to_flex(message) {
                 layout: "vertical",
                 contents: [],
                 paddingTop: "2px",
-                height: "380px",
+                height: "270px",
             },
             footer: {
                 type: "box",
                 layout: "vertical",
                 contents: [
                     {
-                        type: "button",
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ชมสินค้ากลุ่มนี้เพิ่มเติม คลิก!",
+                                align: "center",
+                                gravity: "center",
+                                size: "14px",
+                                weight: "bold",
+                                color: "#FFFFFF",
+                            },
+                        ],
+                        backgroundColor: "#D61F26",
+                        offsetBottom: "3px",
+                        borderWidth: "10px",
+                        borderColor: "#D61F26",
+                        cornerRadius: "10px",
                         action: {
                             type: "uri",
-                            label: "ชมสินค้ากลุ่มนี้เพิ่มเติม คลิก!",
+                            label: "action",
                             uri: "http://linecorp.com/",
                         },
-                        style: "primary",
-                        color: "#D61F26",
                     },
                 ],
-                borderWidth: "8px",
-                height: "90px",
-                cornerRadius: "8px",
+                height: "55px",
             },
             styles: {
                 header: {
@@ -2265,22 +2245,24 @@ function trans_text_to_flex(message) {
                     url: "https://i.imgur.com/pvinl1r.png",
                     aspectRatio: "1:1",
                     size: "40px",
-                    offsetTop: "13px",
+                    offsetTop: "8px",
                 },
                 {
                     type: "text",
                     text: "ปูนงานโครงสร้าง เอสซีจี สูตรไฮบริด (ปูนซีเมนต์ถุง 50 กก.)",
                     align: "start",
                     gravity: "center",
+                    adjustMode: "shrink-to-fit",
+                    position: "relative",
+                    offsetTop: "-22px",
+                    size: "13px",
                     wrap: true,
                     maxLines: 2,
-                    position: "relative",
-                    offsetBottom: "10px",
-                    size: "9px",
+                    weight: "bold",
                 },
             ],
             spacing: "sm",
-            height: "60px",
+            height: "55px",
             alignItems: "center",
             justifyContent: "flex-start",
             action: {
@@ -2296,39 +2278,26 @@ function trans_text_to_flex(message) {
 
         let lastContent = {
             type: "bubble",
-            direction: "ltr",
             size: "kilo",
+            direction: "ltr",
+            hero: {
+                type: "image",
+                size: "full",
+                aspectRatio: "4:3",
+                aspectMode: "cover",
+                url: "https://i.imgur.com/tBBRiDI.png",
+            },
             body: {
                 type: "box",
                 layout: "vertical",
+                spacing: "sm",
                 contents: [
                     {
-                        type: "image",
-                        url: "https://i.imgur.com/Cy3SQ74.png",
-                        aspectMode: "cover",
-                        aspectRatio: "2:3",
-                        gravity: "top",
-                        size: "full",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมดที่นี่!",
-                                wrap: true,
-                                gravity: "center",
-                                align: "center",
-                                style: "normal",
-                                weight: "bold",
-                            },
-                        ],
-                        position: "relative",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        offsetTop: "20px",
-                        height: "75px",
+                        type: "text",
+                        wrap: true,
+                        weight: "bold",
+                        size: "16px",
+                        text: "เลือกซื้อสินค้า จากรายการสินค้าทั้งหมด ได้ที่นี่!    ",
                     },
                 ],
             },
@@ -2337,35 +2306,44 @@ function trans_text_to_flex(message) {
                 layout: "vertical",
                 contents: [
                     {
-                        type: "button",
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "คลิก",
+                                align: "center",
+                                gravity: "center",
+                                size: "14px",
+                                weight: "bold",
+                                color: "#FFFFFF",
+                                offsetBottom: "2px",
+                            },
+                        ],
+                        backgroundColor: "#D61F26",
+                        offsetBottom: "3px",
+                        borderWidth: "8px",
+                        borderColor: "#D61F26",
+                        cornerRadius: "10px",
                         action: {
                             type: "uri",
-                            label: "คลิก",
-                            uri: "http://linecorp.com/",
+                            label: "action",
+                            uri: "https://promptplus.scg.com",
                         },
-                        style: "primary",
-                        color: "#D61F26",
                     },
                 ],
-                borderWidth: "8px",
-                cornerRadius: "8px",
-            },
-            styles: {
-                header: {
-                    separator: true,
-                },
             },
         };
 
         if (getData[index] === "start") {
-            bodyContent.header.contents[1].text = getData[index + 2];
-            bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(/\s/g, "");
+            bodyContent.header.contents[1].text = getData[index + 2]; // name of product class
+            bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(/\s/g, ""); // url of product class
             bodyContentTemp = JSON.parse(JSON.stringify(bodyContent));
         }
         if (getData[index] === "end_list") {
             bodyListData.contents[0].url = getData[index - 3].replace(/\s/g, "");
-            bodyListData.contents[1].text = getData[index - 6];
-            bodyListData.action.uri = getData[index - 2];
+            bodyListData.contents[1].text = getData[index - 6]; // name of product list
+            bodyListData.action.uri = getData[index - 2]; // url of product list
             listData.push(JSON.parse(JSON.stringify(bodyListData)));
             listData.push(JSON.parse(JSON.stringify(separator)));
         }
