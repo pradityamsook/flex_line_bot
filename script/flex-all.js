@@ -790,24 +790,29 @@ function trans_flex_pp_promotion(message) {
 
             let details = v.body.contents[1].text.split("|");
             details.shift();
+            let nullStr = details[0].split(":");
+            let promotionPage = details[2].split(",");
+            let promotionProducts = details[3].split(":");
+            let numberButton = details[details.length - 1].split(":");
+
             // Check if no contents set details as zero space character
-            if (details[0] === "") {
-                details[0] = "​";
+            if (nullStr[1] === "") {
+                nullStr[1] = "​";
             }
 
-            bodyContent.body.contents[2].contents[0].text = details[0]; // details promotion
+            bodyContent.body.contents[2].contents[0].text = nullStr[1]; // details promotion
             if (details.length > 4) {
                 // if has object's key promotion_page and promotion_products
-                bodyContent.footer.contents[1].action.uri = details[2]; // url button go to new page of promotion page
-                bodyContent.footer.contents[2].action.uri = details[3]; // url button go to new page of promotion products
+                bodyContent.footer.contents[1].action.uri = promotionPage[1]; // url button go to new page of promotion page
+                bodyContent.footer.contents[2].action.uri = promotionProducts[1]; // url button go to new page of promotion products
             } else {
-                if (details[details.length - 1] === "0") {
+                if (numberButton[1] === "0") {
                     bodyContent.footer.contents.splice(1, 1);
                     bodyContent.footer.height = "90px";
-                    bodyContent.footer.contents[1].action.uri = details[2];
+                    bodyContent.footer.contents[1].action.uri = promotionPage[1]; // url button go to new page of promotion page
                 } else {
                     // but converse of above if object's either
-                    bodyContent.footer.contents[2].action.uri = details[2]; // url button go to new page of promotion page or promotion products
+                    bodyContent.footer.contents[2].action.uri = promotionPage[1]; // url button go to new page of promotion page or promotion products
                     bodyContent.footer.contents[1].borderColor = "#FFFFFF";
                     bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
                 }
@@ -2353,7 +2358,14 @@ function trans_text_to_flex(message) {
             bodyContentTemp.body.contents = JSON.parse(JSON.stringify(listData));
             newData.push(JSON.parse(JSON.stringify(bodyContentTemp)));
             listData = [];
-        } else if (index === getData.length - 1) {
+        } // else if (index === getData.length - 1) {
+        //     newData.push(JSON.parse(JSON.stringify(lastContent)));
+        // }
+        if (getData[index] === "last_card") {
+            lastContent.hero.url = getData[index + 3]; // url image of last card
+            lastContent.body.contents[0].text = getData[index + 1]; // wording details
+            lastContent.footer.contents[0].contents[0].text = getData[index + 2]; // name of button
+            lastContent.footer.contents[0].action.uri = getData[index + 4]; // url go to product class page
             newData.push(JSON.parse(JSON.stringify(lastContent)));
         }
     }
