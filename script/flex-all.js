@@ -83,15 +83,16 @@ function trans_flex_product(message) {
     const preContents = message.contents.contents;
     let newData = [];
     let date = new Date();
-    let countStr = 0;
+    var countStr = 0;
 
     //loop for count any card have name string length more than 36 without last card.
-    for (let index = 0; index < preContents.length - 1; index++) {
-        preContents[index].body.contents[0].text.length > 28 ? (countStr += 1) : (countStr = 0);
-    }
+    // for (let index = 0; index < preContents.length - 1; index++) {
+    //     preContents[index].body.contents[0].text.length > 34 ? (countStr += 1) : (countStr = countStr);
+    // }
 
     preContents.forEach((v, index) => {
         let dataContent = v.body.contents[1].text.split("|");
+        node.warn(index);
         const white = "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
         dataContent.shift();
 
@@ -193,8 +194,7 @@ function trans_flex_product(message) {
             },
             body: {
                 type: "box",
-                layout: "vertical",
-                spacing: "sm",
+                layout: "horizontal",
                 contents: [
                     {
                         type: "text",
@@ -205,6 +205,14 @@ function trans_flex_product(message) {
                         offsetBottom: "10px",
                         maxLines: 2,
                     },
+                ],
+                height: "70px",
+                offsetTop: "10px",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                contents: [
                     {
                         type: "box",
                         layout: "baseline",
@@ -221,6 +229,7 @@ function trans_flex_product(message) {
                             },
                         ],
                         offsetTop: "0px",
+                        paddingStart: "20px",
                     },
                     {
                         type: "box",
@@ -244,6 +253,7 @@ function trans_flex_product(message) {
                             },
                         ],
                         offsetTop: "0px",
+                        paddingStart: "20px",
                     },
                     {
                         type: "box",
@@ -257,6 +267,7 @@ function trans_flex_product(message) {
                             },
                         ],
                         offsetTop: "0px",
+                        paddingStart: "20px",
                     },
                     {
                         type: "box",
@@ -275,6 +286,8 @@ function trans_flex_product(message) {
                                     },
                                 ],
                                 justifyContent: "flex-start",
+                                paddingStart: "20px",
+                                width: "70px",
                             },
                             {
                                 type: "box",
@@ -306,36 +319,46 @@ function trans_flex_product(message) {
                                 justifyContent: "flex-end",
                                 alignItems: "center",
                                 spacing: "4px",
+                                paddingEnd: "20px",
+                                width: "230px",
                             },
                         ],
                         width: "600px",
-                        offsetTop: "0px",
+                        offsetBottom: "5px",
                     },
-                ],
-            },
-            footer: {
-                type: "box",
-                layout: "vertical",
-                spacing: "sm",
-                contents: [
                     {
-                        type: "text",
-                        text: "คลิกดูสินค้า",
-                        size: "18px",
-                        color: "#FFFFFF",
-                        weight: "bold",
-                        style: "normal",
-                        align: "center",
-                        gravity: "center",
-                        offsetTop: "10px",
+                        type: "box",
+                        layout: "horizontal",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "คลิกดูสินค้า",
+                                size: "18px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                style: "normal",
+                                align: "center",
+                                gravity: "center",
+                            },
+                        ],
+                        backgroundColor: "#ED1C24",
+                        paddingAll: "5%",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                        height: "65px",
                     },
                 ],
-                backgroundColor: "#ED1C24",
-                height: "65px",
-                action: {
-                    type: "uri",
-                    label: "action",
-                    uri: "http://linecorp.com/",
+                paddingAll: "0%",
+            },
+            styles: {
+                hero: {
+                    separator: true,
+                },
+                footer: {
+                    separator: false,
                 },
             },
         };
@@ -423,16 +446,16 @@ function trans_flex_product(message) {
             alignItems: "center",
         };
 
-        // check any card to string length less than 37 and any card
-        // have string more than 36 then set offsetTop of 20px.
-        if (countStr > 0 && v.body.contents[0].text.length <= 28) {
-            bodyContent.body.contents[1].offsetTop = "20px";
-            bodyContent.body.contents[2].offsetTop = "20px";
-            bodyContent.body.contents[3].offsetTop = "20px";
-            bodyContent.body.contents[4].offsetTop = "20px";
-        }
+        let tags = {
+            type: "icon",
+            url: "https://i.imgur.com/vVcsjMQ.png",
+            position: "relative",
+            aspectRatio: "1:1.2",
+            size: "xxl",
+            offsetTop: "4px",
+        };
 
-        if (index === preContents.length - 1) {
+        if (index + 1 === preContents.length || index === preContents.length - 1) {
             lastContent.hero.url = v.hero.url;
             lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
             lastContent.footer.action.uri = v.body.contents[1].text; // url all products
@@ -448,55 +471,58 @@ function trans_flex_product(message) {
             bodyContent.hero.contents[0].url = v.hero.url; //image
             bodyContent.body.contents[0].text = v.body.contents[0].text; //description
             bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount}%`; // percent discount
-            bodyContent.body.contents[3].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
-            bodyContent.body.contents[1].contents[0].text = `${netPrice} / ${unit}`; // net price
-            bodyContent.footer.action.uri = url; // url of products
-
+            bodyContent.footer.contents[2].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
+            bodyContent.footer.contents[0].contents[0].text = `${netPrice} / ${unit}`; // net price
+            bodyContent.footer.contents[4].action.uri = url; // url of products
+            node.warn(462);
             for (var indexData = 0; indexData < dataContent.length; indexData++) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
-                    bodyContent.body.contents[4].contents[0].contents[0].url = dataContent[indexData + 1];
+                    // tags.url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[3].contents[1].contents[0] = dataContent[indexData + 1];
                 } else if (dataContent[indexData] === "!logo") {
-                    bodyContent.body.contents[4].contents[0].contents.splice(0, 0);
+                    bodyContent.footer.contents[3].contents[1].contents.splice(0, 0);
                 }
 
                 if (dataContent[indexData] === "points") {
                     // add points icon
-                    bodyContent.body.contents[4].contents[1].contents[0].url = dataContent[indexData + 1];
+                    tags.url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags.url)));
                 } else if (dataContent[indexData] === "!points") {
                     // hide points icon
-                    bodyContent.body.contents[4].contents[1].contents.splice(0, 1);
+                    bodyContent.footer.contents[3].contents[1].contents.splice(0, 1);
                 }
 
                 if (dataContent[indexData] === "wallet") {
                     // add wallet icon
-                    bodyContent.body.contents[4].contents[1].contents[1].url = dataContent[indexData + 1];
+                    tags.url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags.url)));
                 } else if (dataContent[indexData] === "!wallet") {
-                    node.warn("415");
                     // hide wallet icon
-                    bodyContent.body.contents[4].contents[1].contents.splice(1, 1);
+                    bodyContent.footer.contents[3].contents[1].contents.splice(1, 1);
                 }
 
                 if (dataContent[indexData] === "free goods") {
                     // add free goods icon
-                    bodyContent.body.contents[4].contents[1].contents[2].url = dataContent[indexData + 1];
+                    tags.url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags.url)));
                 } else if (dataContent[indexData] === "!free goods") {
                     // hide free goods icon
-                    bodyContent.body.contents[4].contents[1].contents.splice(2, 1);
+                    bodyContent.footer.contents[3].contents[1].contents.splice(2, 1);
                 }
 
                 if (dataContent[indexData] === "flash sale") {
                     bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 1]; // add flash sale tag's image
-                    bodyContent.body.contents[1].contents[0].text = `${netPrice}`; // net price if has flash sale
-                    bodyContent.body.contents[2].contents[0].text = `${salePrice}`; // sale price
-                    bodyContent.body.contents[2].contents[1].text = ` / ${unit}`;
+                    bodyContent.footer.contents[0].contents[0].text = `${netPrice}`; // net price if has flash sale
+                    bodyContent.footer.contents[1].contents[0].text = `${salePrice}`; // sale price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
                 } else if (dataContent[indexData] === "!flash sale") {
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                    bodyContent.body.contents[1].contents[0].text = "​"; // remove net price
-                    bodyContent.body.contents[2].contents[0].text = `${netPrice}`; // net price
-                    bodyContent.body.contents[2].contents[1].text = ` / ${unit}`;
-                    bodyContent.body.contents[2].contents[0].color = "#000000";
+                    bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                    bodyContent.footer.contents[1].contents[0].text = `${netPrice}`; // net price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
             }
             if (eta === "undefined") {
@@ -1820,7 +1846,7 @@ function trans_flex_point(message) {
             },
         };
         bodyContent.header.contents[0].contents[0].text = v.body.contents[0].text; // partner name's
-        bodyContent.header.contents[1].contents[1].text = dataContent[0]; // store's code
+        bodyContent.header.contents[1].contents[1].text = `รหัสร้านค้า: ${dataContent[0]}`; // store's code
         bodyContent.body.contents[0].contents[1].text = `วันที่ : ${dataContent[6]}`; //date current
         bodyContent.body.contents[1].contents[0].contents[0].contents[0].text = dataContent[1]; // total point
         bodyContent.body.contents[1].contents[0].contents[1].contents[0].text = dataContent[2]; // expired point
