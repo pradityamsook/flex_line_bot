@@ -2394,14 +2394,19 @@ function trans_text_to_flex(message) {
         };
 
         if (getData[index] === "start") {
-            bodyContent.header.contents[1].text = getData[index + 2]; // name of product class
-            bodyContent.footer.contents[0].action.uri = getData[index + 4].replace(/\s/g, ""); // url of product class
+            let nameClass = getData[index + 2].split(":");
+            let urlClass = getData[index + 4].split(",");
+            bodyContent.header.contents[1].text = nameClass[1]; // name of product class
+            bodyContent.footer.contents[0].action.uri = urlClass[1].replace(/\s/g, ""); // url of product class
             bodyContentTemp = JSON.parse(JSON.stringify(bodyContent));
         }
         if (getData[index] === "end_list") {
-            bodyListData.contents[0].url = getData[index - 3].replace(/\s/g, "");
-            bodyListData.contents[1].text = getData[index - 6]; // name of product list
-            bodyListData.action.uri = getData[index - 2]; // url of product list
+            let imageList = getData[index - 3].split(",");
+            let nameList = getData[index - 6].split(":");
+            let urlList = getData[index - 2].split(",");
+            bodyListData.contents[0].url = imageList[1].replace(/\s/g, ""); // image product list
+            bodyListData.contents[1].text = nameList[1]; // name of product list
+            bodyListData.action.uri = urlList[1]; // url of product list
             listData.push(JSON.parse(JSON.stringify(bodyListData)));
             listData.push(JSON.parse(JSON.stringify(separator)));
         }
