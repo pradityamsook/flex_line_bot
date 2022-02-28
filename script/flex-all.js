@@ -379,7 +379,7 @@ function trans_flex_product(message) {
                         style: "normal",
                         align: "center",
                         gravity: "center",
-                        offsetฺBottom: "1px",
+                        offsetBottom: "1px",
                     },
                 ],
                 backgroundColor: "#ED1C24",
@@ -440,22 +440,22 @@ function trans_flex_product(message) {
             lastContent.footer.action.uri = v.body.contents[1].text; // url all products
             newData.push(JSON.parse(JSON.stringify(lastContent)));
         } else {
-            let salePrice = dataContent[dataContent.length - 8];
-            let basePrice = dataContent[dataContent.length - 7];
-            let netPrice = dataContent[dataContent.length - 6];
-            let percenDiscount = dataContent[dataContent.length - 5];
-            let unit = dataContent[dataContent.length - 4];
-            let eta = dataContent[dataContent.length - 3];
-            let url = dataContent[dataContent.length - 2];
-            let _percentDiscount = dataContent[dataContent.length - 1];
+            let salePrice = dataContent[dataContent.length - 8].split(":");
+            let basePrice = dataContent[dataContent.length - 7].split(":");
+            let netPrice = dataContent[dataContent.length - 6].split(":");
+            let percenDiscount = dataContent[dataContent.length - 5].split(":");
+            let unit = dataContent[dataContent.length - 4].split(":");
+            let eta = dataContent[dataContent.length - 3].split(":");
+            let url = dataContent[dataContent.length - 2].split(",");
+            let _percentDiscount = dataContent[dataContent.length - 1].split(":");
 
             bodyContent.hero.contents[0].url = v.hero.url; //image
             bodyContent.body.contents[0].text = v.body.contents[0].text; //description
-            bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount}%`; // percent discount
+            bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount[1]}%`; // percent discount
             bodyContent.footer.contents[2].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
-            bodyContent.footer.contents[0].contents[0].text = `${netPrice} / ${unit}`; // net price
-            bodyContent.footer.contents[4].action.uri = url; // url of products
-            for (var indexData = 0; indexData < dataContent.length; indexData++) {
+            bodyContent.footer.contents[0].contents[0].text = `${netPrice[1]} / ${unit[1]}`; // net price
+            bodyContent.footer.contents[4].action.uri = url[1]; // url of products
+            for (let indexData = 0; indexData < dataContent.length; indexData++) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
                     bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
@@ -485,9 +485,9 @@ function trans_flex_product(message) {
                 if (dataContent[indexData] === "flash sale") {
                     // tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
-                    bodyContent.footer.contents[0].contents[0].text = `${basePrice}`; // net price if has flash sale
-                    bodyContent.footer.contents[1].contents[0].text = `${salePrice}`; // sale price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
+                    bodyContent.footer.contents[1].contents[0].text = `${salePrice[1]}`; // sale price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                     if (eta !== "undefined") {
                         bodyContent.hero.contents[2].offsetBottom = "279px";
                         bodyContent.hero.contents[3].offsetBottom = "312px";
@@ -502,8 +502,8 @@ function trans_flex_product(message) {
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents.splice(3, 1); // remove percent discount
                     bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice}`; // base price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                     bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
 
@@ -513,8 +513,8 @@ function trans_flex_product(message) {
                     bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
                     bodyContent.hero.contents.splice(3, 1); // remove percent discount
                     bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice}`; // base price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                     bodyContent.footer.contents[1].contents[0].color = "#000000";
                     eta !== "undefined"
                         ? (bodyContent.hero.contents[2].offsetBottom = "275px")
@@ -527,8 +527,8 @@ function trans_flex_product(message) {
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents.splice(3, 1); // remove percent discount
                     bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice}`; // net price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                     bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
 
@@ -536,7 +536,7 @@ function trans_flex_product(message) {
                     tags.url = dataContent[indexData + 1];
                     bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                    bodyContent.hero.contents[3].contents[0].text = `-${_percentDiscount}%`; // add percent discount
+                    bodyContent.hero.contents[3].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
                     bodyContent.hero.contents[3].contents[0].offsetTop = "1.5px";
                     bodyContent.hero.contents[3].offsetBottom = "282px";
                     eta !== "undefined"
@@ -544,9 +544,9 @@ function trans_flex_product(message) {
                         : (bodyContent.hero.contents[3].offsetBottom = "282px");
                     bodyContent.hero.contents[3].offsetStart = "20px";
                     delete bodyContent.hero.contents[3].background;
-                    bodyContent.footer.contents[0].contents[0].text = `${basePrice}`; // net price if has discount
-                    bodyContent.footer.contents[1].contents[0].text = `${netPrice}`; // sale price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has discount
+                    bodyContent.footer.contents[1].contents[0].text = `${netPrice[1]}`; // sale price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                 } else if (
                     dataContent[indexData] === "!flash sale" &&
                     dataContent[indexData] === "!promotion" &&
@@ -555,15 +555,15 @@ function trans_flex_product(message) {
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents.splice(3, 1); // remove percent discount
                     bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice}`; // net price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit}`; // unit
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price
+                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                     bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
             }
             if (eta === "undefined") {
                 bodyContent.hero.contents.splice(1, 1);
             } else {
-                bodyContent.hero.contents[1].contents[1].text = eta; // in delivery
+                bodyContent.hero.contents[1].contents[1].text = eta[1]; // in delivery
             }
             newData.push(JSON.parse(JSON.stringify(bodyContent)));
         }
