@@ -83,12 +83,14 @@ function trans_flex_product(message) {
     const preContents = message.contents.contents;
     let newData = [];
     let date = new Date();
-    var countStr = 0;
+    let countDiscount = 0;
 
     //loop for count any card have name string length more than 36 without last card.
-    // for (let index = 0; index < preContents.length - 1; index++) {
-    //     preContents[index].body.contents[0].text.length > 34 ? (countStr += 1) : (countStr = countStr);
-    // }
+    for (let index = 0; index < preContents.length - 1; index++) {
+        let data = preContents[index].body.contents[1].text.split("|");
+        let _percentDiscount = data[data.length - 1].split(":");
+        _percentDiscount[1] === "0" ? (countDiscount += 1) : (countDiscount = countDiscount);
+    }
 
     preContents.forEach((v, index) => {
         let dataContent = v.body.contents[1].text.split("|");
@@ -434,6 +436,35 @@ function trans_flex_product(message) {
             offsetTop: "4px",
         };
 
+        let flashSale = {
+            type: "icon",
+            url: "https://i.imgur.com/yUia3Sy.png",
+            position: "relative",
+            margin: "none",
+            size: "xxl",
+            aspectRatio: "10:3",
+            offsetTop: "20px",
+        };
+
+        let netPrice = {
+            type: "box",
+            layout: "baseline",
+            contents: [
+                {
+                    type: "text",
+                    text: "฿1,023 / ถัง ",
+                    wrap: true,
+                    weight: "bold",
+                    flex: 0,
+                    decoration: "line-through",
+                    color: "#BCBEC0",
+                    size: "14px",
+                },
+            ],
+            offsetTop: "0px",
+            paddingStart: "20px",
+        };
+
         if (index + 1 === preContents.length || index === preContents.length - 1) {
             lastContent.hero.url = v.hero.url;
             lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
@@ -455,13 +486,16 @@ function trans_flex_product(message) {
             bodyContent.footer.contents[2].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
             bodyContent.footer.contents[0].contents[0].text = `${netPrice[1]} / ${unit[1]}`; // net price
             bodyContent.footer.contents[4].action.uri = url[1]; // url of products
+
             for (let indexData = 0; indexData < dataContent.length; indexData++) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
-                    bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
+                    // bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(dataContent[indexData + 1])));
                 } else if (dataContent[indexData] === "!logo") {
-                    bodyContent.footer.contents[3].contents[0].contents[0].url =
-                        "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
+                    // bodyContent.footer.contents[3].contents[0].contents[0].url =
+                    //     "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
+                    bodyContent.footer.contents[3].contents[0].contents.splice(0, 1);
                 }
 
                 if (dataContent[indexData] === "points") {
@@ -483,53 +517,69 @@ function trans_flex_product(message) {
                 }
 
                 if (dataContent[indexData] === "flash sale") {
+                    node.warn(522);
                     // tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
                     bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
                     bodyContent.footer.contents[1].contents[0].text = `${salePrice[1]}`; // sale price
                     bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                    if (eta !== "undefined") {
+                    if (eta[1] !== "undefined") {
                         bodyContent.hero.contents[2].offsetBottom = "279px";
                         bodyContent.hero.contents[3].offsetBottom = "312px";
                     } else {
                         bodyContent.hero.contents[2].offsetBottom = "248px";
                     }
-                } else if (
-                    dataContent[indexData] === "!flash sale" &&
-                    dataContent[indexData] === "!promotion" &&
+                }
+
+                if (
+                    dataContent[indexData] === "!flash sale" ||
+                    dataContent[indexData] === "!promotion" ||
                     dataContent[indexData] === "!discount only"
                 ) {
-                    bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                    bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                    bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                    bodyContent.footer.contents[1].contents[0].color = "#000000";
+                    if (countDiscount === preContents.length - 1) {
+                        bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
+                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
+                        bodyContent.footer.contents[0].contents.splice(0, 1);
+                        node.warn(bodyContent);
+                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                    } else {
+                        bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
+                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
+                        bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                    }
                 }
 
                 if (dataContent[indexData] === "promotion") {
-                    tags.url = dataContent[indexData + 1];
-                    bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
-                    bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
-                    bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                    bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                    bodyContent.footer.contents[1].contents[0].color = "#000000";
-                    eta !== "undefined"
+                    if (countDiscount === preContents.length - 1) {
+                        tags.url = dataContent[indexData + 1];
+                        bodyContent.footer.contents[2].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                        bodyContent.hero.contents[2].contents.push(JSON.parse(JSON.stringify(flashSale)));
+                        bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
+                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
+                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[0].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[0].contents[0].color = "#000000";
+                    } else {
+                        tags.url = dataContent[indexData + 1];
+                        bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                        bodyContent.hero.contents[2].contents.push(JSON.parse(JSON.stringify(flashSale)));
+                        bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
+                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
+                        bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                    }
+                    eta[1] !== "undefined"
                         ? (bodyContent.hero.contents[2].offsetBottom = "275px")
                         : (bodyContent.hero.contents[2].offsetBottom = "248px");
-                } else if (
-                    dataContent[indexData] === "!flash sale" &&
-                    dataContent[indexData] === "!promotion" &&
-                    dataContent[indexData] === "!discount only"
-                ) {
-                    bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                    bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                    bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                    bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
 
                 if (dataContent[indexData] === "discount only") {
@@ -539,7 +589,7 @@ function trans_flex_product(message) {
                     bodyContent.hero.contents[3].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
                     bodyContent.hero.contents[3].contents[0].offsetTop = "1.5px";
                     bodyContent.hero.contents[3].offsetBottom = "282px";
-                    eta !== "undefined"
+                    eta[1] !== "undefined"
                         ? (bodyContent.hero.contents[3].offsetBottom = "312px")
                         : (bodyContent.hero.contents[3].offsetBottom = "282px");
                     bodyContent.hero.contents[3].offsetStart = "20px";
@@ -547,20 +597,9 @@ function trans_flex_product(message) {
                     bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has discount
                     bodyContent.footer.contents[1].contents[0].text = `${netPrice[1]}`; // sale price
                     bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                } else if (
-                    dataContent[indexData] === "!flash sale" &&
-                    dataContent[indexData] === "!promotion" &&
-                    dataContent[indexData] === "!discount only"
-                ) {
-                    bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                    bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                    bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                    bodyContent.footer.contents[1].contents[0].color = "#000000";
                 }
             }
-            if (eta === "undefined") {
+            if (eta[1] === "undefined") {
                 bodyContent.hero.contents.splice(1, 1);
             } else {
                 bodyContent.hero.contents[1].contents[1].text = eta[1]; // in delivery
