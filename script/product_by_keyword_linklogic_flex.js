@@ -28,13 +28,13 @@ data = data.filter((data, index) => index <= 7);
 for (let index = 0; index <= data.length; index++) {
     if (index >= 0 && index <= data.length - 1) {
         /*******Mock up status tags's product*******/
-        data[index].net_price = null;
-        data[index].discount_percentage = 0;
-        data[index].is_changfamily = true;
-        data[index].is_special_point = true;
-        data[index].is_wallet = true;
-        data[index].is_freegoods = true;
-        data[index].is_flash_sale = "true";
+        // data[index].net_price = 5;
+        // data[index].discount_percentage = "step";
+        // data[index].is_changfamily = true;
+        // data[index].is_special_point = true;
+        // data[index].is_wallet = true;
+        // data[index].is_freegoods = true;
+        // data[index].is_flash_sale = "false";
         /*******************************************/
 
         if (data[index].discount_percentage === 0 && data[index].net_price === null) {
@@ -50,7 +50,7 @@ for (let index = 0; index <= data.length; index++) {
         let product_url = encodeURI(data[index].product_url);
         let sale_price = base_price - net_price;
         let discount_percent = Math.floor(((data[index].base_price - data[index].net_price) * 100) / data[index].base_price);
-        let product_image = data[index].product_image !== null ? encodeURI(data[index].product_image) : "https://i.imgur.com/UjR2gYd.png";
+        let product_image = encodeURI(data[index].product_image);
 
         if (data[index].is_changfamily.toString() === "true") {
             is_tags += "logo|";
@@ -125,10 +125,10 @@ for (let index = 0; index <= data.length; index++) {
                 `|Discount percentage:${discount_percentage}` +
                 `|Unit:${unit}` +
                 `|Eta:${eta_text}` +
-                `|Product url,${product_url}` +
+                `|Product url:${product_url}` +
                 `|Discount percent:${discount_percent}`,
             img: encodeURI(product_image),
-            btns: "คลิกดูสินค้า",
+            btns: `${tagsJson["default image"].Button}`,
             link: data[index].product_url,
         };
         carousels = JSON.parse(JSON.stringify(carousels));
@@ -138,7 +138,7 @@ for (let index = 0; index <= data.length; index++) {
             label: `${tagsJson["all products"].Detail}`,
             subtitle: `${tagsJson["all products"].url}`,
             img: `${tagsJson["all products"].Image}`,
-            btns: "คลิกดูสินค้า",
+            btns: `${tagsJson["all products"].Button}`,
             link: `${tagsJson["all products"].url}`,
         };
         // carousels.label = `${tagsJson["all products"].Detail}`;

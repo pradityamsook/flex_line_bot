@@ -1,39 +1,46 @@
 let datas = JSON.parse(msg.data);
-let promotionData = msg.prompt_plus_promotion.hits[0]._source.item;
+let promotionData = msg.prompt_plus_promotion.hits;
 node.warn(datas);
 // node.warn(promotionData);
 
 const items = [];
 let valid_from;
 let valid_date;
+let catalogueData = {};
 let countPromotionTwoButton = 0;
 let formatData = "pp promotion|";
+
+promotionData.forEach((element) => {
+    catalogueData[element._source.item.json.Name] = element._source.item.json;
+});
 
 datas.data.forEach((element) => {
     if (element.hasOwnProperty("promotion_products")) countPromotionTwoButton += 1;
 });
-node.warn(countPromotionTwoButton);
+
 for (let index = 0; index <= datas.data.length; index++) {
     if (index === datas.data.length) {
         var carouselsPromotion = {
-            label: promotionData.name,
-            subtitle: `${promotionData.detail}|${promotionData.url}`,
-            img: promotionData.image,
-            btns: "รายละเอียด",
-            link: promotionData.url,
+            label: catalogueData["promotion"].Name,
+            subtitle: `Detail:${catalogueData["promotion"].Detail}|Button name:${catalogueData["promotion"].Button}|Promotion URL:${catalogueData["promotion"].URL}`,
+            img: catalogueData["promotion"].Image,
+            btns: `${catalogueData["promotion"].Button}`,
+            link: `${catalogueData["promotion"].URL}`,
         };
         carouselsPromotion.subtitle = formatData + carouselsPromotion.subtitle;
-        items.push(carouselsPromotion);
+        items.push(JSON.parse(JSON.stringify(carouselsPromotion)));
     } else {
+        let preImage = datas.data[index].promotion_banner;
+        let image = preImage === null ? (preImage = catalogueData["default"].Image) : (preImage = preImage);
         var carouselsCard = {
             label: datas.data[index].promotion_name,
-            subtitle: `Description:${datas.data[index].promotion_description}|Valid date:${valid_date}|Promotion page,${datas.data[index].promotion_page}|Count button:${countPromotionTwoButton}`,
-            img: encodeURI(datas.data[index].promotion_banner),
-            btns: "รายละเอียด",
-            link: datas.data[index].promotion_page,
+            subtitle: `Description:${datas.data[index].promotion_description}|Valid date:${valid_date}|Promotion page:${datas.data[index].promotion_page}|Button name:${catalogueData["default"].Button}|Count button:${countPromotionTwoButton}`,
+            img: encodeURI(image),
+            btns: `${catalogueData["default"].Button}`,
+            link: `${datas.data[index].promotion_page}`,
         };
         carouselsCard.subtitle = formatData + carouselsCard.subtitle;
-        items.push(carouselsCard);
+        items.push(JSON.parse(JSON.stringify(carouselsCard)));
     }
 }
 

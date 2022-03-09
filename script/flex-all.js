@@ -38,7 +38,6 @@ if (msg.payload.messages) {
 } else {
     node.error("Have no message");
 }
-return msg;
 
 function trans_video(message) {
     if (message.originalContentUrl.includes("thumbnail=")) {
@@ -108,8 +107,8 @@ function trans_flex_product(message) {
                         type: "image",
                         url: "https://i.imgur.com/Hy7OVI5.png",
                         size: "full",
-                        aspectRatio: "4:3",
-                        aspectMode: "cover",
+                        aspectRatio: "20:13",
+                        aspectMode: "fit",
                     },
                     {
                         type: "box",
@@ -465,10 +464,50 @@ function trans_flex_product(message) {
             paddingStart: "20px",
         };
 
+        let changFamily = {
+            type: "icon",
+            url: "https://i.imgur.com/ynXV8ia.png",
+            aspectRatio: "4:3",
+            size: "3xl",
+            offsetTop: "4px",
+        };
+
+        let discount = {
+            type: "box",
+            layout: "vertical",
+            contents: [
+                {
+                    type: "text",
+                    text: "-40%",
+                    color: "#FFFFFF",
+                    align: "center",
+                    gravity: "center",
+                    size: "12px",
+                    offsetTop: "3px",
+                    weight: "bold",
+                },
+            ],
+            offsetBottom: "282px",
+            offsetStart: "240px",
+            width: "40px",
+            height: "24px",
+            cornerRadius: "4px",
+            backgroundColor: "#ED4444",
+            background: {
+                type: "linearGradient",
+                angle: "135deg",
+                startColor: "#FF8A00",
+                endColor: "#ED4444",
+                centerColor: "#FF290C",
+            },
+            paddingAll: "1px",
+        };
+
         if (index + 1 === preContents.length || index === preContents.length - 1) {
             lastContent.hero.url = v.hero.url;
             lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
             lastContent.footer.action.uri = v.body.contents[1].text; // url all products
+            lastContent.footer.contents[0].text = v.footer.contents[0].action.label; // button name
             newData.push(JSON.parse(JSON.stringify(lastContent)));
         } else {
             let salePrice = dataContent[dataContent.length - 8].split(":");
@@ -477,7 +516,7 @@ function trans_flex_product(message) {
             let percenDiscount = dataContent[dataContent.length - 5].split(":");
             let unit = dataContent[dataContent.length - 4].split(":");
             let eta = dataContent[dataContent.length - 3].split(":");
-            let url = dataContent[dataContent.length - 2].split(",");
+            let url = dataContent[dataContent.length - 2].split(/:(.+)/);
             let _percentDiscount = dataContent[dataContent.length - 1].split(":");
 
             bodyContent.hero.contents[0].url = v.hero.url; //image
@@ -486,16 +525,18 @@ function trans_flex_product(message) {
             bodyContent.footer.contents[2].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
             bodyContent.footer.contents[0].contents[0].text = `${netPrice[1]} / ${unit[1]}`; // net price
             bodyContent.footer.contents[4].action.uri = url[1]; // url of products
+            bodyContent.footer.contents[4].contents[0].text = v.footer.contents[0].action.label; // button name
 
             for (let indexData = 0; indexData < dataContent.length; indexData++) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
-                    // bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
-                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(dataContent[indexData + 1])));
+                    // changFamily.url = JSON.parse(JSON.stringify(dataContent[indexData + 1]));
+                    bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
+                    // bodyContent.footer.contents[3].contents[0].contents.push(JSON.parse(JSON.stringify(changFamily)));
                 } else if (dataContent[indexData] === "!logo") {
-                    // bodyContent.footer.contents[3].contents[0].contents[0].url =
-                    //     "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
-                    bodyContent.footer.contents[3].contents[0].contents.splice(0, 1);
+                    bodyContent.footer.contents[3].contents[0].contents[0].url =
+                        "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
+                    // bodyContent.footer.contents[3].contents[0].contents.splice(0, 1);
                 }
 
                 if (dataContent[indexData] === "points") {
@@ -517,7 +558,6 @@ function trans_flex_product(message) {
                 }
 
                 if (dataContent[indexData] === "flash sale") {
-                    node.warn(522);
                     // tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
                     bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
@@ -572,26 +612,29 @@ function trans_flex_product(message) {
                         bodyContent.hero.contents[2].contents.push(JSON.parse(JSON.stringify(flashSale)));
                         bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
                         bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                        bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[0].contents.splice(0, 1);
+                        node.warn(bodyContent);
+                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
                         bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
                         bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
                         bodyContent.footer.contents[1].contents[0].color = "#000000";
                     }
                     eta[1] !== "undefined"
-                        ? (bodyContent.hero.contents[2].offsetBottom = "275px")
-                        : (bodyContent.hero.contents[2].offsetBottom = "248px");
+                        ? (bodyContent.hero.contents[2].offsetBottom = "245px")
+                        : (bodyContent.hero.contents[2].offsetBottom = "215px");
                 }
 
                 if (dataContent[indexData] === "discount only") {
                     tags.url = dataContent[indexData + 1];
+                    bodyContent.hero.contents.push(JSON.parse(JSON.stringify(discount)));
                     bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
                     bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents[3].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
                     bodyContent.hero.contents[3].contents[0].offsetTop = "1.5px";
-                    bodyContent.hero.contents[3].offsetBottom = "282px";
+                    bodyContent.hero.contents[3].offsetBottom = "245px";
                     eta[1] !== "undefined"
-                        ? (bodyContent.hero.contents[3].offsetBottom = "312px")
-                        : (bodyContent.hero.contents[3].offsetBottom = "282px");
+                        ? (bodyContent.hero.contents[3].offsetBottom = "275px")
+                        : (bodyContent.hero.contents[3].offsetBottom = "245px");
                     bodyContent.hero.contents[3].offsetStart = "20px";
                     delete bodyContent.hero.contents[3].background;
                     bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has discount
@@ -865,16 +908,19 @@ function trans_flex_pp_promotion(message) {
                 backgroundColor: "#FFFFFF",
                 height: "95px",
                 position: "relative",
-                offsetBottom: "0px",
+                offsetTop: "2px",
             },
         };
         bodyContent.footer.contents[1].action.uri = v.hero.url;
         bodyContent.body.contents[0].url = v.hero.url;
 
         if (index === preContents.length - 1) {
-            let getURLFromCatalogue = v.body.contents[1].text.split("|");
+            let getCatalogueData = v.body.contents[1].text.split("|");
+            let getURL = getCatalogueData[3].split(/:(.+)/);
+            let getBtnName = getCatalogueData[2].split(":");
             promotionBodyContent.body.contents[0].url = v.hero.url;
-            promotionBodyContent.footer.contents[1].action.uri = encodeURI(getURLFromCatalogue[2]);
+            promotionBodyContent.footer.contents[1].action.uri = encodeURI(getURL[1]);
+            promotionBodyContent.footer.contents[1].contents[0].text = getBtnName[1];
             newData.push(promotionBodyContent);
         } else {
             bodyContent.body.contents[0].url = v.hero.url; //set url image
@@ -883,9 +929,9 @@ function trans_flex_pp_promotion(message) {
             let details = v.body.contents[1].text.split("|");
             details.shift();
             let nullStr = details[0].split(":");
-            let promotionPage = details[2].split(",");
-            let promotionProducts = details[3].split(":");
+            let buttonName = details[details.length - 2].split(":");
             let numberButton = details[details.length - 1].split(":");
+            node.warn(buttonName);
 
             // Check if no contents set details as zero space character
             if (nullStr[1] === "") {
@@ -893,15 +939,20 @@ function trans_flex_pp_promotion(message) {
             }
 
             bodyContent.body.contents[2].contents[0].text = nullStr[1]; // details promotion
-            if (details.length > 4) {
+            if (details.length > 5) {
+                let promotionPage = details[2].split(/:(.+)/);
+                let promotionProducts = details[3].split(":");
                 // if has object's key promotion_page and promotion_products
                 bodyContent.footer.contents[1].action.uri = promotionPage[1]; // url button go to new page of promotion page
                 bodyContent.footer.contents[2].action.uri = promotionProducts[1]; // url button go to new page of promotion products
             } else {
+                let promotionPage = details[2].split(/:(.+)/);
+                node.warn(promotionPage);
                 if (numberButton[1] === "0") {
                     bodyContent.footer.contents.splice(1, 1);
                     bodyContent.footer.height = "90px";
                     bodyContent.footer.contents[1].action.uri = promotionPage[1]; // url button go to new page of promotion page
+                    bodyContent.footer.contents[1].contents[0].text = buttonName[1];
                 } else {
                     // but converse of above if object's either
                     bodyContent.footer.contents[2].action.uri = promotionPage[1]; // url button go to new page of promotion page or promotion products
@@ -1706,312 +1757,6 @@ function trans_flex_point(message) {
     message.contents.contents = newData;
 }
 
-function trans_flex_promotion(message) {
-    const preContents = message.contents.contents;
-    let newData = [];
-    let countButton = 0;
-    for (let index = 0; index < preContents.length; index++) {
-        if (preContents[index].footer.contents[0].action.label !== "null") countButton += 1;
-    }
-    preContents.forEach((v, index) => {
-        let setDataBody = v.body.contents[1].text.split("|");
-        node.warn(setDataBody.length);
-        let bodyContent = {
-            type: "bubble",
-            body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                    {
-                        type: "image",
-                        url: "https://i.imgur.com/VrLnVgK.jpg",
-                        size: "full",
-                        aspectMode: "cover",
-                        aspectRatio: "4:3",
-                        gravity: "top",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "Lorem ipsum dolor sit amet, cons",
-                                gravity: "center",
-                                align: "start",
-                                weight: "bold",
-                                size: "14px",
-                                style: "normal",
-                            },
-                        ],
-                        offsetTop: "10px",
-                        paddingStart: "16px",
-                        paddingEnd: "16px",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                maxLines: 2,
-                                size: "12px",
-                                color: "#808285",
-                                wrap: true,
-                                text: 'The JSON is data only, and if you include a comment, then it will be data too.  You could have a designated data element called "_comment" (or something) that should be ignored by apps that use the JSON data.  You would probably be better having the comment in the processes that generates/receives the JSON, as they are supposed to know what the JSON data will be in advance, or at least the structure of it.',
-                            },
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [],
-                                paddingStart: "16px",
-                                paddingEnd: "16px",
-                                paddingTop: "5px",
-                            },
-                        ],
-                        paddingStart: "16px",
-                        paddingEnd: "16px",
-                        paddingTop: "12px",
-                    },
-                ],
-                paddingAll: "0px",
-            },
-            footer: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "separator",
-                            },
-                            {
-                                type: "text",
-                                text: "1 - 30 พ.ย. 2564",
-                                color: "#808285",
-                                size: "12px",
-                                margin: "7.09091px",
-                                offsetBottom: "5px",
-                            },
-                        ],
-                        offsetBottom: "5px",
-                        paddingStart: "5px",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "รายละเอียด",
-                                gravity: "center",
-                                align: "center",
-                                offsetTop: "8px",
-                                color: "#FFFFFF",
-                                weight: "bold",
-                                size: "16px",
-                            },
-                        ],
-                        cornerRadius: "10px",
-                        borderColor: "#ED1C24",
-                        backgroundColor: "#ED1C24",
-                        height: "40px",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "รายละเอียด",
-                                gravity: "center",
-                                align: "center",
-                                offsetTop: "8px",
-                                color: "#FFFFFF",
-                                weight: "bold",
-                                size: "16px",
-                            },
-                        ],
-                        cornerRadius: "10px",
-                        borderColor: "#ED1C24",
-                        backgroundColor: "#ED1C24",
-                        height: "40px",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
-                        offsetTop: "5px",
-                    },
-                ],
-                backgroundColor: "#FFFFFF",
-                height: "130px",
-                position: "relative",
-                offsetBottom: "0px",
-            },
-        };
-
-        let lastBodyContent = {
-            type: "bubble",
-            body: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                    {
-                        type: "image",
-                        url: "https://i.imgur.com/VrLnVgK.jpg",
-                        size: "full",
-                        aspectMode: "cover",
-                        aspectRatio: "4:3",
-                        gravity: "top",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "​",
-                                gravity: "center",
-                                align: "start",
-                                weight: "bold",
-                                size: "14px",
-                                style: "normal",
-                            },
-                        ],
-                        offsetTop: "10px",
-                        paddingStart: "16px",
-                        paddingEnd: "16px",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "​",
-                                maxLines: 5,
-                                size: "12px",
-                                color: "#808285",
-                                wrap: true,
-                            },
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [],
-                                paddingStart: "16px",
-                                paddingEnd: "16px",
-                                paddingTop: "5px",
-                            },
-                        ],
-                        paddingStart: "16px",
-                        paddingEnd: "16px",
-                        paddingTop: "12px",
-                    },
-                ],
-                paddingAll: "0px",
-            },
-            footer: {
-                type: "box",
-                layout: "vertical",
-                contents: [
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "​",
-                                color: "#808285",
-                                size: "12px",
-                                margin: "7.09091px",
-                                offsetBottom: "5px",
-                            },
-                        ],
-                        offsetBottom: "5px",
-                        paddingStart: "5px",
-                    },
-                    {
-                        type: "box",
-                        layout: "vertical",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "รายละเอียด",
-                                gravity: "center",
-                                align: "center",
-                                offsetTop: "8px",
-                                color: "#FFFFFF",
-                                weight: "bold",
-                                size: "16px",
-                            },
-                        ],
-                        cornerRadius: "10px",
-                        borderColor: "#ED1C24",
-                        backgroundColor: "#ED1C24",
-                        height: "40px",
-                        action: {
-                            type: "uri",
-                            label: "action",
-                            uri: "http://linecorp.com/",
-                        },
-                        offsetTop: "5px",
-                    },
-                ],
-                backgroundColor: "#FFFFFF",
-                height: "95px",
-                position: "relative",
-                offsetBottom: "0px",
-            },
-        };
-
-        if (v.footer.contents[0].action.label === "null") {
-            if (countButton === 0) {
-                bodyContent.footer.contents.splice(1, 1);
-                bodyContent.footer.height = "90px";
-                bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
-            } else {
-                bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
-                bodyContent.footer.contents[1].borderColor = "#FFFFFF";
-                bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
-                bodyContent.footer.contents[1].action.uri = encodeURI("https://google.com");
-            }
-        } else {
-            bodyContent.footer.contents[1].action.label = v.footer.contents[0].action.label;
-            bodyContent.footer.contents[1].action.uri = v.footer.contents[0].action.uri;
-            bodyContent.footer.contents[2].action.label = v.footer.contents[1].action.label;
-            bodyContent.footer.contents[2].action.uri = encodeURI(v.footer.contents[1].action.uri);
-        }
-
-        if (index === preContents.length - 1) {
-            // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
-            lastBodyContent.body.contents[0].url = v.hero.url;
-            lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
-            newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
-        } else {
-            bodyContent.body.contents[0].url = v.hero.url; //set url image
-            bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
-            if (setDataBody.length === 1) bodyContent.body.contents[1].contents[0].text = "​";
-            else bodyContent.footer.contents[0].contents[1].text = setDataBody[2]; //set valid date;
-
-            if (!v.body.contents[1].text) {
-                bodyContent.body.contents.text = "​";
-            } else {
-                bodyContent.body.contents[2].contents[0].text = setDataBody[1];
-            }
-            newData.push(JSON.parse(JSON.stringify(bodyContent)));
-        }
-    });
-    message.contents.contents = newData;
-}
-
 function trans_text_to_flex(message) {
     let getData = message.text.split("|");
     getData.shift();
@@ -2207,16 +1952,18 @@ function trans_text_to_flex(message) {
         };
 
         if (getData[index] === "start") {
-            let nameClass = getData[index + 2].split(":");
-            let urlClass = getData[index + 4].split(",");
+            let buttonName = getData[index + 1].split(":");
+            bodyContent.footer.contents[0].contents[0].text = buttonName[1];
+            let nameClass = getData[index + 3].split(":");
+            let urlClass = getData[index + 5].split(/:(.+)/);
             bodyContent.header.contents[1].text = nameClass[1]; // name of product class
             bodyContent.footer.contents[0].action.uri = urlClass[1].replace(/\s/g, ""); // url of product class
             bodyContentTemp = JSON.parse(JSON.stringify(bodyContent));
         }
         if (getData[index] === "end_list") {
-            let imageList = getData[index - 3].split(",");
+            let imageList = getData[index - 3].split(/:(.+)/);
             let nameList = getData[index - 6].split(":");
-            let urlList = getData[index - 2].split(",");
+            let urlList = getData[index - 2].split(/:(.+)/);
             bodyListData.contents[0].url = imageList[1].replace(/\s/g, ""); // image product list
             bodyListData.contents[1].text = nameList[1]; // name of product list
             bodyListData.action.uri = urlList[1]; // url of product list
