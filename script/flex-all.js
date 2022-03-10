@@ -964,6 +964,7 @@ function trans_flex_pp_promotion(message) {
         }
     });
     message.contents.contents = newData;
+    message.altText = "";
 }
 
 function trans_flex_po(message) {
@@ -978,17 +979,64 @@ function trans_flex_po(message) {
     let purchase_date = (data[0].body.contents[1].text.split("|")[7] || "").split(":");
     let btn = data[0].footer.contents[0].action.label;
     let url = data[0].footer.contents[0].action.uri;
-    let dateTime = purchase_date[1].split("T");
+    node.warn(purchase_date);
+    let gmt7 = new Date(purchase_date[1] + ":" + purchase_date[2] + "-07:00");
+    node.warn(gmt7);
+    let timeZoneGmt7 = gmt7.toISOString();
+    node.warn(timeZoneGmt7);
+    let dateTime = timeZoneGmt7.split("T");
     let newDate = dateTime[0].split("-").reverse().join("/");
     let time = dateTime[1].split(":");
     let newTime = time[0] + ":" + time[1];
     let newDateTime = newDate + " " + newTime;
+    node.warn(newDate);
+    node.warn(time);
+    node.warn(newTime);
+    node.warn(newDateTime);
+
+    // let dateTime = purchase_date[1].split("T");
+    // let date = dateTime[0].split("-");
+
+    // let years = Number(date[0]);
+    // let months = Number(date[1]);
+    // let days = Number(date[2]);
+
+    // let hours = Number(date[1]);
+    // let minutes = Number(purchase_date[2]);
+    // // let seconds = Math.floor(Number(time[2]));
+    // let formatDate = new Date(Date.UTC(years, months, days, hours, minutes));
+
+    // let thDate = formatDate.toLocaleString("en-GB", {
+    //     timeZone: "Asia/Bangkok",
+    // });
+
+    // formatTHDate = thDate.split(", ");
+    // let removeMinutes = formatTHDate[1].split(":");
+    // let newTime = removeMinutes[0] + ":" + removeMinutes[1];
+    // let newDateTime = formatTHDate[0] + " " + newTime;
+
     let imgBackground = data[0].hero.url; //image order status
 
     msg.payload.messages[0].type = "flex";
-    //msg.payload.messages[0].altText = "เปิดบัญชี";
+    let altText = "";
     let _backgroundColor;
-    order_status === "pending" || order_status === "approved" ? (_backgroundColor = "#ECFFFA") : (_backgroundColor = "#FFF2F2");
+    order_status[1] === "pending" || order_status[1] === "approved" ? (_backgroundColor = "#ECFFFA") : (_backgroundColor = "#FFF2F2");
+
+    switch (order_status[1]) {
+        case "pending":
+            altText = "คำสั่งซื้อรอการอนุมัติ";
+            break;
+        case "approved":
+            altText = "คำสั่งซื้อถูกอนุมัติแล้ว";
+            break;
+        case "cancelled":
+            altText = "คำสั่งซื้อถูกยกเลิก";
+            break;
+        case "expired":
+            altText = "คำสั่งซื้อหมดอายุ";
+            break;
+    }
+
     var body = {
         type: "bubble",
         size: "mega",
@@ -1338,6 +1386,7 @@ function trans_flex_po(message) {
         },
     };
     message.contents = body;
+    message.altText = altText;
 }
 
 function trans_flex_point(message) {
