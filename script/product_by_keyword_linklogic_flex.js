@@ -21,7 +21,7 @@ for (let index = 0; index < getTags.length; index++) {
         tagsJson[data._source.item.json.Name] = data._source.item.json;
     });
 }
-
+node.error(tagsJson);
 var items = [];
 data = data.filter((data, index) => index <= 7);
 
@@ -51,7 +51,6 @@ for (let index = 0; index <= data.length; index++) {
         let sale_price = base_price - net_price;
         let discount_percent = Math.floor(((data[index].base_price - data[index].net_price) * 100) / data[index].base_price);
         let product_image = encodeURI(data[index].product_image);
-
         if (data[index].is_changfamily.toString() === "true") {
             is_tags += "logo|";
             is_tags += `${tagsJson["logo"].Image}|`;
@@ -113,7 +112,10 @@ for (let index = 0; index <= data.length; index++) {
 
         is_tags += `${tagsJson["delivery"]}|`;
 
-        product_image === null ? (product_image = `${tagsJson["default image"].Image}`) : (product_image = product_image);
+        product_image === "null" ? (product_image = `${tagsJson["default image"].Image}`) : (product_image = product_image);
+
+        const checkThaiChar = new RegExp("[ก-๙]").test(product_image);
+        checkThaiChar === true ? (product_image = encodeURI(product_image)) : (product_image = product_image);
 
         var carousels = {
             label: data[index].product_name,
@@ -127,7 +129,7 @@ for (let index = 0; index <= data.length; index++) {
                 `|Eta:${eta_text}` +
                 `|Product url:${product_url}` +
                 `|Discount percent:${discount_percent}`,
-            img: encodeURI(product_image),
+            img: product_image, //encodeURI(product_image),
             btns: `${tagsJson["default image"].Button}`,
             link: data[index].product_url,
         };
