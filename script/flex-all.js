@@ -1785,22 +1785,39 @@ function trans_flex_point(message) {
                 },
             },
         };
+
+        let storeCode = dataContent[0].split(":");
+        let dateCurrent = dataContent[7].split(":");
+        let totalPoint = dataContent[2].split(":");
+        let expiredPOint = dataContent[3].split(":");
+        let expiredYear = dataContent[4].split(":");
+        let expiredMonth = dataContent[5].split(":");
+        let totalBalance = dataContent[6].split(":");
+        let btn1 = v.footer.contents[0].action.label;
+        let btn2 = v.footer.contents[1].action.label;
+        let btn3 = v.footer.contents[2].action.label;
+        let btn4 = v.footer.contents[3].action.label;
+        let action1 = v.footer.contents[0].action;
+        let action2 = v.footer.contents[1].action;
+        let action3 = v.footer.contents[2].action;
+        let action4 = v.footer.contents[3].action;
+
         bodyContent.header.contents[0].contents[0].text = v.body.contents[0].text; // partner name's
-        bodyContent.header.contents[1].contents[1].text = `รหัสร้านค้า: ${dataContent[0]}`; // store's code
-        bodyContent.body.contents[0].contents[1].text = `วันที่ : ${dataContent[6]}`; //date current
-        bodyContent.body.contents[1].contents[0].contents[0].contents[0].text = dataContent[1]; // total point
-        bodyContent.body.contents[1].contents[0].contents[1].contents[0].text = dataContent[2]; // expired point
-        bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${dataContent[4]}/${dataContent[3]}`; // expired date point
-        bodyContent.body.contents[1].contents[2].contents[0].contents[0].text = dataContent[5]; //total balance
-        bodyContent.body.contents[2].contents[0].contents[0].contents[0].text = dataContent[7]; // btn1
-        bodyContent.body.contents[2].contents[1].contents[0].contents[0].text = dataContent[8]; // btn2
-        bodyContent.body.contents[3].contents[0].contents[0].contents[0].text = dataContent[9]; // btn3
-        bodyContent.body.contents[3].contents[1].contents[0].contents[0].text = dataContent[10]; // btn4
-        node.warn(dataContent[10]);
-        bodyContent.body.contents[2].contents[0].action.uri = encodeURI(dataContent[11]); // url1
-        // bodyContent.body.contents[2].contents[1].action.uri = encodeURI(dataContent[12]); // url2
-        bodyContent.body.contents[3].contents[0].action.uri = encodeURI(dataContent[13]); // url3
-        bodyContent.body.contents[3].contents[1].action.uri = encodeURI(dataContent[14]); // url4
+        bodyContent.header.contents[1].contents[1].text = `${storeCode[1]}`; // store's code
+        bodyContent.body.contents[0].contents[1].text = `วันที่ : ${dateCurrent[1]}`; //date current
+        bodyContent.body.contents[1].contents[0].contents[0].contents[0].text = totalPoint[1]; // total point
+        bodyContent.body.contents[1].contents[0].contents[1].contents[0].text = expiredPOint[1]; // expired point
+        bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${expiredYear[1]}/${expiredMonth[1]}`; // expired date point
+        bodyContent.body.contents[1].contents[2].contents[0].contents[0].text = totalBalance[1]; //total balance
+        bodyContent.body.contents[2].contents[0].contents[0].contents[0].text = btn1; // btn1
+        bodyContent.body.contents[2].contents[1].contents[0].contents[0].text = btn2; // btn2
+        bodyContent.body.contents[3].contents[0].contents[0].contents[0].text = btn3; // btn3
+        bodyContent.body.contents[3].contents[1].contents[0].contents[0].text = btn4; // btn4
+        // node.warn(dataContent[10]);
+        bodyContent.body.contents[2].contents[0].action = action1; // url1
+        bodyContent.body.contents[2].contents[1].action = action2; // url2
+        bodyContent.body.contents[3].contents[0].action = action3; // url3
+        bodyContent.body.contents[3].contents[1].action = action4; // url4
         newData.push(JSON.parse(JSON.stringify(bodyContent)));
     });
     message.contents.contents = newData;
