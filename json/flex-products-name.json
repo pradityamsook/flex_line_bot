@@ -808,3 +808,521 @@
         }
     ]
 }
+
+{
+    "type": "carousel",
+    "contents": [
+        {
+            "type": "bubble",
+            "hero": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                    {
+                        "type": "image",
+                        "url": "https://i.imgur.com/Hy7OVI5.png",
+                        "size": "full",
+                        "aspectRatio": "4:3"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://i.imgur.com/yUia3Sy.png",
+                                "position": "relative",
+                                "margin": "none",
+                                "size": "xxl",
+                                "aspectRatio": "10:3",
+                                "offsetTop": "-10px"
+                            }
+                        ],
+                        "offsetBottom": "183px",
+                        "height": "70px",
+                        "paddingTop": "10px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "-40%",
+                                "color": "#FFFFFF",
+                                "align": "center",
+                                "gravity": "center",
+                                "size": "12px",
+                                "offsetTop": "3px"
+                            }
+                        ],
+                        "offsetBottom": "250px",
+                        "offsetStart": "253px",
+                        "width": "40px",
+                        "height": "24px",
+                        "cornerRadius": "4px",
+                        "backgroundColor": "#ED4444",
+                        "background": {
+                            "type": "linearGradient",
+                            "angle": "135deg",
+                            "startColor": "#FF8A00",
+                            "endColor": "#ED4444",
+                            "centerColor": "#FF290C"
+                        },
+                        "paddingAll": "1px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "icon",
+                                "url": "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
+                                "offsetTop": "8px",
+                                "offsetStart": "-50px",
+                                "aspectRatio": "1:1"
+                            },
+                            {
+                                "type": "text",
+                                "text": "จัดส่งใน 15 วัน",
+                                "color": "#FFFFFF",
+                                "offsetStart": "40px",
+                                "weight": "bold",
+                                "position": "absolute",
+                                "offsetTop": "6px",
+                                "size": "14px"
+                            }
+                        ],
+                        "offsetBottom": "132px",
+                        "cornerRadius": "5px",
+                        "backgroundColor": "#000000AA",
+                        "borderColor": "#000000AA",
+                        "width": "140px",
+                        "offsetStart": "153px",
+                        "height": "30px",
+                        "justifyContent": "center",
+                        "alignItems": "center"
+                    }
+                ],
+                "height": "220px"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "text",
+                        "wrap": true,
+                        "weight": "bold",
+                        "text": "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)",
+                        "size": "16px",
+                        "offsetBottom": "10px"
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "฿1,023 / ถัง ",
+                                "wrap": true,
+                                "weight": "bold",
+                                "flex": 0,
+                                "decoration": "line-through",
+                                "color": "#BCBEC0",
+                                "size": "14px"
+                            }
+                        ],
+                        "paddingStart": "15px",
+                        "paddingEnd": "15px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "฿1,000 ",
+                                "wrap": true,
+                                "weight": "bold",
+                                "flex": 0,
+                                "color": "#ED4444",
+                                "size": "19px"
+                            },
+                            {
+                                "type": "text",
+                                "text": "⠀/ ถัง",
+                                "color": "#808285",
+                                "size": "14px",
+                                "weight": "bold"
+                            }
+                        ],
+                        "height": "30px",
+                        "alignItems": "center",
+                        "justifyContent": "center",
+                        "paddingStart": "15px",
+                        "paddingEnd": "15px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "ราคา ณ วันที่ 22 พ.ย. 2021",
+                                "color": "#808285",
+                                "size": "14px"
+                            }
+                        ],
+                        "paddingStart": "13px",
+                        "paddingEnd": "13px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/ynXV8ia.png",
+                                        "aspectRatio": "4:3",
+                                        "size": "3xl",
+                                        "offsetTop": "4px"
+                                    }
+                                ],
+                                "justifyContent": "flex-start"
+                            },
+                            {
+                                "type": "box",
+                                "layout": "baseline",
+                                "contents": [
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/vVcsjMQ.png",
+                                        "position": "relative",
+                                        "aspectRatio": "1:1.2",
+                                        "size": "xxl",
+                                        "offsetTop": "4px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/OabotYy.png",
+                                        "size": "xxl",
+                                        "aspectRatio": "1:1.2",
+                                        "offsetTop": "4px"
+                                    },
+                                    {
+                                        "type": "icon",
+                                        "url": "https://i.imgur.com/RHJXfvA.png",
+                                        "size": "xxl",
+                                        "aspectRatio": "1:1.2",
+                                        "offsetTop": "4px"
+                                    }
+                                ],
+                                "justifyContent": "flex-end",
+                                "alignItems": "center",
+                                "spacing": "4px"
+                            }
+                        ],
+                        "width": "600px",
+                        "paddingStart": "13px",
+                        "paddingEnd": "13px"
+                    },
+                    {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "text": "คลิกดูสินค้า",
+                                "size": "18px",
+                                "color": "#FFFFFF",
+                                "weight": "bold",
+                                "style": "normal",
+                                "align": "center",
+                                "gravity": "center",
+                                "offsetTop": "20px"
+                            }
+                        ],
+                        "paddingAll": "0%",
+                        "backgroundColor": "#ED1C24",
+                        "height": "65px"
+                    }
+                ],
+                "backgroundColor": "#FFFFFF",
+                "height": "100%",
+                "paddingAll": "0%"
+            }
+        }
+    ]
+}
+
+{
+    type: "carousel",
+    contents: [
+        {
+        type: "bubble",
+        hero: {
+          type: "box",
+          layout: "vertical",
+          contents: [
+                    {
+              type: "image",
+              url: "https://i.imgur.com/Hy7OVI5.png",
+              size: "full",
+              aspectRatio: "4:3"
+                    },
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "icon",
+                  url: "https://i.imgur.com/yUia3Sy.png",
+                  position: "relative",
+                  margin: "none",
+                  size: "xxl",
+                  aspectRatio: "10:3",
+                  offsetTop: "-10px"
+                            }
+                        ],
+              offsetBottom: "183px",
+              height: "70px",
+              paddingTop: "10px"
+                    },
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "text",
+                  text: "-40%",
+                  color: "#FFFFFF",
+                  align: "center",
+                  gravity: "center",
+                  size: "12px",
+                  offsetTop: "3px"
+                            }
+                        ],
+              offsetBottom: "250px",
+              offsetStart: "253px",
+              width: "40px",
+              height: "24px",
+              cornerRadius: "4px",
+              backgroundColor: "#ED4444",
+              background: {
+                type: "linearGradient",
+                angle: "135deg",
+                startColor: "#FF8A00",
+                endColor: "#ED4444",
+                centerColor: "#FF290C"
+                        },
+              paddingAll: "1px"
+                    },
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "icon",
+                  url: "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
+                  offsetTop: "8px",
+                  offsetStart: "-50px",
+                  aspectRatio: "1:1"
+                            },
+                            {
+                  type: "text",
+                  text: "จัดส่งใน 15 วัน",
+                  color: "#FFFFFF",
+                  offsetStart: "40px",
+                  weight: "bold",
+                  position: "absolute",
+                  offsetTop: "6px",
+                  size: "14px"
+                            }
+                        ],
+              offsetBottom: "132px",
+              cornerRadius: "5px",
+              backgroundColor: "#000000AA",
+              borderColor: "#000000AA",
+              width: "140px",
+              offsetStart: "153px",
+              height: "30px",
+              justifyContent: "center",
+              alignItems: "center"
+                    }
+                ],
+          height: "220px"
+            },
+        body: {
+          type: "box",
+          layout: "vertical",
+          spacing: "sm",
+          contents: [
+                    {
+              type: "text",
+              wrap: true,
+              weight: "bold",
+              text: "เสือ เดคอร์ โพลิเมอร์ซีเมนต์ ลอฟท์วอลล์ - สีเทาอ่อน (L01)",
+              size: "16px",
+              offsetBottom: "10px"
+                    }
+                ]
+            },
+        footer: {
+          type: "box",
+          layout: "vertical",
+          spacing: "sm",
+          contents: [
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "text",
+                  text: "฿1,023 / ถัง ",
+                  wrap: true,
+                  weight: "bold",
+                  flex: 0,
+                  decoration: "line-through",
+                  color: "#BCBEC0",
+                  size: "14px"
+                            }
+                        ],
+              paddingStart: "15px",
+              paddingEnd: "15px"
+                    },
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "text",
+                  text: "฿1,000 ",
+                  wrap: true,
+                  weight: "bold",
+                  flex: 0,
+                  color: "#ED4444",
+                  size: "19px"
+                            },
+                            {
+                  type: "text",
+                  text: "⠀/ ถัง",
+                  color: "#808285",
+                  size: "14px",
+                  weight: "bold"
+                            }
+                        ],
+              height: "30px",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingStart: "15px",
+              paddingEnd: "15px"
+                    },
+                    {
+              type: "box",
+              layout: "baseline",
+              contents: [
+                            {
+                  type: "text",
+                  text: "ราคา ณ วันที่ 22 พ.ย. 2021",
+                  color: "#808285",
+                  size: "14px"
+                            }
+                        ],
+              paddingStart: "13px",
+              paddingEnd: "13px"
+                    },
+                    {
+              type: "box",
+              layout: "horizontal",
+              contents: [
+                            {
+                  type: "box",
+                  layout: "baseline",
+                  contents: [
+                                    {
+                      type: "icon",
+                      url: "https://i.imgur.com/ynXV8ia.png",
+                      aspectRatio: "4:3",
+                      size: "3xl",
+                      offsetTop: "4px"
+                                    }
+                                ],
+                  justifyContent: "flex-start"
+                            },
+                            {
+                  type: "box",
+                  layout: "baseline",
+                  contents: [
+                                    {
+                      type: "icon",
+                      url: "https://i.imgur.com/vVcsjMQ.png",
+                      position: "relative",
+                      aspectRatio: "1:1.2",
+                      size: "xxl",
+                      offsetTop: "4px"
+                                    },
+                                    {
+                      type: "icon",
+                      url: "https://i.imgur.com/OabotYy.png",
+                      size: "xxl",
+                      aspectRatio: "1:1.2",
+                      offsetTop: "4px"
+                                    },
+                                    {
+                      type: "icon",
+                      url: "https://i.imgur.com/RHJXfvA.png",
+                      size: "xxl",
+                      aspectRatio: "1:1.2",
+                      offsetTop: "4px"
+                                    }
+                                ],
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                  spacing: "4px"
+                            }
+                        ],
+              width: "600px",
+              paddingStart: "13px",
+              paddingEnd: "13px"
+                    },
+                    {
+              type: "box",
+              layout: "vertical",
+              contents: [
+                            {
+                  type: "text",
+                  text: "คลิกดูสินค้า",
+                  size: "18px",
+                  color: "#FFFFFF",
+                  weight: "bold",
+                  style: "normal",
+                  align: "center",
+                  gravity: "center",
+                  offsetTop: "20px"
+                            }
+                        ],
+              paddingAll: "0%",
+              backgroundColor: "#ED1C24",
+              height: "65px"
+                    }
+                ],
+          backgroundColor: "#FFFFFF",
+          height: "100%",
+          paddingAll: "0%"
+            }
+        }
+    ]
+}

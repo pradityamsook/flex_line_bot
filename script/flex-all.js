@@ -85,15 +85,15 @@ function trans_flex_product(message) {
     let countDiscount = 0;
 
     //loop for count any card have name string length more than 36 without last card.
-    for (let index = 0; index < preContents.length - 1; index++) {
-        let data = preContents[index].body.contents[1].text.split("|");
-        let _percentDiscount = data[data.length - 1].split(":");
-        _percentDiscount[1] === "0" ? (countDiscount += 1) : (countDiscount = countDiscount);
-    }
+    // for (let index = 0; index < preContents.length - 1; index++) {
+    //     let data = preContents[index].body.contents[1].text.split("|");
+    //     let _percentDiscount = data[data.length - 1].split(":");
+    //     _percentDiscount[1] === "0" ? (countDiscount += 1) : (countDiscount = countDiscount);
+    // }
 
     preContents.forEach((v, index) => {
         let dataContent = v.body.contents[1].text.split("|");
-        node.warn(index);
+        node.warn(dataContent);
         const white = "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
         dataContent.shift();
 
@@ -107,41 +107,7 @@ function trans_flex_product(message) {
                         type: "image",
                         url: "https://i.imgur.com/Hy7OVI5.png",
                         size: "full",
-                        aspectRatio: "20:13",
-                        aspectMode: "fit",
-                    },
-                    {
-                        type: "box",
-                        layout: "baseline",
-                        contents: [
-                            {
-                                type: "icon",
-                                url: "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
-                                offsetTop: "5px",
-                                offsetStart: "-60px",
-                                aspectRatio: "1:1",
-                                size: "25px",
-                            },
-                            {
-                                type: "text",
-                                text: "จัดส่งใน 15 วัน",
-                                color: "#FFFFFF",
-                                offsetStart: "40px",
-                                weight: "bold",
-                                position: "absolute",
-                                offsetTop: "6px",
-                                size: "14px",
-                            },
-                        ],
-                        offsetBottom: "35px",
-                        cornerRadius: "5px",
-                        backgroundColor: "#000000AA",
-                        borderColor: "#000000AA",
-                        width: "165px",
-                        offsetStart: "115px",
-                        height: "30px",
-                        justifyContent: "center",
-                        alignItems: "center",
+                        aspectRatio: "4:3",
                     },
                     {
                         type: "box",
@@ -154,16 +120,16 @@ function trans_flex_product(message) {
                                 margin: "none",
                                 size: "xxl",
                                 aspectRatio: "10:3",
-                                offsetTop: "20px",
+                                offsetTop: "-10px",
                             },
                         ],
-                        offsetBottom: "248px",
+                        offsetBottom: "210px",
                         height: "70px",
-                        paddingTop: "15px",
+                        paddingTop: "10px",
                     },
                     {
                         type: "box",
-                        layout: "vertical",
+                        layout: "baseline",
                         contents: [
                             {
                                 type: "text",
@@ -173,11 +139,10 @@ function trans_flex_product(message) {
                                 gravity: "center",
                                 size: "12px",
                                 offsetTop: "3px",
-                                weight: "bold",
                             },
                         ],
-                        offsetBottom: "282px",
-                        offsetStart: "240px",
+                        offsetBottom: "275px",
+                        offsetStart: "253px",
                         width: "40px",
                         height: "24px",
                         cornerRadius: "4px",
@@ -190,6 +155,38 @@ function trans_flex_product(message) {
                             centerColor: "#FF290C",
                         },
                         paddingAll: "1px",
+                    },
+                    {
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
+                            {
+                                type: "icon",
+                                url: "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
+                                offsetTop: "8px",
+                                offsetStart: "-55px",
+                                aspectRatio: "1:1",
+                            },
+                            {
+                                type: "text",
+                                text: "จัดส่งใน 15 วัน",
+                                color: "#FFFFFF",
+                                offsetStart: "40px",
+                                weight: "bold",
+                                position: "absolute",
+                                offsetTop: "4px",
+                                size: "14px",
+                            },
+                        ],
+                        offsetBottom: "132px",
+                        cornerRadius: "5px",
+                        backgroundColor: "#000000AA",
+                        borderColor: "#000000AA",
+                        width: "160px",
+                        offsetStart: "125px",
+                        height: "30px",
+                        justifyContent: "center",
+                        alignItems: "center",
                     },
                 ],
                 height: "220px",
@@ -215,62 +212,6 @@ function trans_flex_product(message) {
                 type: "box",
                 layout: "vertical",
                 contents: [
-                    {
-                        type: "box",
-                        layout: "baseline",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "฿1,023 / ถัง ",
-                                wrap: true,
-                                weight: "bold",
-                                flex: 0,
-                                decoration: "line-through",
-                                color: "#BCBEC0",
-                                size: "14px",
-                            },
-                        ],
-                        offsetTop: "0px",
-                        paddingStart: "20px",
-                    },
-                    {
-                        type: "box",
-                        layout: "baseline",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "฿1,000 ",
-                                wrap: true,
-                                weight: "bold",
-                                flex: 0,
-                                color: "#ED4444",
-                                size: "19px",
-                            },
-                            {
-                                type: "text",
-                                text: "⠀/ ถัง",
-                                color: "#808285",
-                                size: "14px",
-                                weight: "bold",
-                            },
-                        ],
-                        offsetTop: "0px",
-                        paddingStart: "20px",
-                    },
-                    {
-                        type: "box",
-                        layout: "baseline",
-                        contents: [
-                            {
-                                type: "text",
-                                text: "ราคา ณ วันที่ 22 พ.ย. 2021",
-                                color: "#808285",
-                                size: "14px",
-                            },
-                        ],
-                        offsetTop: "0px",
-                        paddingStart: "20px",
-                    },
                     {
                         type: "box",
                         layout: "horizontal",
@@ -303,6 +244,62 @@ function trans_flex_product(message) {
                             },
                         ],
                         width: "600px",
+                        offsetBottom: "5px",
+                    },
+                    {
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "฿1,023",
+                                wrap: true,
+                                weight: "bold",
+                                flex: 0,
+                                decoration: "line-through",
+                                color: "#BCBEC0",
+                                size: "14px",
+                            },
+                        ],
+                        paddingStart: "20px",
+                        offsetBottom: "2px",
+                    },
+                    {
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "฿1,000 ",
+                                wrap: true,
+                                weight: "bold",
+                                flex: 0,
+                                color: "#ED4444",
+                                size: "19px",
+                            },
+                            {
+                                type: "text",
+                                text: "⠀/ ถัง",
+                                color: "#808285",
+                                size: "14px",
+                                weight: "bold",
+                            },
+                        ],
+                        paddingStart: "20px",
+                        offsetBottom: "5px",
+                    },
+                    {
+                        type: "box",
+                        layout: "baseline",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ราคา ณ วันที่ 22 พ.ย. 2021",
+                                color: "#808285",
+                                size: "14px",
+                            },
+                        ],
+                        paddingStart: "20px",
                         offsetBottom: "5px",
                     },
                     {
@@ -401,7 +398,7 @@ function trans_flex_product(message) {
                     type: "icon",
                     url: "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png",
                     offsetTop: "8px",
-                    offsetStart: "-50px",
+                    offsetStart: "-55px",
                     aspectRatio: "1:1",
                 },
                 {
@@ -411,16 +408,16 @@ function trans_flex_product(message) {
                     offsetStart: "40px",
                     weight: "bold",
                     position: "absolute",
-                    offsetTop: "6px",
+                    offsetTop: "4px",
                     size: "14px",
                 },
             ],
-            offsetBottom: "35px",
+            offsetBottom: "132px",
             cornerRadius: "5px",
             backgroundColor: "#000000AA",
             borderColor: "#000000AA",
-            width: "140px",
-            offsetStart: "153px",
+            width: "160px",
+            offsetStart: "125px",
             height: "30px",
             justifyContent: "center",
             alignItems: "center",
@@ -442,7 +439,7 @@ function trans_flex_product(message) {
             margin: "none",
             size: "xxl",
             aspectRatio: "10:3",
-            offsetTop: "20px",
+            offsetTop: "-10px",
         };
 
         let netPrice = {
@@ -503,6 +500,17 @@ function trans_flex_product(message) {
             paddingAll: "1px",
         };
 
+        let basePriceObject = {
+            type: "text",
+            text: "฿1,023 / ถัง ",
+            wrap: true,
+            weight: "bold",
+            flex: 0,
+            decoration: "line-through",
+            color: "#BCBEC0",
+            size: "14px",
+        };
+
         if (index + 1 === preContents.length || index === preContents.length - 1) {
             lastContent.hero.url = v.hero.url;
             lastContent.body.contents[0].text = v.body.contents[0].text; // detail all products
@@ -510,8 +518,10 @@ function trans_flex_product(message) {
             lastContent.footer.contents[0].text = v.footer.contents[0].action.label; // button name
             newData.push(JSON.parse(JSON.stringify(lastContent)));
         } else {
+            node.warn(dataContent);
             let salePrice = dataContent[dataContent.length - 8].split(":");
             let basePrice = dataContent[dataContent.length - 7].split(":");
+            node.warn(basePrice);
             let netPrice = dataContent[dataContent.length - 6].split(":");
             let percenDiscount = dataContent[dataContent.length - 5].split(":");
             let unit = dataContent[dataContent.length - 4].split(":");
@@ -521,9 +531,9 @@ function trans_flex_product(message) {
 
             bodyContent.hero.contents[0].url = v.hero.url; //image
             bodyContent.body.contents[0].text = v.body.contents[0].text; //description
-            bodyContent.hero.contents[3].contents[0].text = `-${percenDiscount[1]}%`; // percent discount
-            bodyContent.footer.contents[2].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
-            bodyContent.footer.contents[0].contents[0].text = `${netPrice[1]} / ${unit[1]}`; // net price
+            bodyContent.hero.contents[2].contents[0].text = `-${percenDiscount[1]}%`; // percent discount
+            bodyContent.footer.contents[3].contents[0].text = `ราคา ณ วันที่ ${toThaiDateString(date)}`; // Thai date
+            bodyContent.footer.contents[2].contents[0].text = `${netPrice[1]} / ${unit[1]}`; // net price
             bodyContent.footer.contents[4].action.uri = url[1]; // url of products
             bodyContent.footer.contents[4].contents[0].text = v.footer.contents[0].action.label; // button name
 
@@ -531,10 +541,10 @@ function trans_flex_product(message) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
                     // changFamily.url = JSON.parse(JSON.stringify(dataContent[indexData + 1]));
-                    bodyContent.footer.contents[3].contents[0].contents[0].url = dataContent[indexData + 1];
+                    bodyContent.footer.contents[0].contents[0].contents[0].url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[0].contents.push(JSON.parse(JSON.stringify(changFamily)));
                 } else if (dataContent[indexData] === "!logo") {
-                    bodyContent.footer.contents[3].contents[0].contents[0].url =
+                    bodyContent.footer.contents[0].contents[0].contents[0].url =
                         "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
                     // bodyContent.footer.contents[3].contents[0].contents.splice(0, 1);
                 }
@@ -542,111 +552,139 @@ function trans_flex_product(message) {
                 if (dataContent[indexData] === "points") {
                     // add points icon
                     tags.url = dataContent[indexData + 1];
-                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
+                    bodyContent.footer.contents[0].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
                 }
 
                 if (dataContent[indexData] === "wallet") {
                     // add wallet icon
                     tags.url = dataContent[indexData + 1];
-                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
+                    bodyContent.footer.contents[0].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
                 }
 
                 if (dataContent[indexData] === "free goods") {
                     // add free goods icon
                     tags.url = dataContent[indexData + 1];
-                    bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
+                    bodyContent.footer.contents[0].contents[1].contents.push(JSON.parse(JSON.stringify(tags)));
                 }
 
                 if (dataContent[indexData] === "flash sale") {
                     // tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
-                    bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
-                    bodyContent.footer.contents[1].contents[0].text = `${salePrice[1]}`; // sale price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
+                    // bodyContent.hero.contents[1].contents[0].offsetTop = "70px";
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
+                    bodyContent.footer.contents[2].contents[0].text = `${salePrice[1]}`; // sale price
+                    bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                    node.warn(bodyContent.hero.contents);
+                    node.warn(eta[1]);
                     if (eta[1] !== "undefined") {
-                        bodyContent.hero.contents[2].offsetBottom = "279px";
-                        bodyContent.hero.contents[3].offsetBottom = "312px";
+                        bodyContent.hero.contents[1].offsetBottom = "210px";
+                        bodyContent.hero.contents[2].offsetBottom = "275px";
+                        bodyContent.hero.contents[3].contents[1].text = eta[1];
                     } else {
-                        bodyContent.hero.contents[2].offsetBottom = "248px";
+                        bodyContent.hero.contents[1].offsetBottom = "248px";
+                        bodyContent.hero.contents.splice(3, 1);
                     }
                 }
-
-                if (
-                    dataContent[indexData] === "!flash sale" ||
-                    dataContent[indexData] === "!promotion" ||
-                    dataContent[indexData] === "!discount only"
-                ) {
+                if (dataContent[indexData] === "!flash sale") {
                     if (countDiscount === preContents.length - 1) {
-                        bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                        bodyContent.footer.contents[0].contents.splice(0, 1);
-                        node.warn(bodyContent);
+                        bodyContent.hero.contents[1].contents.splice(0, 1); // remove flash sale icon
+                        bodyContent.hero.contents.splice(2, 1); // remove percent discount
+                        bodyContent.footer.contents[1].contents.splice(0, 1);
                         // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
-                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                        bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[2].contents[0].color = "#000000";
                     } else {
-                        bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                        bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
-                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                        bodyContent.hero.contents[1].contents.splice(0, 1); // remove flash sale icon
+                        bodyContent.hero.contents.splice(2, 1); // remove percent discount
+                        bodyContent.footer.contents[1].contents[0].text = "​"; // remove net price
+                        bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[2].contents[0].color = "#000000";
                     }
                 }
-
                 if (dataContent[indexData] === "promotion") {
                     if (countDiscount === preContents.length - 1) {
                         tags.url = dataContent[indexData + 1];
-                        bodyContent.footer.contents[2].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
-                        bodyContent.hero.contents[2].contents.push(JSON.parse(JSON.stringify(flashSale)));
-                        bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
-                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
+                        bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                        bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
+                        bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
+                        bodyContent.hero.contents.splice(2, 1); // remove percent discount
                         // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                        bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // base price
-                        bodyContent.footer.contents[0].contents[1].text = ` / ${unit[1]}`; // unit
-                        bodyContent.footer.contents[0].contents[0].color = "#000000";
+                        bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[2].contents[0].color = "#000000";
                     } else {
                         tags.url = dataContent[indexData + 1];
-                        bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
-                        bodyContent.hero.contents[2].contents.push(JSON.parse(JSON.stringify(flashSale)));
-                        bodyContent.hero.contents[2].contents[0].url = dataContent[indexData + 2]; // set tag promotion
-                        bodyContent.hero.contents.splice(3, 1); // remove percent discount
-                        bodyContent.footer.contents[0].contents.splice(0, 1);
-                        node.warn(bodyContent);
+                        bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                        bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
+                        bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
+                        // bodyContent.hero.contents.splice(2, 1); // remove percent discount
+                        bodyContent.footer.contents[1].contents.splice(0, 1);
                         // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
-                        bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // base price
-                        bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
-                        bodyContent.footer.contents[1].contents[0].color = "#000000";
+                        bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
+                        bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                        bodyContent.footer.contents[2].contents[0].color = "#000000";
+                        // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+                        // bodyContent.hero.contents[2].contents[1].text = eta[1];
+
+                        node.warn(bodyContent.hero.contents);
+                        if (eta[1] !== "undefined") {
+                            // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+                            bodyContent.hero.contents[2].contents[1].text = eta[1];
+                            bodyContent.hero.contents[2].offsetBottom = "100px";
+                        } else {
+                            bodyContent.hero.contents.splice(2, 1);
+                        }
                     }
                     eta[1] !== "undefined"
-                        ? (bodyContent.hero.contents[2].offsetBottom = "245px")
-                        : (bodyContent.hero.contents[2].offsetBottom = "215px");
+                        ? (bodyContent.hero.contents[1].offsetBottom = "210px")
+                        : (bodyContent.hero.contents[1].offsetBottom = "210px");
                 }
-
                 if (dataContent[indexData] === "discount only") {
                     tags.url = dataContent[indexData + 1];
-                    bodyContent.hero.contents.push(JSON.parse(JSON.stringify(discount)));
-                    bodyContent.footer.contents[3].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
-                    bodyContent.hero.contents[2].contents.splice(0, 1); // remove flash sale icon
-                    bodyContent.hero.contents[3].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
-                    bodyContent.hero.contents[3].contents[0].offsetTop = "1.5px";
-                    bodyContent.hero.contents[3].offsetBottom = "245px";
-                    eta[1] !== "undefined"
-                        ? (bodyContent.hero.contents[3].offsetBottom = "275px")
-                        : (bodyContent.hero.contents[3].offsetBottom = "245px");
-                    bodyContent.hero.contents[3].offsetStart = "20px";
-                    delete bodyContent.hero.contents[3].background;
-                    bodyContent.footer.contents[0].contents[0].text = `${basePrice[1]}`; // net price if has discount
-                    bodyContent.footer.contents[1].contents[0].text = `${netPrice[1]}`; // sale price
-                    bodyContent.footer.contents[1].contents[1].text = ` / ${unit[1]}`; // unit
+                    node.warn(bodyContent.hero.contents);
+                    // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(discount)));
+                    bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                    bodyContent.hero.contents[1].contents.splice(0, 1); // remove flash sale icon
+                    bodyContent.hero.contents[1] = JSON.parse(JSON.stringify(discount));
+                    bodyContent.footer.contents[1].contents.push(JSON.parse(JSON.stringify(basePriceObject)));
+                    bodyContent.hero.contents[1].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
+
+                    bodyContent.hero.contents[1].contents[0].offsetTop = "1.5px";
+                    bodyContent.hero.contents[1].offsetBottom = "210px";
+                    if (eta[1] !== "undefined") {
+                        bodyContent.hero.contents[1].offsetBottom = "210px";
+                        bodyContent.hero.contents[2].offsetBottom = "60px";
+                        bodyContent.hero.contents[2].contents[1].text = eta[1];
+                    } else {
+                        bodyContent.hero.contents[1].offsetBottom = "210px";
+                    }
+
+                    bodyContent.hero.contents[1].offsetStart = "20px";
+                    delete bodyContent.hero.contents[1].background;
+                    bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has discount
+                    bodyContent.footer.contents[2].contents[0].text = `${netPrice[1]}`; // sale price
+                    bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                    bodyContent.footer.contents[2].contents[0].color = "#ED4444"; // set color red when net_price != base_price
+                    bodyContent.footer.contents[1].contents.splice(1, 1); // remove mockup base price
                 }
             }
-            if (eta[1] === "undefined") {
-                bodyContent.hero.contents.splice(1, 1);
-            } else {
-                bodyContent.hero.contents[1].contents[1].text = eta[1]; // in delivery
-            }
+            // if (eta[1] === "undefined") {
+            //     bodyContent.hero.contents.splice(3, 1);
+            // } else {
+            //     node.warn(658);
+            //     if (bodyContent.hero.contents.length < 3) {
+            //         node.warn(666);
+            //         node.warn(bodyContent.hero.contents);
+            //         bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+            //         bodyContent.hero.contents[3].contents[1].text = eta[1];
+            //     } else {
+            //         node.warn(663);
+            //         node.warn(bodyContent.hero.contents);
+            //         bodyContent.hero.contents[3].contents[1].text = eta[1]; // in delivery
+            //     }
+            // }
             newData.push(JSON.parse(JSON.stringify(bodyContent)));
         }
     });
