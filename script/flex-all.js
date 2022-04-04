@@ -1005,6 +1005,312 @@ function trans_flex_pp_promotion(message) {
     message.altText = "";
 }
 
+function trans_flex_promotion(message) {
+    const preContents = message.contents.contents;
+    let newData = [];
+    let countButton = 0;
+    for (let index = 0; index < preContents.length; index++) {
+        if (preContents[index].footer.contents[0].action.label !== "null") countButton += 1;
+    }
+    preContents.forEach((v, index) => {
+        let setDataBody = v.body.contents[1].text.split("|");
+        node.warn(setDataBody.length);
+        let bodyContent = {
+            type: "bubble",
+            body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/VrLnVgK.jpg",
+                        size: "full",
+                        aspectMode: "cover",
+                        aspectRatio: "4:3",
+                        gravity: "top",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "Lorem ipsum dolor sit amet, cons",
+                                gravity: "center",
+                                align: "start",
+                                weight: "bold",
+                                size: "14px",
+                                style: "normal",
+                            },
+                        ],
+                        offsetTop: "10px",
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                maxLines: 2,
+                                size: "12px",
+                                color: "#808285",
+                                wrap: true,
+                                text: 'The JSON is data only, and if you include a comment, then it will be data too.  You could have a designated data element called "_comment" (or something) that should be ignored by apps that use the JSON data.  You would probably be better having the comment in the processes that generates/receives the JSON, as they are supposed to know what the JSON data will be in advance, or at least the structure of it.',
+                            },
+                            {
+                                type: "box",
+                                layout: "vertical",
+                                contents: [],
+                                paddingStart: "16px",
+                                paddingEnd: "16px",
+                                paddingTop: "5px",
+                            },
+                        ],
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                        paddingTop: "12px",
+                    },
+                ],
+                paddingAll: "0px",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "separator",
+                            },
+                            {
+                                type: "text",
+                                text: "1 - 30 พ.ย. 2564",
+                                color: "#808285",
+                                size: "12px",
+                                margin: "7.09091px",
+                                offsetBottom: "5px",
+                            },
+                        ],
+                        offsetBottom: "5px",
+                        paddingStart: "5px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "8px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "40px",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "8px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "40px",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                        offsetTop: "5px",
+                    },
+                ],
+                backgroundColor: "#FFFFFF",
+                height: "130px",
+                position: "relative",
+                offsetBottom: "0px",
+            },
+        };
+
+        let lastBodyContent = {
+            type: "bubble",
+            body: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "image",
+                        url: "https://i.imgur.com/VrLnVgK.jpg",
+                        size: "full",
+                        aspectMode: "cover",
+                        aspectRatio: "4:3",
+                        gravity: "top",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "​",
+                                gravity: "center",
+                                align: "start",
+                                weight: "bold",
+                                size: "14px",
+                                style: "normal",
+                            },
+                        ],
+                        offsetTop: "10px",
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "​",
+                                maxLines: 5,
+                                size: "12px",
+                                color: "#808285",
+                                wrap: true,
+                            },
+                            {
+                                type: "box",
+                                layout: "vertical",
+                                contents: [],
+                                paddingStart: "16px",
+                                paddingEnd: "16px",
+                                paddingTop: "5px",
+                            },
+                        ],
+                        paddingStart: "16px",
+                        paddingEnd: "16px",
+                        paddingTop: "12px",
+                    },
+                ],
+                paddingAll: "0px",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "​",
+                                color: "#808285",
+                                size: "12px",
+                                margin: "7.09091px",
+                                offsetBottom: "5px",
+                            },
+                        ],
+                        offsetBottom: "5px",
+                        paddingStart: "5px",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "รายละเอียด",
+                                gravity: "center",
+                                align: "center",
+                                offsetTop: "8px",
+                                color: "#FFFFFF",
+                                weight: "bold",
+                                size: "16px",
+                            },
+                        ],
+                        cornerRadius: "10px",
+                        borderColor: "#ED1C24",
+                        backgroundColor: "#ED1C24",
+                        height: "40px",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
+                        offsetTop: "5px",
+                    },
+                ],
+                backgroundColor: "#FFFFFF",
+                height: "95px",
+                position: "relative",
+                offsetBottom: "0px",
+            },
+        };
+
+        if (v.footer.contents[0].action.label === "null") {
+            if (countButton === 0) {
+                bodyContent.footer.contents.splice(1, 1);
+                bodyContent.footer.height = "90px";
+                bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
+            } else {
+                bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
+                bodyContent.footer.contents[1].borderColor = "#FFFFFF";
+                bodyContent.footer.contents[1].backgroundColor = "#FFFFFF";
+                bodyContent.footer.contents[1].action.uri = encodeURI("https://google.com");
+            }
+        } else {
+            bodyContent.footer.contents[1].action.label = v.footer.contents[0].action.label;
+            bodyContent.footer.contents[1].action.uri = v.footer.contents[0].action.uri;
+            bodyContent.footer.contents[2].action.label = v.footer.contents[1].action.label;
+            bodyContent.footer.contents[2].action.uri = encodeURI(v.footer.contents[1].action.uri);
+        }
+
+        if (index === preContents.length - 1) {
+            // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
+            lastBodyContent.body.contents[0].url = v.hero.url;
+            lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
+            newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
+        } else {
+            bodyContent.body.contents[0].url = v.hero.url; //set url image
+            bodyContent.body.contents[1].contents[0].text = v.body.contents[0].text; // header name
+            if (setDataBody.length === 1) bodyContent.body.contents[1].contents[0].text = "​";
+            else bodyContent.footer.contents[0].contents[1].text = setDataBody[2]; //set valid date;
+
+            if (!v.body.contents[1].text) {
+                bodyContent.body.contents.text = "​";
+            } else {
+                bodyContent.body.contents[2].contents[0].text = setDataBody[1];
+            }
+            newData.push(JSON.parse(JSON.stringify(bodyContent)));
+        }
+    });
+    message.contents.contents = newData;
+}
+
 function trans_flex_po(message) {
     let data = message.contents.contents;
     let type = data[0].body.contents[0].text || "";
@@ -2191,3 +2497,35 @@ function trans_flex_part_products_member(message) {
 
     message.contents.contents = newData;
 }
+
+msg.payload = {
+    cust_first_name: "โสภาวรรณ",
+    cust_last_name: "สวัสดิ์เรืองศรี",
+    cust_nat_id: "1779900109611",
+    cust_sub_district: "01",
+    cust_district: "44",
+    cust_province: "10",
+    policy: {
+        pol_comp_id: "2037",
+        pol_type: "MC",
+        pol_id: "08582-65001/กธ/43472611",
+        pol_name: "ประกันภาคบังคับ (พ.ร.บ.)",
+        pol_name_oic: "กรมธรรม์ประกันภัยคุ้มครองผู้ประสบภัยจากรถ",
+        pol_start_date: "03-02-2022 00:00:00",
+        pol_end_date: "03-02-2023 16:30:00",
+        pol_beneficiary1: "",
+        pol_beneficiary2: "",
+        pol_beneficiary_other: "",
+        pol_daily_amount: 0,
+        pol_claim_document: "",
+        pol_payment_term: "รายปี",
+        pol_payment_amount: 625.95,
+        pol_info_url: " https://www.viriyah.co.th/th/content.php?id=37",
+        pol_claim_url: "",
+        pol_status_active: "A",
+        pol_compulsary_type: "",
+        pol_claim_death: 0,
+        pol_claim_medical_expense: 0,
+        pol_claim_paid: 0,
+    },
+};
