@@ -1742,63 +1742,63 @@ function trans_flex_point(message) {
         node.warn(dataContent);
         let bodyContent = {
             type: "bubble",
+            size: "mega",
+            direction: "ltr",
             header: {
                 type: "box",
                 layout: "vertical",
                 contents: [
                     {
+                        type: "text",
+                        text: "เอสแอนด์พีนครหลวงอลูมิเนียม",
+                        align: "center",
+                        gravity: "center",
+                        color: "#FFFFFF",
+                        weight: "bold",
+                        margin: "none",
+                        size: "18px",
+                    },
+                ],
+                paddingAll: "0%",
+                paddingTop: "5%",
+                paddingBottom: "2%",
+            },
+            hero: {
+                type: "box",
+                layout: "horizontal",
+                contents: [
+                    {
                         type: "box",
-                        layout: "horizontal",
+                        layout: "vertical",
                         contents: [
                             {
                                 type: "text",
-                                text: "เอสแอนด์พีนครหลวงอลูมิเนียม",
+                                text: "รหัสร้าน: 12345678",
                                 weight: "bold",
                                 color: "#FFFFFF",
-                                size: "18px",
-                                gravity: "center",
-                                position: "relative",
-                                align: "center",
+                                size: "12px",
                             },
                         ],
-                        height: "30px",
-                        alignItems: "center",
-                        margin: "16px",
                     },
                     {
                         type: "box",
-                        layout: "horizontal",
+                        layout: "vertical",
                         contents: [
                             {
                                 type: "text",
-                                text: "รหัสร้าน: ",
-                                size: "12px",
-                                color: "#FFFFFF",
-                                flex: 0,
-                            },
-                            {
-                                type: "text",
-                                text: "12345678",
-                                size: "12px",
-                                align: "start",
-                                color: "#FFFFFF",
-                            },
-                            {
-                                type: "text",
                                 text: "กรุงเทพมหานคร",
-                                size: "12px",
+                                gravity: "center",
                                 align: "end",
+                                weight: "bold",
                                 color: "#FFFFFF",
+                                size: "12px",
                             },
                         ],
-                        height: "40px",
-                        alignItems: "center",
                     },
                 ],
-                width: "300px",
-                height: "87px",
-                justifyContent: "center",
-                backgroundColor: "#CD242B",
+                paddingAll: "2%",
+                paddingStart: "3%",
+                paddingEnd: "3%",
             },
             body: {
                 type: "box",
@@ -1809,65 +1809,58 @@ function trans_flex_point(message) {
                         layout: "horizontal",
                         contents: [
                             {
-                                type: "text",
-                                text: "คะแนนสะสม ช้าง แฟมิลี่",
-                                weight: "regular",
-                                color: "#FFFFFF",
-                                size: "12px",
-                                gravity: "center",
-                                position: "relative",
+                                type: "box",
+                                layout: "vertical",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "คะแนนสะสม ช้าง แฟมิลี่",
+                                        weight: "bold",
+                                        color: "#FFFFFF",
+                                        size: "12px",
+                                    },
+                                ],
                             },
                             {
-                                type: "text",
-                                text: "วันที่ :  12 / 12 / 2021",
-                                weight: "regular",
-                                color: "#FFFFFF",
-                                size: "12px",
-                                gravity: "center",
-                                position: "relative",
-                                align: "end",
+                                type: "box",
+                                layout: "vertical",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "วันที่ : 12 / 12 / 2021",
+                                        gravity: "center",
+                                        align: "end",
+                                        weight: "bold",
+                                        color: "#FFFFFF",
+                                        size: "12px",
+                                    },
+                                ],
                             },
                         ],
+                        paddingBottom: "2%",
                     },
                     {
                         type: "box",
                         layout: "vertical",
-                        margin: "xs",
-                        spacing: "sm",
                         contents: [
                             {
                                 type: "box",
-                                layout: "vertical",
+                                layout: "horizontal",
                                 contents: [
                                     {
                                         type: "box",
-                                        layout: "horizontal",
+                                        layout: "vertical",
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "1,000,000",
-                                                size: "28px",
-                                                color: "#FFFFFF",
-                                                align: "start",
-                                                margin: "0px",
+                                                text: "0",
+                                                align: "end",
                                                 weight: "bold",
-                                                flex: 0,
-                                                gravity: "center",
-                                                adjustMode: "shrink-to-fit",
-                                            },
-                                            {
-                                                type: "text",
-                                                text: "คะแนน",
-                                                size: "16px",
+                                                size: "30px",
                                                 color: "#FFFFFF",
-                                                flex: 0,
-                                                align: "center",
-                                                weight: "bold",
-                                                gravity: "center",
-                                                margin: "10px",
                                             },
                                         ],
-                                        justifyContent: "center",
+                                        flex: 10,
                                     },
                                     {
                                         type: "box",
@@ -1875,262 +1868,246 @@ function trans_flex_point(message) {
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "1,000",
-                                                size: "12px",
-                                                color: "#FFFFFF",
-                                                margin: "45px",
-                                                flex: 0,
-                                                adjustMode: "shrink-to-fit",
-                                            },
-                                            {
-                                                type: "text",
                                                 text: "คะแนน",
-                                                size: "12px",
+                                                align: "end",
+                                                size: "14px",
+                                                gravity: "center",
+                                                weight: "bold",
                                                 color: "#FFFFFF",
-                                                align: "start",
-                                                margin: "7px",
-                                                flex: 0,
-                                            },
-                                            {
-                                                type: "text",
-                                                text: "หมดอายุ",
-                                                size: "12px",
-                                                color: "#FFFFFF",
-                                                align: "start",
-                                                margin: "7px",
-                                                flex: 0,
-                                            },
-                                            {
-                                                type: "text",
-                                                text: "12/2021",
-                                                size: "12px",
-                                                color: "#FFFFFF",
-                                                align: "start",
-                                                margin: "7px",
-                                                flex: 0,
                                             },
                                         ],
-                                        margin: "12px",
+                                        flex: 4,
                                     },
                                 ],
-                                paddingAll: "13px",
-                                backgroundColor: "#AA1C21",
-                                cornerRadius: "10px",
-                                margin: "xl",
-                                height: "90px",
-                                width: "260px",
+                                paddingEnd: "20px",
                             },
                             {
                                 type: "box",
-                                layout: "horizontal",
-                                margin: "6px",
+                                layout: "vertical",
                                 contents: [
                                     {
                                         type: "text",
-                                        text: "ยอดเงิน ช้าง แฟมิลี่ วอลเล็ท",
-                                        size: "12px",
+                                        align: "center",
+                                        weight: "regular",
                                         color: "#FFFFFF",
-                                        gravity: "top",
+                                        size: "14px",
+                                        contents: [
+                                            {
+                                                type: "span",
+                                                text: "350",
+                                            },
+                                            {
+                                                type: "span",
+                                                text: " คะแนน  หมดอายุ ",
+                                            },
+                                            {
+                                                type: "span",
+                                                text: "12/2021",
+                                            },
+                                        ],
                                     },
                                 ],
+                                paddingTop: "2%",
                             },
+                        ],
+                        backgroundColor: "#AA1C21",
+                        paddingAll: "3%",
+                        cornerRadius: "9px",
+                        paddingBottom: "2%",
+                    },
+                    {
+                        type: "box",
+                        layout: "horizontal",
+                        contents: [
+                            {
+                                type: "text",
+                                text: "ยอดเงิน ช้าง แฟมิลี่ วอลเล็ท",
+                                weight: "bold",
+                                color: "#FFFFFF",
+                                size: "12px",
+                            },
+                        ],
+                        paddingTop: "2%",
+                    },
+                    {
+                        type: "box",
+                        layout: "vertical",
+                        contents: [
                             {
                                 type: "box",
                                 layout: "horizontal",
                                 contents: [
                                     {
                                         type: "box",
-                                        layout: "horizontal",
+                                        layout: "vertical",
                                         contents: [
                                             {
                                                 type: "text",
-                                                text: "1,000,000",
-                                                size: "28px",
-                                                color: "#FFFFFF",
+                                                text: "0",
+                                                align: "end",
                                                 weight: "bold",
-                                                margin: "0px",
-                                                position: "absolute",
-                                                align: "center",
-                                                adjustMode: "shrink-to-fit",
+                                                size: "30px",
+                                                color: "#FFFFFF",
                                             },
+                                        ],
+                                        flex: 10,
+                                    },
+                                    {
+                                        type: "box",
+                                        layout: "horizontal",
+                                        contents: [
                                             {
                                                 type: "text",
                                                 text: "บาท",
-                                                size: "20px",
-                                                color: "#FFFFFF",
                                                 align: "end",
-                                                position: "relative",
-                                                decoration: "none",
+                                                size: "14px",
                                                 gravity: "center",
                                                 weight: "bold",
-                                                offsetBottom: "6px",
+                                                color: "#FFFFFF",
                                             },
                                         ],
-                                        height: "50px",
-                                        justifyContent: "center",
+                                        flex: 4,
                                     },
                                 ],
-                                margin: "9px",
+                                paddingEnd: "20px",
                             },
                         ],
-                    },
-                    {
-                        type: "box",
-                        layout: "horizontal",
-                        margin: "xxl",
-                        contents: [
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "แลกของรางวัล",
-                                                size: "14px",
-                                                color: "#CD242B",
-                                                flex: 0,
-                                                align: "start",
-                                                margin: "10px",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        margin: "10px",
-                                    },
-                                ],
-                                paddingAll: "13px",
-                                backgroundColor: "#FFFFFF",
-                                cornerRadius: "10px",
-                                margin: "sm",
-                                height: "70px",
-                                width: "125px",
-                                action: {
-                                    type: "uri",
-                                    label: "action",
-                                    uri: "http://linecorp.com/",
-                                },
-                            },
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "สินค้าร่วมรายการ",
-                                                size: "13px",
-                                                color: "#CD242B",
-                                                flex: 0,
-                                                align: "start",
-                                                margin: "6px",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        margin: "12px",
-                                    },
-                                ],
-                                paddingAll: "13px",
-                                backgroundColor: "#FFFFFF",
-                                cornerRadius: "10px",
-                                margin: "sm",
-                                height: "70px",
-                                width: "125px",
-                            },
-                        ],
-                    },
-                    {
-                        type: "box",
-                        layout: "horizontal",
-                        margin: "3px",
-                        contents: [
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ข้อมูลผู้ใช้",
-                                                size: "14px",
-                                                color: "#CD242B",
-                                                flex: 0,
-                                                align: "center",
-                                                margin: "20px",
-                                                weight: "bold",
-                                            },
-                                        ],
-                                        margin: "10px",
-                                    },
-                                ],
-                                paddingAll: "13px",
-                                backgroundColor: "#FFFFFF",
-                                cornerRadius: "10px",
-                                margin: "sm",
-                                height: "70px",
-                                width: "125px",
-                                action: {
-                                    type: "uri",
-                                    label: "action",
-                                    uri: "http://linecorp.com/",
-                                },
-                            },
-                            {
-                                type: "box",
-                                layout: "vertical",
-                                contents: [
-                                    {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "ดาวน์โหลดแอปพลิเคชั่น ช้างแฟมิลี่",
-                                                size: "9px",
-                                                color: "#CD242B",
-                                                flex: 0,
-                                                align: "center",
-                                                margin: "1px",
-                                                weight: "bold",
-                                                wrap: true,
-                                            },
-                                        ],
-                                        margin: "8px",
-                                    },
-                                ],
-                                paddingAll: "13px",
-                                backgroundColor: "#FFFFFF",
-                                cornerRadius: "10px",
-                                margin: "sm",
-                                height: "70px",
-                                width: "125px",
-                                action: {
-                                    type: "uri",
-                                    label: "action",
-                                    uri: "http://linecorp.com/",
-                                },
-                            },
-                        ],
+                        paddingAll: "3%",
+                        cornerRadius: "9px",
                     },
                 ],
-                backgroundColor: "#7D1416",
+                paddingTop: "2%",
+                paddingStart: "3%",
+                paddingEnd: "3%",
+                paddingBottom: "0%",
+            },
+            footer: {
+                type: "box",
+                layout: "vertical",
+                contents: [
+                    {
+                        type: "box",
+                        layout: "horizontal",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "สินค้าร่วมรายการ",
+                                        color: "#CD242B",
+                                        weight: "bold",
+                                        size: "14px",
+                                        gravity: "center",
+                                        align: "center",
+                                    },
+                                ],
+                                backgroundColor: "#FFFFFF",
+                                cornerRadius: "9px",
+                                flex: 30,
+                                action: {
+                                    type: "postback",
+                                    label: "action",
+                                    data: "hello",
+                                },
+                            },
+                            {
+                                type: "filler",
+                                flex: 1,
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "แลกของรางวัล",
+                                        align: "center",
+                                        color: "#CD242B",
+                                        weight: "bold",
+                                        size: "14px",
+                                        gravity: "center",
+                                    },
+                                ],
+                                backgroundColor: "#FFFFFF",
+                                cornerRadius: "9px",
+                                flex: 30,
+                            },
+                        ],
+                        height: "45px",
+                    },
+                    {
+                        type: "box",
+                        layout: "horizontal",
+                        contents: [
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "ข้อมูลผู้ใช้",
+                                        align: "center",
+                                        color: "#CD242B",
+                                        weight: "bold",
+                                        size: "14px",
+                                        gravity: "center",
+                                    },
+                                ],
+                                backgroundColor: "#FFFFFF",
+                                cornerRadius: "9px",
+                                flex: 30,
+                            },
+                            {
+                                type: "filler",
+                                flex: 1,
+                            },
+                            {
+                                type: "box",
+                                layout: "horizontal",
+                                contents: [
+                                    {
+                                        type: "text",
+                                        text: "ดาวน์โหลดแอปพลิเคชั่น ช้าง แฟมิลี่",
+                                        align: "center",
+                                        color: "#CD242B",
+                                        weight: "bold",
+                                        size: "12px",
+                                        wrap: true,
+                                        gravity: "center",
+                                    },
+                                ],
+                                backgroundColor: "#FFFFFF",
+                                cornerRadius: "9px",
+                                flex: 30,
+                            },
+                        ],
+                        margin: "4px",
+                        height: "45px",
+                    },
+                ],
+                paddingStart: "3%",
+                paddingEnd: "3%",
             },
             styles: {
+                header: {
+                    backgroundColor: "#CD242B",
+                },
+                hero: {
+                    backgroundColor: "#CD242B",
+                },
+                body: {
+                    backgroundColor: "#7D1416",
+                },
                 footer: {
-                    separator: true,
+                    backgroundColor: "#7D1416",
                 },
             },
         };
 
         let storeCode = dataContent[0].split(":");
+        let province = dataContent[1].split(":");
         let dateCurrent = dataContent[7].split(":");
         let totalPoint = dataContent[2].split(":");
         let expiredPOint = dataContent[3].split(":");
@@ -2146,22 +2123,26 @@ function trans_flex_point(message) {
         let action3 = v.footer.contents[2].action;
         let action4 = v.footer.contents[3].action;
 
-        bodyContent.header.contents[0].contents[0].text = v.body.contents[0].text; // partner name's
-        bodyContent.header.contents[1].contents[1].text = `${storeCode[1]}`; // store's code
-        bodyContent.body.contents[0].contents[1].text = `วันที่ : ${dateCurrent[1]}`; //date current
+        bodyContent.header.contents[0].text = v.body.contents[0].text; // partner name's
+
+        bodyContent.hero.contents[0].contents[0].text = `รหัสร้านค้า: ${storeCode[1]}`; // store's code
+        bodyContent.hero.contents[1].contents[0].text = `จังหวัด: ${province[1]}`; // location
+
+        bodyContent.body.contents[0].contents[1].contents[0].text = `วันที่ : ${dateCurrent[1]}`; //date current
         bodyContent.body.contents[1].contents[0].contents[0].contents[0].text = totalPoint[1]; // total point
-        bodyContent.body.contents[1].contents[0].contents[1].contents[0].text = expiredPOint[1]; // expired point
-        bodyContent.body.contents[1].contents[0].contents[1].contents[3].text = `${expiredYear[1]}/${expiredMonth[1]}`; // expired date point
-        bodyContent.body.contents[1].contents[2].contents[0].contents[0].text = totalBalance[1]; //total balance
-        bodyContent.body.contents[2].contents[0].contents[0].contents[0].text = btn1; // btn1
-        bodyContent.body.contents[2].contents[1].contents[0].contents[0].text = btn2; // btn2
-        bodyContent.body.contents[3].contents[0].contents[0].contents[0].text = btn3; // btn3
-        bodyContent.body.contents[3].contents[1].contents[0].contents[0].text = btn4; // btn4
-        // node.warn(dataContent[10]);
-        bodyContent.body.contents[2].contents[0].action = action1; // url1
-        bodyContent.body.contents[2].contents[1].action = action2; // url2
-        bodyContent.body.contents[3].contents[0].action = action3; // url3
-        bodyContent.body.contents[3].contents[1].action = action4; // url4
+        bodyContent.body.contents[1].contents[1].contents[0].contents[0].text = expiredPOint[1]; // expired point
+        bodyContent.body.contents[1].contents[1].contents[0].contents[2].text = `${expiredMonth[1]}/${expiredYear[1]}`; // expired date point
+        bodyContent.body.contents[3].contents[0].contents[0].contents[0].text = totalBalance[1]; //total balance
+
+        bodyContent.footer.contents[0].contents[0].contents[0].text = btn1; // btn1
+        bodyContent.footer.contents[0].contents[2].contents[0].text = btn2; // btn2
+        bodyContent.footer.contents[1].contents[0].contents[0].text = btn3; // btn3
+        bodyContent.footer.contents[1].contents[2].contents[0].text = btn4; // btn4
+
+        bodyContent.footer.contents[0].contents[0].action = action1; // url1
+        bodyContent.footer.contents[0].contents[2].action = action2; // url2
+        bodyContent.footer.contents[1].contents[0].action = action3; // url3
+        bodyContent.footer.contents[1].contents[2].action = action4; // url4
         newData.push(JSON.parse(JSON.stringify(bodyContent)));
     });
     message.contents.contents = newData;
