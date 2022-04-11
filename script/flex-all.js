@@ -574,8 +574,6 @@ function trans_flex_product(message) {
                     bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
                     bodyContent.footer.contents[2].contents[0].text = `${salePrice[1]}`; // sale price
                     bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
-                    node.warn(bodyContent.hero.contents);
-                    node.warn(eta[1]);
                     if (eta[1] !== "undefined") {
                         bodyContent.hero.contents[1].offsetBottom = "210px";
                         bodyContent.hero.contents[2].offsetBottom = "275px";
@@ -636,6 +634,31 @@ function trans_flex_product(message) {
                         } else {
                             bodyContent.hero.contents.splice(2, 1);
                         }
+                    }
+                    eta[1] !== "undefined"
+                        ? (bodyContent.hero.contents[1].offsetBottom = "210px")
+                        : (bodyContent.hero.contents[1].offsetBottom = "210px");
+                } else if (dataContent[indexData] === "!promotion") {
+                    tags.url = dataContent[indexData + 1];
+                    // bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
+                    // bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
+                    // bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
+                    // bodyContent.hero.contents.splice(2, 1); // remove percent discount
+                    bodyContent.footer.contents[1].contents.splice(0, 1);
+                    // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
+                    bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
+                    bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
+                    bodyContent.footer.contents[2].contents[0].color = "#000000";
+                    // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+                    // bodyContent.hero.contents[2].contents[1].text = eta[1];
+
+                    node.warn(bodyContent.hero.contents);
+                    if (eta[1] !== "undefined") {
+                        // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+                        bodyContent.hero.contents[2].contents[1].text = eta[1];
+                        bodyContent.hero.contents[2].offsetBottom = "100px";
+                    } else {
+                        bodyContent.hero.contents.splice(2, 1);
                     }
                     eta[1] !== "undefined"
                         ? (bodyContent.hero.contents[1].offsetBottom = "210px")
@@ -2478,35 +2501,3 @@ function trans_flex_part_products_member(message) {
 
     message.contents.contents = newData;
 }
-
-msg.payload = {
-    cust_first_name: "โสภาวรรณ",
-    cust_last_name: "สวัสดิ์เรืองศรี",
-    cust_nat_id: "1779900109611",
-    cust_sub_district: "01",
-    cust_district: "44",
-    cust_province: "10",
-    policy: {
-        pol_comp_id: "2037",
-        pol_type: "MC",
-        pol_id: "08582-65001/กธ/43472611",
-        pol_name: "ประกันภาคบังคับ (พ.ร.บ.)",
-        pol_name_oic: "กรมธรรม์ประกันภัยคุ้มครองผู้ประสบภัยจากรถ",
-        pol_start_date: "03-02-2022 00:00:00",
-        pol_end_date: "03-02-2023 16:30:00",
-        pol_beneficiary1: "",
-        pol_beneficiary2: "",
-        pol_beneficiary_other: "",
-        pol_daily_amount: 0,
-        pol_claim_document: "",
-        pol_payment_term: "รายปี",
-        pol_payment_amount: 625.95,
-        pol_info_url: " https://www.viriyah.co.th/th/content.php?id=37",
-        pol_claim_url: "",
-        pol_status_active: "A",
-        pol_compulsary_type: "",
-        pol_claim_death: 0,
-        pol_claim_medical_expense: 0,
-        pol_claim_paid: 0,
-    },
-};
