@@ -1,11 +1,25 @@
-let datas = JSON.parse(msg.data);
+function toThaiDateString(dateFrom, dateTo) {
+    let monthNames = ["ม.ค.", "ก.พ.", "มี.ค.", "ม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+
+    // let year = date.getFullYear() + 543; //uncomment if you want to convert to bhuddhist's year.
+    let year = dateFrom.getFullYear();
+    let month = monthNames[dateFrom.getMonth()];
+    let numOfDay_dateFrom = dateFrom.getDate();
+    let numOfDay_dateTo = dateTo.getDate();
+
+    // let hour = dateFrom.getHours().toString().padStart(2, "0");
+    // let minutes = dateFrom.getMinutes().toString().padStart(2, "0");
+    // let second = dateFrom.getSeconds().toString().padStart(2, "0");
+
+    return `${numOfDay_dateFrom} - ${numOfDay_dateTo} ${month} ${year}`;
+}
+
+let datas = msg.data;
 let promotionData = msg.prompt_plus_promotion.hits;
 node.warn(datas);
 // node.warn(promotionData);
 
 const items = [];
-let valid_from;
-let valid_date;
 let catalogueData = {};
 let countPromotionTwoButton = 0;
 let formatData = "pp promotion|";
@@ -32,9 +46,14 @@ for (let index = 0; index <= datas.data.length; index++) {
     } else {
         let preImage = datas.data[index].promotion_banner;
         let image = preImage === null ? (preImage = catalogueData["default"].Image) : (preImage = preImage);
+        let valid_from = new Date(datas.data[index].valid_from);
+        let valid_to = new Date(datas.data[index].valid_to);
+        let valid_date = toThaiDateString(valid_from, valid_to);
         var carouselsCard = {
             label: datas.data[index].promotion_name,
-            subtitle: `Description:${datas.data[index].promotion_description}|Valid date:${valid_date}|Promotion page:${datas.data[index].promotion_page}|Button name:${catalogueData["default"].Button}|Count button:${countPromotionTwoButton}`,
+            subtitle: `Description:${datas.data[index].promotion_description || ""}|Valid date:${valid_date}|Promotion page:${
+                datas.data[index].promotion_page
+            }|Button name:${catalogueData["default"].Button}|Count button:${countPromotionTwoButton}`,
             img: encodeURI(image),
             btns: `${catalogueData["default"].Button}`,
             link: `${datas.data[index].promotion_page}`,
@@ -57,5 +76,5 @@ msg.payload = {
     },
 };
 
-// node.warn(msg)
+node.warn(msg);
 return msg;
