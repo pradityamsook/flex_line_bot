@@ -1,9 +1,12 @@
 if (msg.payload.messages) {
+    // node.warn(msg.payload.messages)
     msg.payload.messages.forEach((messages) => {
-        node.error(messages.type);
+        // node.error(messages.type)
         if (messages.type == "video") {
             trans_video(messages);
         } else if (messages.type == "flex") {
+            node.error(11);
+            node.error(msg.payload);
             const check_catalogue =
                 messages.contents &&
                 messages.contents.contents &&
@@ -14,13 +17,17 @@ if (msg.payload.messages) {
                 messages.contents.contents[0].body.contents[1].text
                     ? messages.contents.contents[0].body.contents[1].text.split("|")
                     : "";
+            node.error(14);
             if (check_catalogue[0] && check_catalogue[0] === "promotion") {
+                node.warn("promotion non login");
                 trans_flex_promotion(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "search point") {
                 trans_flex_point(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "po status") {
                 trans_flex_po(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "search product keyword") {
+                // node.warn("keyword")
+                // node.warn(messages)
                 trans_flex_product(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "pp promotion") {
                 trans_flex_pp_promotion(messages);
@@ -28,7 +35,9 @@ if (msg.payload.messages) {
                 trans_flex_part_products_member(messages);
             }
         } else if (messages.type == "text") {
+            node.error(31);
             const getData = messages.text.split("|");
+            node.error(33);
             if (getData[0] === "Products") {
                 trans_text_to_flex(messages);
             }
@@ -38,6 +47,7 @@ if (msg.payload.messages) {
 } else {
     node.error("Have no message");
 }
+return msg;
 
 function trans_video(message) {
     if (message.originalContentUrl.includes("thumbnail=")) {
@@ -568,11 +578,14 @@ function trans_flex_product(message) {
                 }
 
                 if (dataContent[indexData] === "flash sale") {
+                    // node.warn("flash sale")
                     // tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
                     // bodyContent.hero.contents[1].contents[0].offsetTop = "70px";
+                    bodyContent.hero.contents[2].offsetStart = "240px";
+                    bodyContent.hero.contents[1].contents[0].offsetTop = "30px";
                     bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
-                    bodyContent.footer.contents[2].contents[0].text = `${salePrice[1]}`; // sale price
+                    bodyContent.footer.contents[2].contents[0].text = `${netPrice[1]}`; // sale price
                     bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                     if (eta[1] !== "undefined") {
                         bodyContent.hero.contents[1].offsetBottom = "210px";
@@ -638,7 +651,8 @@ function trans_flex_product(message) {
                     eta[1] !== "undefined"
                         ? (bodyContent.hero.contents[1].offsetBottom = "210px")
                         : (bodyContent.hero.contents[1].offsetBottom = "210px");
-                } else if (dataContent[indexData] === "!promotion") {
+                } else if (dataContent[indexData] === "!promotion" && dataContent[indexData] === "!flash sale") {
+                    node.warn("No anthing");
                     tags.url = dataContent[indexData + 1];
                     // bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
                     // bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
@@ -651,16 +665,16 @@ function trans_flex_product(message) {
                     bodyContent.footer.contents[2].contents[0].color = "#000000";
                     // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
                     // bodyContent.hero.contents[2].contents[1].text = eta[1];
-
+                    node.warn(`ETA ${eta[1]}`);
                     node.warn(bodyContent.hero.contents);
-                    if (eta[1] !== "undefined") {
+                    if (eta[1] != "undefined") {
                         // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
                         bodyContent.hero.contents[2].contents[1].text = eta[1];
                         bodyContent.hero.contents[2].offsetBottom = "100px";
                     } else {
                         bodyContent.hero.contents.splice(2, 1);
                     }
-                    eta[1] !== "undefined"
+                    eta[1] != "undefined"
                         ? (bodyContent.hero.contents[1].offsetBottom = "210px")
                         : (bodyContent.hero.contents[1].offsetBottom = "210px");
                 }
@@ -990,16 +1004,17 @@ function trans_flex_pp_promotion(message) {
             let details = v.body.contents[1].text.split("|");
             details.shift();
             let nullStr = details[0].split(":");
-            let buttonName = details[details.length - 2].split(":");
-            let numberButton = details[details.length - 1].split(":");
+            const buttonName = details[details.length - 2].split(":");
+            const numberButton = details[details.length - 1].split(":");
+            const valid_date = details[1].split(":");
             node.warn(buttonName);
 
             // Check if no contents set details as zero space character
             if (nullStr[1] === "") {
                 nullStr[1] = "​";
             }
-
             bodyContent.body.contents[2].contents[0].text = nullStr[1]; // details promotion
+            bodyContent.footer.contents[0].contents[1].text = valid_date[1];
             if (details.length > 5) {
                 let promotionPage = details[2].split(/:(.+)/);
                 let promotionProducts = details[3].split(":");
@@ -1025,7 +1040,7 @@ function trans_flex_pp_promotion(message) {
         }
     });
     message.contents.contents = newData;
-    message.altText = "";
+    message.altText = "โปรโมชั่นมีดังนี้";
 }
 
 function trans_flex_promotion(message) {
@@ -1298,6 +1313,7 @@ function trans_flex_promotion(message) {
             if (countButton === 0) {
                 bodyContent.footer.contents.splice(1, 1);
                 bodyContent.footer.height = "90px";
+                bodyContent.footer.contents[1].contents[0].text = v.footer.contents[0].contents[1].action.label; // button name
                 bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
             } else {
                 bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
@@ -1315,6 +1331,7 @@ function trans_flex_promotion(message) {
         if (index === preContents.length - 1) {
             // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
             lastBodyContent.body.contents[0].url = v.hero.url;
+            lastBodyContent.footer.contents[1].contents[0].text = v.footer.contents[0].contents[1].action.label; // button name
             lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
             newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
         } else {
