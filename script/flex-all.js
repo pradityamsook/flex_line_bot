@@ -1,12 +1,8 @@
 if (msg.payload.messages) {
-    // node.warn(msg.payload.messages)
     msg.payload.messages.forEach((messages) => {
-        // node.error(messages.type)
         if (messages.type == "video") {
             trans_video(messages);
         } else if (messages.type == "flex") {
-            node.error(11);
-            node.error(msg.payload);
             const check_catalogue =
                 messages.contents &&
                 messages.contents.contents &&
@@ -19,15 +15,12 @@ if (msg.payload.messages) {
                     : "";
             node.error(14);
             if (check_catalogue[0] && check_catalogue[0] === "promotion") {
-                node.warn("promotion non login");
                 trans_flex_promotion(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "search point") {
                 trans_flex_point(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "po status") {
                 trans_flex_po(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "search product keyword") {
-                // node.warn("keyword")
-                // node.warn(messages)
                 trans_flex_product(messages);
             } else if (check_catalogue[0] && check_catalogue[0] === "pp promotion") {
                 trans_flex_pp_promotion(messages);
@@ -94,16 +87,8 @@ function trans_flex_product(message) {
     let date = new Date();
     let countDiscount = 0;
 
-    //loop for count any card have name string length more than 36 without last card.
-    // for (let index = 0; index < preContents.length - 1; index++) {
-    //     let data = preContents[index].body.contents[1].text.split("|");
-    //     let _percentDiscount = data[data.length - 1].split(":");
-    //     _percentDiscount[1] === "0" ? (countDiscount += 1) : (countDiscount = countDiscount);
-    // }
-
     preContents.forEach((v, index) => {
         let dataContent = v.body.contents[1].text.split("|");
-        node.warn(dataContent);
         const white = "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
         dataContent.shift();
 
@@ -528,10 +513,8 @@ function trans_flex_product(message) {
             lastContent.footer.contents[0].text = v.footer.contents[0].action.label; // button name
             newData.push(JSON.parse(JSON.stringify(lastContent)));
         } else {
-            node.warn(dataContent);
             let salePrice = dataContent[dataContent.length - 8].split(":");
             let basePrice = dataContent[dataContent.length - 7].split(":");
-            node.warn(basePrice);
             let netPrice = dataContent[dataContent.length - 6].split(":");
             let percenDiscount = dataContent[dataContent.length - 5].split(":");
             let unit = dataContent[dataContent.length - 4].split(":");
@@ -550,13 +533,10 @@ function trans_flex_product(message) {
             for (let indexData = 0; indexData < dataContent.length; indexData++) {
                 if (dataContent[indexData] === "logo") {
                     // add chang icon
-                    // changFamily.url = JSON.parse(JSON.stringify(dataContent[indexData + 1]));
                     bodyContent.footer.contents[0].contents[0].contents[0].url = dataContent[indexData + 1];
-                    // bodyContent.footer.contents[3].contents[0].contents.push(JSON.parse(JSON.stringify(changFamily)));
                 } else if (dataContent[indexData] === "!logo") {
                     bodyContent.footer.contents[0].contents[0].contents[0].url =
                         "https://upload.convolab.ai/scg-promptplus-dev%2Fb82f1698-5485-4514-9651-190b520b5a06.png";
-                    // bodyContent.footer.contents[3].contents[0].contents.splice(0, 1);
                 }
 
                 if (dataContent[indexData] === "points") {
@@ -578,18 +558,16 @@ function trans_flex_product(message) {
                 }
 
                 if (dataContent[indexData] === "flash sale") {
-                    // node.warn("flash sale")
-                    // tags.url = dataContent[indexData + 1];
-                    // bodyContent.footer.contents[3].contents[1].contents.push(JSON.parse(JSON.stringify(tags))); // add flash sale tag's image
-                    // bodyContent.hero.contents[1].contents[0].offsetTop = "70px";
                     bodyContent.hero.contents[2].offsetStart = "240px";
                     bodyContent.hero.contents[1].contents[0].offsetTop = "30px";
                     bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has flash sale
                     bodyContent.footer.contents[2].contents[0].text = `${netPrice[1]}`; // sale price
                     bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                     if (eta[1] !== "undefined") {
-                        bodyContent.hero.contents[1].offsetBottom = "210px";
+                        bodyContent.hero.contents[1].offsetBottom = "246px";
                         bodyContent.hero.contents[2].offsetBottom = "275px";
+                        bodyContent.hero.contents[3].contents[0].offsetStart = "-60px";
+                        bodyContent.hero.contents[3].contents[1].offsetStart = "35px";
                         bodyContent.hero.contents[3].contents[1].text = eta[1];
                     } else {
                         bodyContent.hero.contents[1].offsetBottom = "248px";
@@ -601,7 +579,6 @@ function trans_flex_product(message) {
                         bodyContent.hero.contents[1].contents.splice(0, 1); // remove flash sale icon
                         bodyContent.hero.contents.splice(2, 1); // remove percent discount
                         bodyContent.footer.contents[1].contents.splice(0, 1);
-                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
                         bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
                         bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                         bodyContent.footer.contents[2].contents[0].color = "#000000";
@@ -621,7 +598,6 @@ function trans_flex_product(message) {
                         bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
                         bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
                         bodyContent.hero.contents.splice(2, 1); // remove percent discount
-                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
                         bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
                         bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                         bodyContent.footer.contents[2].contents[0].color = "#000000";
@@ -630,18 +606,12 @@ function trans_flex_product(message) {
                         bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
                         bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
                         bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
-                        // bodyContent.hero.contents.splice(2, 1); // remove percent discount
                         bodyContent.footer.contents[1].contents.splice(0, 1);
-                        // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
                         bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
                         bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                         bodyContent.footer.contents[2].contents[0].color = "#000000";
-                        // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
-                        // bodyContent.hero.contents[2].contents[1].text = eta[1];
 
-                        node.warn(bodyContent.hero.contents);
                         if (eta[1] !== "undefined") {
-                            // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
                             bodyContent.hero.contents[2].contents[1].text = eta[1];
                             bodyContent.hero.contents[2].offsetBottom = "100px";
                         } else {
@@ -651,43 +621,31 @@ function trans_flex_product(message) {
                     eta[1] !== "undefined"
                         ? (bodyContent.hero.contents[1].offsetBottom = "210px")
                         : (bodyContent.hero.contents[1].offsetBottom = "210px");
-                } else if (dataContent[indexData] === "!promotion" && dataContent[indexData] === "!flash sale") {
-                    node.warn("No anthing");
+                } else if (dataContent[indexData] === "!promotion" && dataContent[indexData - 2] === "!flash sale") {
                     tags.url = dataContent[indexData + 1];
-                    // bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
-                    // bodyContent.hero.contents[1].contents.push(JSON.parse(JSON.stringify(flashSale)));
-                    // bodyContent.hero.contents[1].contents[0].url = dataContent[indexData + 2]; // set tag promotion
-                    // bodyContent.hero.contents.splice(2, 1); // remove percent discount
                     bodyContent.footer.contents[1].contents.splice(0, 1);
-                    // bodyContent.footer.contents[0].contents[0].text = "​"; // remove net price
                     bodyContent.footer.contents[2].contents[0].text = `${basePrice[1]}`; // base price
                     bodyContent.footer.contents[2].contents[1].text = ` / ${unit[1]}`; // unit
                     bodyContent.footer.contents[2].contents[0].color = "#000000";
-                    // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
-                    // bodyContent.hero.contents[2].contents[1].text = eta[1];
-                    node.warn(`ETA ${eta[1]}`);
-                    node.warn(bodyContent.hero.contents);
-                    if (eta[1] != "undefined") {
-                        // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
+                    if (eta[1] !== "undefined") {
                         bodyContent.hero.contents[2].contents[1].text = eta[1];
-                        bodyContent.hero.contents[2].offsetBottom = "100px";
+                        bodyContent.hero.contents[2].contents[0].offsetStart = "-60px";
+                        bodyContent.hero.contents[2].contents[1].offsetStart = "35px";
+                        bodyContent.hero.contents[2].offsetStart = "120px";
                     } else {
                         bodyContent.hero.contents.splice(2, 1);
                     }
-                    eta[1] != "undefined"
-                        ? (bodyContent.hero.contents[1].offsetBottom = "210px")
+                    eta[1] !== "undefined"
+                        ? (bodyContent.hero.contents[1].offsetBottom = "245px")
                         : (bodyContent.hero.contents[1].offsetBottom = "210px");
                 }
                 if (dataContent[indexData] === "discount only") {
                     tags.url = dataContent[indexData + 1];
-                    node.warn(bodyContent.hero.contents);
-                    // bodyContent.hero.contents.push(JSON.parse(JSON.stringify(discount)));
                     bodyContent.footer.contents[0].contents[1].contents.unshift(JSON.parse(JSON.stringify(tags))); // add discount tag's image
                     bodyContent.hero.contents[1].contents.splice(0, 1); // remove flash sale icon
                     bodyContent.hero.contents[1] = JSON.parse(JSON.stringify(discount));
                     bodyContent.footer.contents[1].contents.push(JSON.parse(JSON.stringify(basePriceObject)));
                     bodyContent.hero.contents[1].contents[0].text = `-${_percentDiscount[1]}%`; // add percent discount
-
                     bodyContent.hero.contents[1].contents[0].offsetTop = "1.5px";
                     bodyContent.hero.contents[1].offsetBottom = "210px";
                     if (eta[1] !== "undefined") {
@@ -697,7 +655,6 @@ function trans_flex_product(message) {
                     } else {
                         bodyContent.hero.contents[1].offsetBottom = "210px";
                     }
-
                     bodyContent.hero.contents[1].offsetStart = "20px";
                     delete bodyContent.hero.contents[1].background;
                     bodyContent.footer.contents[1].contents[0].text = `${basePrice[1]}`; // net price if has discount
@@ -707,21 +664,6 @@ function trans_flex_product(message) {
                     bodyContent.footer.contents[1].contents.splice(1, 1); // remove mockup base price
                 }
             }
-            // if (eta[1] === "undefined") {
-            //     bodyContent.hero.contents.splice(3, 1);
-            // } else {
-            //     node.warn(658);
-            //     if (bodyContent.hero.contents.length < 3) {
-            //         node.warn(666);
-            //         node.warn(bodyContent.hero.contents);
-            //         bodyContent.hero.contents.push(JSON.parse(JSON.stringify(etaContent)));
-            //         bodyContent.hero.contents[3].contents[1].text = eta[1];
-            //     } else {
-            //         node.warn(663);
-            //         node.warn(bodyContent.hero.contents);
-            //         bodyContent.hero.contents[3].contents[1].text = eta[1]; // in delivery
-            //     }
-            // }
             newData.push(JSON.parse(JSON.stringify(bodyContent)));
         }
     });
@@ -1007,7 +949,6 @@ function trans_flex_pp_promotion(message) {
             const buttonName = details[details.length - 2].split(":");
             const numberButton = details[details.length - 1].split(":");
             const valid_date = details[1].split(":");
-            node.warn(buttonName);
 
             // Check if no contents set details as zero space character
             if (nullStr[1] === "") {
@@ -1023,7 +964,6 @@ function trans_flex_pp_promotion(message) {
                 bodyContent.footer.contents[2].action.uri = promotionProducts[1]; // url button go to new page of promotion products
             } else {
                 let promotionPage = details[2].split(/:(.+)/);
-                node.warn(promotionPage);
                 if (numberButton[1] === "0") {
                     bodyContent.footer.contents.splice(1, 1);
                     bodyContent.footer.height = "90px";
@@ -1052,7 +992,6 @@ function trans_flex_promotion(message) {
     }
     preContents.forEach((v, index) => {
         let setDataBody = v.body.contents[1].text.split("|");
-        node.warn(setDataBody.length);
         let bodyContent = {
             type: "bubble",
             body: {
@@ -1313,7 +1252,7 @@ function trans_flex_promotion(message) {
             if (countButton === 0) {
                 bodyContent.footer.contents.splice(1, 1);
                 bodyContent.footer.height = "90px";
-                bodyContent.footer.contents[1].contents[0].text = v.footer.contents[0].contents[1].action.label; // button name
+                bodyContent.footer.contents[1].contents[0].text = v.footer.contents[1].action.label; // button name
                 bodyContent.footer.contents[1].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
             } else {
                 bodyContent.footer.contents[2].action.uri = v.footer.contents[1].action.uri; // url button go to new page of promotion page or promotion products
@@ -1331,7 +1270,7 @@ function trans_flex_promotion(message) {
         if (index === preContents.length - 1) {
             // lastBodyContent.footer.contents[0].action.label = v.footer.contents[1].action.label;
             lastBodyContent.body.contents[0].url = v.hero.url;
-            lastBodyContent.footer.contents[1].contents[0].text = v.footer.contents[0].contents[1].action.label; // button name
+            lastBodyContent.footer.contents[1].contents[0].text = v.footer.contents[1].action.label; // button name
             lastBodyContent.footer.contents[1].action.uri = encodeURI(v.footer.contents[1].action.uri);
             newData.push(JSON.parse(JSON.stringify(lastBodyContent)));
         } else {
@@ -1363,42 +1302,13 @@ function trans_flex_po(message) {
     let purchase_date = (data[0].body.contents[1].text.split("|")[7] || "").split(":");
     let btn = data[0].footer.contents[0].action.label;
     let url = data[0].footer.contents[0].action.uri;
-    node.warn(purchase_date);
     let gmt7 = new Date(purchase_date[1] + ":" + purchase_date[2] + "-07:00");
-    node.warn(gmt7);
     let timeZoneGmt7 = gmt7.toISOString();
-    node.warn(timeZoneGmt7);
     let dateTime = timeZoneGmt7.split("T");
     let newDate = dateTime[0].split("-").reverse().join("/");
     let time = dateTime[1].split(":");
     let newTime = time[0] + ":" + time[1];
     let newDateTime = newDate + " " + newTime;
-    node.warn(newDate);
-    node.warn(time);
-    node.warn(newTime);
-    node.warn(newDateTime);
-
-    // let dateTime = purchase_date[1].split("T");
-    // let date = dateTime[0].split("-");
-
-    // let years = Number(date[0]);
-    // let months = Number(date[1]);
-    // let days = Number(date[2]);
-
-    // let hours = Number(date[1]);
-    // let minutes = Number(purchase_date[2]);
-    // // let seconds = Math.floor(Number(time[2]));
-    // let formatDate = new Date(Date.UTC(years, months, days, hours, minutes));
-
-    // let thDate = formatDate.toLocaleString("en-GB", {
-    //     timeZone: "Asia/Bangkok",
-    // });
-
-    // formatTHDate = thDate.split(", ");
-    // let removeMinutes = formatTHDate[1].split(":");
-    // let newTime = removeMinutes[0] + ":" + removeMinutes[1];
-    // let newDateTime = formatTHDate[0] + " " + newTime;
-
     let imgBackground = data[0].hero.url; //image order status
 
     msg.payload.messages[0].type = "flex";
@@ -1779,7 +1689,6 @@ function trans_flex_point(message) {
     preContents.forEach((v) => {
         let dataContent = v.body.contents[1].text.split("|");
         dataContent.shift();
-        node.warn(dataContent);
         let bodyContent = {
             type: "bubble",
             size: "mega",
@@ -2445,74 +2354,53 @@ function trans_flex_part_products_member(message) {
                         url: "https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip3.jpg",
                         size: "full",
                         aspectMode: "cover",
-                        aspectRatio: "4:3",
+                        aspectRatio: "555:512",
                         gravity: "center",
+                        action: {
+                            type: "uri",
+                            label: "action",
+                            uri: "http://linecorp.com/",
+                        },
                     },
                     {
                         type: "box",
                         layout: "vertical",
-                        contents: [],
-                        position: "absolute",
-                        width: "100%",
-                        height: "40%",
-                        offsetBottom: "0px",
-                        offsetStart: "0px",
-                        offsetEnd: "0px",
-                    },
-                    {
-                        type: "box",
-                        layout: "horizontal",
                         contents: [
                             {
                                 type: "box",
                                 layout: "vertical",
                                 contents: [
                                     {
-                                        type: "box",
-                                        layout: "horizontal",
-                                        contents: [
-                                            {
-                                                type: "text",
-                                                text: "คลิกเลย",
-                                                size: "12px",
-                                                color: "#ffffff",
-                                                align: "center",
-                                                gravity: "center",
-                                                style: "normal",
-                                            },
-                                        ],
-                                        justifyContent: "center",
-                                        alignItems: "center",
-                                        cornerRadius: "12px",
-                                        borderColor: "#A7A9AC",
-                                        backgroundColor: "#A7A9AC",
-                                        height: "24.99px",
-                                        width: "78.71px",
-                                        action: {
-                                            type: "uri",
-                                            label: "action",
-                                            uri: "http://linecorp.com/",
-                                        },
+                                        type: "text",
+                                        text: "คลิกเลย",
+                                        align: "center",
+                                        gravity: "center",
+                                        color: "#ffffff",
                                     },
                                 ],
-                                spacing: "xs",
-                                justifyContent: "center",
-                                alignItems: "center",
+                                position: "relative",
+                                backgroundColor: "#A7A9AC",
+                                cornerRadius: "18px",
+                                paddingTop: "2%",
+                                paddingBottom: "2%",
+                                paddingStart: "5%",
+                                paddingEnd: "5%",
                             },
                         ],
                         position: "absolute",
-                        offsetBottom: "0px",
-                        offsetStart: "0px",
+                        offsetBottom: "10%",
                         offsetEnd: "0px",
-                        paddingAll: "20px",
+                        offsetStart: "0px",
+                        justifyContent: "center",
+                        alignItems: "center",
                     },
                 ],
                 paddingAll: "0px",
             },
         };
-
         bodyContent.body.contents[0].url = v.hero.url; // image of card.
-        bodyContent.body.contents[2].contents[0].contents[0].action = JSON.parse(JSON.stringify(v.footer.contents[0].action)); // action button of card
+        bodyContent.body.contents[0].action = JSON.parse(JSON.stringify(v.footer.contents[0].action)); // action button of card
+        bodyContent.body.contents[1].contents[0].contents[0].text = JSON.parse(JSON.stringify(v.footer.contents[0].action.label));
         newData.push(JSON.parse(JSON.stringify(bodyContent)));
     });
 
